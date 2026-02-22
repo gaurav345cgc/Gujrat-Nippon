@@ -58,7 +58,7 @@ export default function Hero() {
                             <span className={styles.mainHeading}>Metal Processing Industries</span>
                         </h1>
                         <p className={styles.heroSubtitle}>One Point Engineering Solution Provider and Supply Company. <br /> "Service with Quality"</p>
-                        <button className={styles.contactBtn}>CONTACT US</button>
+                        <Link href="/contact" className={styles.contactBtn} style={{ textDecoration: 'none', display: 'inline-block' }}>CONTACT US</Link>
                     </div>
                 </div>
             </div>
