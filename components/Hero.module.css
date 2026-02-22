@@ -146,43 +146,48 @@
 }
 
 .contactBtn:hover {
-  background-color: var(--page-bg);
-  color: var(--primary-accent);
+  background-color: #FFFFFF;
+  color: #990000;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .heroTitle {
+  .preHeading {
+    font-size: 1.4rem;
+  }
+
+  .mainHeading {
     font-size: 3rem;
-  }
-
-  .floatingNavbar {
-    flex-direction: column;
-    border-radius: 20px;
-  }
-
-  .navRight {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  .navLeft {
-    justify-content: center;
-  }
-
-  .contactInfo {
-    display: none;
-    /* Hide complex contact info on small mobile */
   }
 }
 
 @media (max-width: 768px) {
-  .heroTitle {
-    font-size: 2.5rem;
+  .preHeading {
+    font-size: 1.1rem;
+  }
+
+  .mainHeading {
+    font-size: 2.2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .contactBtn {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
   }
 
   .contentOverlay {
     padding: 1rem;
+  }
+
+  .scene {
+    margin: 100px 1rem 1rem;
+    width: calc(100% - 2rem);
+    min-height: 450px;
+    height: 70vh;
   }
 }

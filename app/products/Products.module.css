@@ -148,3 +148,10 @@
         transform: translateY(0);
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 5rem 1rem 3rem;
+        /* Match Contact us top padding to clear header */
+    }
+}

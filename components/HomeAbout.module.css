@@ -183,3 +183,22 @@
 .knowMoreBtn:hover .arrowCircle {
     transform: translateX(4px);
 }
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .textContent p {
+        font-size: 1rem;
+    }
+
+    .leftCol {
+        min-height: 350px;
+    }
+
+    .container {
+        gap: 3rem;
+    }
+}

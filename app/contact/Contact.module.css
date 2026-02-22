@@ -124,3 +124,23 @@
 .submitBtn:hover {
     opacity: 0.9;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 6rem 1rem 2rem;
+    }
+
+    .pageTitle {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .contactLayout {
+        gap: 2rem;
+    }
+
+    .formContainer {
+        padding: 1.5rem;
+    }
+}

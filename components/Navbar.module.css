@@ -1,5 +1,5 @@
 .logoText {
-    color: white;
+    color: #C00000;
     font-size: 1.5rem;
     font-weight: 800;
     text-decoration: none;
@@ -31,17 +31,28 @@
 .topNavbar {
     pointer-events: auto;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 95%;
     max-width: 1600px;
     margin: 1.5rem auto 0;
     padding: 0.5rem 1rem;
-    /* Added internal padding for navbar container */
     border-radius: 50px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    background: rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+    background: rgba(240, 240, 240, 0.95) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(200, 200, 200, 0.5);
+}
+
+.mobileMenuBtn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    color: #C00000;
 }
 
 .navLeft {
@@ -66,7 +77,7 @@
 }
 
 .navDescription {
-    color: #e2e8f0;
+    color: #4A5568;
     font-size: 0.85rem;
     font-weight: 500;
     margin: 0;
@@ -84,7 +95,7 @@
 }
 
 .redText {
-    color: white;
+    color: #C00000;
     /* var(--primary-accent) */
     font-weight: 700;
 }
@@ -102,14 +113,14 @@
     bottom: -15px;
     /* adjust to sit comfortably below links */
     height: 3px;
-    background-color: white;
+    background-color: #C00000;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     border-radius: 4px;
     pointer-events: none;
 }
 
 .navLink {
-    color: #FFFFFF;
+    color: #1A1A1A;
     /* var(--text-dark) */
     text-decoration: none;
     font-weight: 700;
@@ -138,7 +149,8 @@
 }
 
 .contactButtonRed:hover {
-    background-color: #A00000;
+    background-color: #1A1A1A;
+    color: #FFFFFF;
 }
 
 .navLink:hover,
@@ -175,10 +187,10 @@
     top: 100%;
     left: 0;
     min-width: 280px;
-    background-color: rgba(15, 15, 15, 0.95);
+    background-color: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     /* Slightly softer corners for dark theme */
     padding: 1rem 0;
@@ -199,7 +211,7 @@
 }
 
 .dropdownLink {
-    color: #FFFFFF;
+    color: #2C3E50;
     text-decoration: none;
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
@@ -210,14 +222,14 @@
 }
 
 .dropdownLink:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #F8F9FA;
     color: #C00000;
 }
 
 .vendorBtn {
-    background-color: #FFFFFF;
-    color: #000000;
-    border: 1px solid #FFFFFF;
+    background-color: transparent;
+    color: #1A1A1A;
+    border: 1px solid #1A1A1A;
     border-radius: 9999px;
     padding: 0.6rem 1.2rem;
     font-weight: 600;
@@ -228,7 +240,70 @@
 }
 
 .vendorBtn:hover {
-    background-color: transparent;
+    background-color: #1A1A1A;
     color: #FFFFFF;
-    border-color: #FFFFFF;
+    border-color: #1A1A1A;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .mobileMenuBtn {
+        display: block;
+    }
+
+    .navRight {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 2rem;
+        margin-top: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+
+    .navRightOpen {
+        display: flex;
+    }
+
+    .navLinks {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .navIndicator {
+        display: none;
+    }
+
+    .dropdownMenu {
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        padding: 1rem 0 0 1rem;
+        border: none;
+        display: none;
+    }
+
+    .dropdownItem:hover .dropdownMenu {
+        display: flex;
+        opacity: 1;
+        transform: none;
+    }
+
+    .dropdownLink {
+        padding: 0.5rem 0;
+    }
+
+    .topNavbar {
+        border-radius: 12px;
+        /* Less rounded on mobile if open, but pill is fine too */
+    }
 }

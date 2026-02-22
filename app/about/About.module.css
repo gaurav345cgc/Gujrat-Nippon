@@ -212,3 +212,21 @@
         transform: translateY(0);
     }
 }
+
+@media (max-width: 768px) {
+    .sectionHeading {
+        font-size: 2rem;
+    }
+
+    .sectionTitle {
+        font-size: 2rem;
+    }
+
+    .textContent {
+        padding: 1.5rem;
+    }
+
+    .container {
+        padding: 0 1rem 2rem;
+    }
+}
