@@ -3,51 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './HomeProducts.module.css';
 import Link from 'next/link';
-
-const PRODUCTS = [
-    {
-        id: 1,
-        title: 'Industrial Spares & Consumables',
-        desc: 'Comprehensive electrical, mechanical, hydraulic, and pneumatic supplies.',
-        link: '/products/spares',
-        image: '/product_4.png'
-    },
-    {
-        id: 2,
-        title: 'Chemicals, Grease & Lubricants',
-        desc: 'High-quality preventative maintenance supplies for industrial use.',
-        link: '/products/chemicals',
-        image: '/product_1.png'
-    },
-    {
-        id: 3,
-        title: 'Turnkey Plant & Machineries',
-        desc: 'Design, manufacture and supply of plant machineries for metal processing.',
-        link: '/products/turnkey',
-        image: '/product_3.png'
-    },
-    {
-        id: 4,
-        title: 'Capital Equipment',
-        desc: 'Representing reputed International Companies (Zhuoshen, Vietsteel, Maker).',
-        link: '/products/equipment',
-        image: '/product_2.png'
-    },
-    {
-        id: 5,
-        title: 'Plastic Moulding Systems',
-        desc: 'Advanced plastic moulding technologies by Gujarat Nippon Enterprises.',
-        link: '/products/moulding',
-        image: '/product_3.png'
-    },
-    {
-        id: 6,
-        title: 'Logic Plastics Manufacturing',
-        desc: 'High-volume production lines for various renowned multinational brands.',
-        link: '/products/logic-plastics',
-        image: '/product_4.png'
-    }
-];
+import { products as PRODUCTS } from '../lib/data/products';
 
 export default function HomeProducts() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -121,12 +77,12 @@ export default function HomeProducts() {
                             <Link href={prod.link} key={prod.id} style={{ textDecoration: 'none' }} className={styles.card}>
                                 <div className={styles.cardTag}>PRODUCT FEATURE</div>
                                 <div className={styles.cardImageWrapper}>
-                                    <img src={prod.image} alt={prod.title} className={styles.cardImage} />
+                                    <img src={prod.image} alt={prod.name} className={styles.cardImage} />
                                 </div>
                                 <div className={styles.cardFooter}>
                                     <div>
-                                        <h3 className={styles.cardTitle}>{prod.title}</h3>
-                                        <p className={styles.cardDesc}>{prod.desc}</p>
+                                        <h3 className={styles.cardTitle}>{prod.name}</h3>
+                                        <p className={styles.cardDesc}>{prod.description}</p>
                                     </div>
                                     <div className={styles.cardArrow}>
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>

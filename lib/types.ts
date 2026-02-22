@@ -1,9 +1,18 @@
 export interface Product {
   id: string;
   name: string;
-  category: string;
   description: string;
-  specifications: Record<string, string>;
+  link: string;
+  image: string;
+}
+
+export interface Document {
+  id: string;
+  title: string;
+  type: string;
+  size: string;
+  date: string;
+  url: string;
 }
 
 export interface Brochure {
