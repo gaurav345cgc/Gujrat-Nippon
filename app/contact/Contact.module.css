@@ -1,0 +1,126 @@
+.container {
+    background-color: transparent;
+    min-height: 100vh;
+    padding: 8rem 2rem 4rem;
+    /* Leave room for fixed header */
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #2C3E50;
+}
+
+.pageTitle {
+    color: #1A1A1A;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contactLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+    .contactLayout {
+        flex-direction: row;
+        gap: 6rem;
+    }
+}
+
+/* Left Column: Company Info */
+.companyInfo {
+    flex: 1;
+}
+
+.companyName {
+    color: #1A1A1A;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #C00000;
+}
+
+.infoBlock {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.infoLabel {
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-right: 0.5rem;
+}
+
+.locationsBlock {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #6C7A89;
+}
+
+/* Right Column: Contact Form */
+.formContainer {
+    flex: 1;
+    background-color: #FFFFFF;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #6C7A89;
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1A1A1A;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #6C7A89;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #2C3E50;
+    background-color: #F8F9FA;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Crimson Red on Focus */
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #C00000;
+    box-shadow: 0 0 0 3px rgba(192, 0, 0, 0.1);
+}
+
+.submitBtn {
+    width: 100%;
+    background-color: #C00000;
+    color: #FFFFFF;
+    border: none;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    margin-top: 1rem;
+}
+
+.submitBtn:hover {
+    opacity: 0.9;
+}

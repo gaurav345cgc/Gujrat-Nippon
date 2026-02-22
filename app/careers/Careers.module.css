@@ -1,0 +1,120 @@
+.container {
+    background-color: transparent;
+    /* Allows global grid to show through */
+    min-height: 100vh;
+    padding: 3rem 2rem 6rem;
+    /* Padding adjusted for new PageHeader */
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pageTitle {
+    display: none;
+}
+
+.pageSubtitle {
+    color: #2C3E50;
+    font-size: 1.1rem;
+    max-width: 1000px;
+    margin: 0 auto 6rem auto;
+    line-height: 1.8;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+    .featuresGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .featuresGrid {
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 columns for 4 features */
+        gap: 2rem;
+    }
+}
+
+.featureCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Base styling for the icons if we use standard unicode/emoji or SVGs */
+.iconContainer {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* The horizontal line under the icon */
+.iconContainer::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: #1A1A1A;
+}
+
+.featureTitle {
+    color: #1A1A1A;
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.featureDesc {
+    color: #4A5568;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Job Openings Section */
+.jobOpeningsSection {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid #E2E8F0;
+    text-align: center;
+}
+
+.jobOpeningsTitle {
+    color: #1A1A1A;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.noOpeningsBox {
+    background-color: #FFFFFF;
+    border: 1px dashed #A0AEC0;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #2C3E50;
+    font-size: 1.1rem;
+}
+
+.noOpeningsSubtext {
+    margin-top: 0.5rem;
+    color: #718096;
+    font-size: 0.95rem;
+}

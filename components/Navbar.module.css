@@ -1,0 +1,234 @@
+.logoText {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
+/* Navbar Container visibility */
+.navContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Increased to avoid overlapping from other elements */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.navVisible {
+    transform: translateY(0);
+}
+
+.navHidden {
+    transform: translateY(-100%);
+}
+
+/* Fixed Top Navbar */
+.topNavbar {
+    pointer-events: auto;
+    display: flex;
+    width: 95%;
+    max-width: 1600px;
+    margin: 1.5rem auto 0;
+    padding: 0.5rem 1rem;
+    /* Added internal padding for navbar container */
+    border-radius: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.navLeft {
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.navMiddle {
+    flex: 1;
+    display: none;
+    /* Hide description to make room for 6 top level links, or only show on ultra-wide */
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+}
+
+@media (min-width: 1400px) {
+    .navMiddle {
+        display: flex;
+    }
+}
+
+.navDescription {
+    color: #e2e8f0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 500px;
+}
+
+.navRight {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem 0.5rem 2rem;
+    gap: 1.5rem;
+    border-radius: 0 50px 50px 0;
+}
+
+.redText {
+    color: white;
+    /* var(--primary-accent) */
+    font-weight: 700;
+}
+
+.navLinks {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.navIndicator {
+    position: absolute;
+    bottom: -15px;
+    /* adjust to sit comfortably below links */
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.navLink {
+    color: #FFFFFF;
+    /* var(--text-dark) */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.2s, color 0.2s;
+    padding: 0.5rem 0;
+    /* Adding padding to give height for slider calculation */
+}
+
+.contactButtonRed {
+    background-color: #C00000;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.contactButtonRed:hover {
+    background-color: #A00000;
+}
+
+.navLink:hover,
+.navLink.active {
+    opacity: 0.8;
+    color: #C00000;
+    /* var(--primary-accent) */
+}
+
+.navLink span {
+    font-size: 0.6rem;
+    transition: transform 0.2s;
+}
+
+/* Dropdown Container */
+.dropdownItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.dropdownItem:hover .navLink {
+    color: #C00000;
+}
+
+.dropdownItem:hover .navLink span {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu styling matching the image */
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 280px;
+    background-color: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    /* Slightly softer corners for dark theme */
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 1001;
+    border-top: 3px solid #C00000;
+}
+
+.dropdownItem:hover .dropdownMenu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdownLink {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+    text-transform: none;
+    /* Keep normal casing like in image */
+}
+
+.dropdownLink:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #C00000;
+}
+
+.vendorBtn {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid #FFFFFF;
+    border-radius: 9999px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.vendorBtn:hover {
+    background-color: transparent;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
