@@ -19,22 +19,15 @@
 /* 3D Scene Container */
 .scene {
   position: relative;
-  margin: 120px 2rem 2rem;
-  /* Uniform outer margins (left, right, bottom) */
-  margin-left: auto;
-  margin-right: auto;
-  width: calc(100% - 4rem);
-  /* Match the 2rem margin on each side */
-  max-width: 1800px;
-  /* Increased from 1600px */
-  height: 85vh;
-  /* Increased from 75vh */
+  /* Removed uniform outer margins to attach image to the top */
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  height: 100vh;
   min-height: 600px;
-  /* Increased from 500px */
-  max-height: 900px;
-  /* Increased from 800px */
-  border-radius: 40px;
-  /* Rounded corners */
+  max-height: none;
+  border-radius: 0;
+  /* Removing border radius to meet the top navbar flush */
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
   perspective: 1000px;
   overflow: hidden;
@@ -185,8 +178,8 @@
   }
 
   .scene {
-    margin: 100px 1rem 1rem;
-    width: calc(100% - 2rem);
+    margin: 0;
+    width: 100%;
     min-height: 450px;
     height: 70vh;
   }

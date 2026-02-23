@@ -37,14 +37,14 @@ export default function Hero() {
     };
 
     return (
-        <header className={styles.heroSection} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+        <header className={styles.heroSection} /* onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} */>
             {/* 3D background layer */}
             <div className={styles.scene}>
                 <div
                     ref={bgRef}
                     className={styles.parallaxBg}
                     style={{
-                        backgroundImage: "url('/hero_image.png?v=3')", // AI Generated Metal Processing Image (Dark & High Contrast)
+                        backgroundImage: "url('/hero_bg.png')",
                     }}
                 />
                 {/* Dark overlay for better text readability */}
