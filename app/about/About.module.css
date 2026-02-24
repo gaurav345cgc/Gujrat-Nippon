@@ -43,8 +43,7 @@
 }
 
 .container {
-    padding: 0 2rem 4rem;
-    /* Removed top padding from 2rem to 0 */
+    padding: 6rem 2rem 4rem;
     color: #2C3E50;
     max-width: 1200px;
     margin: 0 auto;

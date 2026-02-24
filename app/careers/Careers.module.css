@@ -2,7 +2,7 @@
     background-color: transparent;
     /* Allows global grid to show through */
     min-height: 100vh;
-    padding: 3rem 2rem 6rem;
+    padding: 8rem 2rem 6rem;
     /* Padding adjusted for new PageHeader */
     max-width: 1200px;
     margin: 0 auto;

@@ -50,11 +50,11 @@
 }
 
 .navWhiteSection {
-    background-color: rgba(255, 255, 255, 0.75);
-    /* White glass */
-    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.6);
+    /* White glass - lower opacity for more blur visibility */
+    backdrop-filter: blur(8px);
     /* Glass blur effect */
-    -webkit-backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.4);
     /* Subtle border for glass structure */
     display: flex;

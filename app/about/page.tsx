@@ -60,7 +60,7 @@ export default function AboutPage() {
                     </div>
                     <div ref={addToRefs} className={`${styles.imageContent} ${styles.blurInRight}`} style={{ transitionDelay: '0.2s' }}>
                         <img
-                            src="https://images.unsplash.com/photo-1565514020179-026a92b84bb6?auto=format&fit=crop&q=80&w=800"
+                            src="/hero_image.png"
                             alt="Industrial Facility Overview"
                             className={styles.sectionImage}
                         />
@@ -76,7 +76,7 @@ export default function AboutPage() {
                     </div>
                     <div ref={addToRefs} className={`${styles.imageContent} ${styles.blurInLeft}`} style={{ transitionDelay: '0.2s' }}>
                         <img
-                            src="https://images.unsplash.com/photo-1504917595217-d4bf14d2ce8a?auto=format&fit=crop&q=80&w=800"
+                            src="/industries_served.png"
                             alt="Precision Engineering Mission"
                             className={styles.sectionImage}
                         />
@@ -92,7 +92,7 @@ export default function AboutPage() {
                     </div>
                     <div ref={addToRefs} className={`${styles.imageContent} ${styles.blurInRight}`} style={{ transitionDelay: '0.2s' }}>
                         <img
-                            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
+                            src="/distribution_image.png"
                             alt="Innovative Vision Robotics"
                             className={styles.sectionImage}
                         />
@@ -108,7 +108,7 @@ export default function AboutPage() {
                     </div>
                     <div ref={addToRefs} className={`${styles.imageContent} ${styles.blurInLeft}`} style={{ transitionDelay: '0.2s' }}>
                         <img
-                            src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?auto=format&fit=crop&q=80&w=800"
+                            src="/export_image.png"
                             alt="Executive Leadership Team"
                             className={styles.sectionImage}
                         />
