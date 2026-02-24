@@ -1,7 +1,7 @@
 .logoText {
     color: #C00000;
     font-size: 1.25rem;
-    font-weight: 800;
+    font-weight: 500;
     text-decoration: none;
     letter-spacing: -0.5px;
     white-space: nowrap;
@@ -50,7 +50,13 @@
 }
 
 .navWhiteSection {
-    background-color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.75);
+    /* White glass */
+    backdrop-filter: blur(12px);
+    /* Glass blur effect */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* Subtle border for glass structure */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,31 +68,7 @@
     max-width: calc(100% - 220px);
 }
 
-.navWhiteSection::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -30px;
-    width: 31px;
-    height: 31px;
-    background-color: transparent;
-    border-top-right-radius: 30px;
-    box-shadow: 20px -20px 0 20px #FFFFFF;
-    pointer-events: none;
-}
 
-.navWhiteSection::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: -30px;
-    width: 31px;
-    height: 31px;
-    background-color: transparent;
-    border-top-left-radius: 30px;
-    box-shadow: -20px -20px 0 20px #FFFFFF;
-    pointer-events: none;
-}
 
 .navTransparentSection {
     width: 220px;

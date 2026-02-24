@@ -40,10 +40,13 @@ export default function AboutPage() {
 
     return (
         <main className={styles.pageWrapper}>
-            {/* Hero Banner with White Text on Red Background */}
-            <header className={styles.heroBanner}>
-                <h1 className={styles.heroBannerTitle}>About Us</h1>
-            </header>
+            {/* Full Screen Hero Image */}
+            <div className={styles.heroFullScreen}>
+                <img src="/about_us.png" alt="About Us Full Screen" className={styles.heroImage} />
+                <div className={styles.heroOverlay}>
+                    <h1 className={styles.heroTitle}>About Us</h1>
+                </div>
+            </div>
 
             <div className={styles.container}>
 
@@ -61,8 +64,7 @@ export default function AboutPage() {
                             alt="Industrial Facility Overview"
                             className={styles.sectionImage}
                         />
-                    </div>
-                </section>
+                    </div>                </section>
 
                 {/* 2. Mission (Reverse: Image Left, Text Right) */}
                 <section className={`${styles.splitSection} ${styles.splitSectionReverse}`}>
@@ -78,8 +80,7 @@ export default function AboutPage() {
                             alt="Precision Engineering Mission"
                             className={styles.sectionImage}
                         />
-                    </div>
-                </section>
+                    </div>                </section>
 
                 {/* 3. Vision (Text Left, Image Right) */}
                 <section className={styles.splitSection}>
@@ -95,8 +96,7 @@ export default function AboutPage() {
                             alt="Innovative Vision Robotics"
                             className={styles.sectionImage}
                         />
-                    </div>
-                </section>
+                    </div>                </section>
 
                 {/* 4. Leadership (Reverse: Image Left, Text Right) */}
                 <section className={`${styles.splitSection} ${styles.splitSectionReverse}`}>
@@ -112,8 +112,7 @@ export default function AboutPage() {
                             alt="Executive Leadership Team"
                             className={styles.sectionImage}
                         />
-                    </div>
-                </section>
+                    </div>                </section>
 
                 {/* Divisions Grid Section */}
                 <section>

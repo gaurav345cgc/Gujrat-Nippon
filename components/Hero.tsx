@@ -51,15 +51,18 @@ export default function Hero() {
                 <div className={styles.bgOverlay} />
 
                 <div className={styles.contentOverlay}>
-                    {/* Hero Content */}
                     <div className={styles.heroTextContent}>
                         <h1 className={styles.heroTitle}>
-                            <span className={styles.preHeading}>Multi National Group in</span><br />
-                            <span className={styles.mainHeading}>Metal Processing Industries</span>
+                            <span className={styles.lightText}>Engineering</span><br />
+                            <span className={styles.lightText}>Precision Systems</span><br />
+                            <span className={styles.lightText}>For Global Industries</span>
                         </h1>
-                        <p className={styles.heroSubtitle}>One Point Engineering Solution Provider and Supply Company. <br /> "Service with Quality"</p>
-                        <Link href="/contact" className={styles.contactBtn} style={{ textDecoration: 'none', display: 'inline-block' }}>CONTACT US</Link>
                     </div>
+                    <Link href="/products" className={styles.heroArrowContainer} aria-label="View Products">
+                        <div className={styles.heroArrowBtn}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </div>
+                    </Link>
                 </div>
             </div>
 

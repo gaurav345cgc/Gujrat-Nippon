@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Mrs_Saint_Delafield } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import PageHeader from "@/components/PageHeader";
 
 const mrsSaintDelafield = Mrs_Saint_Delafield({ subsets: ["latin"], weight: "400", variable: "--font-delafield" });
 import Footer from "@/components/Footer";
@@ -29,9 +28,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={mrsSaintDelafield.variable}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
+      </head>
       <body>
         <Navbar />
-        <PageHeader />
         <main>
           {children}
         </main>

@@ -4,16 +4,42 @@
     min-height: 100vh;
 }
 
-/* Hero Banner */
-.heroBanner {
-    text-align: center;
-    padding: 1rem 2rem 4rem;
-    /* Reduced top padding since PageHeader is now above */
+/* Full Screen Hero Image */
+.heroFullScreen {
+    position: relative;
     width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
 }
 
-.heroBannerTitle {
-    display: none;
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.heroTitle {
+    color: #FFFFFF;
+    font-size: 4rem;
+    font-weight: 800;
+    text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .container {
@@ -70,47 +96,25 @@
 .imageContent {
     flex: 1;
     position: relative;
-    min-height: 400px;
+    height: 300px;
     background-color: #e0e0e0;
-    border-radius: 8px;
-    border: 1px solid #6C7A89;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     z-index: 1;
+    overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+    .imageContent {
+        height: 340px;
+    }
 }
 
 .sectionImage {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 7px;
-    /* slightly less than container to fit inside border */
-}
-
-/* Offset red border effect */
-.imageContent::after {
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: -10px;
-    bottom: -10px;
-    left: 10px;
-    border-right: 4px solid #C00000;
-    border-bottom: 2px solid #C00000;
-    border-radius: 0 0 8px 0;
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* For reversed sections, flip the red border offset to the left */
-.splitSectionReverse .imageContent::after {
-    right: 20px;
-    left: -20px;
-    border-right: none;
-    border-left: 4px solid #C00000;
-    border-radius: 0 0 0 8px;
 }
 
 /* Blur-In Animations via Intersection Observer */

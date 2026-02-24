@@ -22,6 +22,7 @@ export default function ProductsPage() {
                             <div className={styles.imageContainer}>
                                 <img src={product.image} alt={product.name} className={styles.productImage} />
                             </div>
+
                             <div className={styles.cardFooter}>
                                 <div>
                                     <h2 className={styles.productName}>{product.name}</h2>

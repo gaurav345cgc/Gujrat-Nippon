@@ -61,34 +61,40 @@ const industries = [
 
 export default function IndustriesPage() {
     return (
-        <main className={styles.container}>
-            <h1 className={styles.pageTitle}>Industries Served</h1>
-            <p className={styles.pageSubtitle}>
-                Gujarat Nippon Group powers innovation across multiple sectors. From heavy-duty metal processing to precision plastics engineering, our comprehensive &quot;One Point Engineering Solutions&quot; equip industries worldwide to meet the demands of tomorrow.
-            </p>
+        <main className={styles.pageWrapper}>
+            {/* Full Screen Hero Image */}
+            <div className={styles.heroFullScreen}>
+                <img src="/industries_served.png" alt="Industries Served Full Screen" className={styles.heroImage} />
+                <div className={styles.heroOverlay}>
+                    <h1 className={styles.heroTitle}>Industries Served</h1>
+                </div>
+            </div>
 
-            <div className={styles.grid}>
-                {industries.map((industry) => (
-                    <article key={industry.id} className={styles.industryCard}>
+            <div className={styles.container}>
+                <p className={styles.pageSubtitle}>
+                    Gujarat Nippon Group powers innovation across multiple sectors. From heavy-duty metal processing to precision plastics engineering, our comprehensive &quot;One Point Engineering Solutions&quot; equip industries worldwide to meet the demands of tomorrow.
+                </p>
 
-                        {/* Default State */}
-                        <div className={styles.imageContainer}>
-                            <img src={industry.image} alt={industry.title} className={styles.industryImage} />
-                            <div className={styles.imageOverlay}>
-                                <h3 className={styles.industryTitle}>{industry.title}</h3>
+                <div className={styles.grid}>
+                    {industries.map((industry) => (
+                        <article key={industry.id} className={styles.industryCard}>
+
+                            {/* Default State */}
+                            <div className={styles.textContainer}>
+                                <h3 className={styles.industryTitleSolid}>{industry.title}</h3>
                             </div>
-                        </div>
 
-                        {/* Hover State */}
-                        <div className={styles.hoverContent}>
-                            <h3 className={styles.industryTitle} style={{ textShadow: 'none', marginBottom: '1rem' }}>
-                                {industry.title}
-                            </h3>
-                            <p className={styles.hoverText}>{industry.description}</p>
-                            <Link href="/contact" className={styles.hoverLink}>Inquire Now</Link>
-                        </div>
-                    </article>
-                ))}
+                            {/* Hover State */}
+                            <div className={styles.hoverContent}>
+                                <h3 className={styles.industryTitle} style={{ textShadow: 'none', marginBottom: '1rem' }}>
+                                    {industry.title}
+                                </h3>
+                                <p className={styles.hoverText}>{industry.description}</p>
+                                <Link href="/contact" className={styles.hoverLink}>Inquire Now</Link>
+                            </div>
+                        </article>
+                    ))}
+                </div>
             </div>
         </main>
     );
