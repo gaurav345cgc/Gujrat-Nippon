@@ -48,14 +48,14 @@ export default function HomeAbout() {
                 </div>
             </div>
             <div className={styles.rightCol}>
-                <span className={styles.subheading}>Since 2004</span>
-                <h2 className={styles.heading}>Gujarat Nippon Group</h2>
+                <span className={styles.subheading}>About Us</span>
+                <h2 className={styles.heading}>Gujarat Nippon International</h2>
                 <div className={styles.textContent}>
                     <p>
-                        We are a premier Multinational Conglomerate specializing in Metal Processing, Engineering Solutions, and high-precision Manufacturing. Since our inception, we have established ourselves as a &quot;One Point Engineering Solution Provider,&quot; designing, manufacturing, and exporting world-class industrial systems and consumables to a diverse global clientele.
+                        Gujarat Nippon International Private Limited is a globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution.
                     </p>
                     <p>
-                        Our reputation as a versatile industry leader is built on a foundation of turnkey excellence—ranging from the modernization of complex rolling mills to the high-volume production of consumer goods. With a footprint spanning across Africa, Asia, Europe, and North America, Gujarat Nippon Group remains committed to delivering innovative, reliable, and integrated solutions that power industries worldwide.
+                        Our mission is to provide efficient, precise, and excellent execution that empowers our business partners to achieve operational excellence and long-term success.
                     </p>
                 </div>
                 <Link href="/about" className={styles.knowMoreBtn}>

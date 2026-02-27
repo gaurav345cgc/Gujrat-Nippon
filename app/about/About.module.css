@@ -85,11 +85,11 @@
 
 .textContent {
     flex: 1;
-    background-color: #FFFFFF;
+    background-color: #EEEEEE;
     padding: 2.5rem;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    border: none;
+    box-shadow: none;
 }
 
 .imageContent {
@@ -142,7 +142,7 @@
     transform: translateX(0) !important;
 }
 
-/* Divisions Grid */
+/* Goals Grid */
 .sectionTitle {
     color: #1A1A1A;
     font-size: 2.5rem;
@@ -151,7 +151,7 @@
     text-align: center;
 }
 
-.divisionsGrid {
+.goalsGrid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -159,42 +159,43 @@
 }
 
 @media (min-width: 1024px) {
-    .divisionsGrid {
+    .goalsGrid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-.divisionCard {
-    background-color: #FFFFFF;
-    border: 1px solid #6C7A89;
-    border-radius: 8px;
+.goalCard {
+    background-color: #EEEEEE;
+    border: none;
+    border-radius: 16px;
     padding: 2.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    box-shadow: none;
     opacity: 0;
     transform: translateY(30px);
     animation: slideUpFade 0.6s ease-out forwards;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.divisionCard:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.divisionCard:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.divisionCard:nth-child(3) {
-    animation-delay: 0.3s;
+.goalIcon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    background-color: rgba(192, 0, 0, 0.05);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .cardTitle {
     color: #C00000;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 2rem;
-    border-bottom: 2px solid #C00000;
-    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .cardText {

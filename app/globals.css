@@ -17,6 +17,20 @@ body {
   font-family: "Nunito", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/bg_pattern.png');
+  background-repeat: repeat;
+  background-size: auto;
+  mix-blend-mode: multiply;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
 }
 
 * {

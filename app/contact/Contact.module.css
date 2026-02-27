@@ -98,11 +98,8 @@
     background-color: #FFFFFF;
     padding: 3rem;
     border-radius: 16px;
-    /* Increased border radius for a modern look */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    /* Softer, larger shadow */
     border: 1px solid rgba(0, 0, 0, 0.05);
-    /* Softer border */
 }
 
 .formGroup {

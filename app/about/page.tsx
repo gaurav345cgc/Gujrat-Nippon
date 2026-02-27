@@ -40,23 +40,25 @@ export default function AboutPage() {
 
     return (
         <main className={styles.pageWrapper}>
-            {/* Full Screen Hero Image */}
-            <div className={styles.heroFullScreen}>
-                <img src="/about_us.png" alt="About Us Full Screen" className={styles.heroImage} />
-                <div className={styles.heroOverlay}>
-                    <h1 className={styles.heroTitle}>About Us</h1>
-                </div>
-            </div>
+
 
             <div className={styles.container}>
 
-                {/* 1. Company Overview (Text Left, Image Right) */}
+                {/* 1. Introduction (Text Left, Image Right) */}
                 <section className={styles.splitSection}>
                     <div ref={addToRefs} className={`${styles.textContent} ${styles.blurInLeft}`} style={{ transitionDelay: '0s' }}>
-                        <h2 className={styles.sectionHeading}>Precision in every process</h2>
-                        <p className={styles.sectionText}>
-                            <strong>Company Overview:</strong> Gujarat Nippon Group is part of a Multi National Group predominantly in metal processing industries. We have established ourselves as pioneers delivering robust engineering solutions and global supply chains for over three decades.
-                        </p>
+                        <h2 className={styles.sectionHeading}>About Us</h2>
+                        <div className={styles.sectionText}>
+                            <p style={{ marginBottom: '1rem' }}>
+                                Gujarat Nippon International Private Limited is a globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution.
+                            </p>
+                            <p style={{ marginBottom: '1rem' }}>
+                                Our expertise lies in delivering comprehensive engineering solutions that integrate technology alliances, industrial sourcing, and turnkey project capabilities. Our approach is centered on gaining a deep understanding of our clients’ requirements and providing customized solutions that enhance operational performance, productivity, and efficiency.
+                            </p>
+                            <p>
+                                As we expand into new international markets, we aim to establish ourselves as a trusted partner for organizations seeking long-term value creation and reliable engineering support.
+                            </p>
+                        </div>
                     </div>
                     <div ref={addToRefs} className={`${styles.imageContent} ${styles.blurInRight}`} style={{ transitionDelay: '0.2s' }}>
                         <img
@@ -64,15 +66,23 @@ export default function AboutPage() {
                             alt="Industrial Facility Overview"
                             className={styles.sectionImage}
                         />
-                    </div>                </section>
+                    </div>
+                </section>
 
-                {/* 2. Mission (Reverse: Image Left, Text Right) */}
+                {/* 2. Vision & Mission (Reverse: Image Left, Text Right) */}
                 <section className={`${styles.splitSection} ${styles.splitSectionReverse}`}>
                     <div ref={addToRefs} className={`${styles.textContent} ${styles.blurInRight}`} style={{ transitionDelay: '0s' }}>
-                        <h2 className={styles.sectionHeading}>Our Mission</h2>
-                        <p className={styles.sectionText}>
-                            Our mission is to empower the metal processing and manufacturing sectors by delivering reliable, high-performance industrial solutions. We continually innovate targeting efficiency, safety, and scale, ensuring our partners always stay ahead of the curve.
-                        </p>
+                        <h2 className={styles.sectionHeading}>Vision & Mission</h2>
+                        <div className={styles.sectionText}>
+                            <div style={{ marginBottom: '2rem' }}>
+                                <h3 style={{ color: '#C00000', fontSize: '1.5rem', marginBottom: '0.5rem' }}>Our Vision</h3>
+                                <p>To become a globally recognized one-stop hub for comprehensive engineering solutions and industrial supplies, known for reliability, efficiency, and execution excellence.</p>
+                            </div>
+                            <div>
+                                <h3 style={{ color: '#C00000', fontSize: '1.5rem', marginBottom: '0.5rem' }}>Our Mission</h3>
+                                <p>To provide efficient, precise, and excellent execution that empowers our business partners to achieve operational excellence and long-term success.</p>
+                            </div>
+                        </div>
                     </div>
                     <div ref={addToRefs} className={`${styles.imageContent} ${styles.blurInLeft}`} style={{ transitionDelay: '0.2s' }}>
                         <img
@@ -80,64 +90,79 @@ export default function AboutPage() {
                             alt="Precision Engineering Mission"
                             className={styles.sectionImage}
                         />
-                    </div>                </section>
+                    </div>
+                </section>
 
-                {/* 3. Vision (Text Left, Image Right) */}
-                <section className={styles.splitSection}>
+                {/* 3. Our Goals */}
+                <section>
+                    <h2 className={styles.sectionTitle}>Our Goals</h2>
+                    <div className={styles.goalsGrid}>
+                        <article className={styles.goalCard} style={{ animationDelay: '0.1s' }}>
+                            <div className={styles.goalIcon}>👥</div>
+                            <h3 className={styles.cardTitle}>People</h3>
+                            <p className={styles.cardText}>
+                                To create equitable opportunities for growth and success for all our stakeholders — employees, partners, and clients — by fostering innovation, collaboration, and trust.
+                            </p>
+                        </article>
+
+                        <article className={styles.goalCard} style={{ animationDelay: '0.2s' }}>
+                            <div className={styles.goalIcon}>🌍</div>
+                            <h3 className={styles.cardTitle}>Planet</h3>
+                            <p className={styles.cardText}>
+                                To serve industries across the globe with sustainable and responsible engineering solutions that contribute positively to society and the environment.
+                            </p>
+                        </article>
+
+                        <article className={styles.goalCard} style={{ animationDelay: '0.3s' }}>
+                            <div className={styles.goalIcon}>📈</div>
+                            <h3 className={styles.cardTitle}>Profits</h3>
+                            <p className={styles.cardText}>
+                                To deliver measurable value to our business partners by ensuring minimum operating costs, maximum efficiency, and enhanced profitability across every project we undertake.
+                            </p>
+                        </article>
+                    </div>
+                </section>
+
+                {/* 4. Our Team & Philosophy (Text Left, Image Right) */}
+                <section className={styles.splitSection} style={{ marginBottom: '2rem' }}>
                     <div ref={addToRefs} className={`${styles.textContent} ${styles.blurInLeft}`} style={{ transitionDelay: '0s' }}>
-                        <h2 className={styles.sectionHeading}>Our Vision</h2>
-                        <p className={styles.sectionText}>
-                            <strong>GNIPL Vision:</strong> 'To be One Point Engineering Solution Provider and Supply company'. We envision a future where Gujarat Nippon stands synonymous with operational excellence and sustainable industrial supply chains worldwide.
-                        </p>
+                        <h2 className={styles.sectionHeading}>Our Team & Philosophy</h2>
+                        <div className={styles.sectionText}>
+                            <p style={{ marginBottom: '1.5rem' }}>
+                                At Gujarat Nippon International Private Limited (GNIPL), our strength lies in our people. We are a dedicated team of professionals who combine hard work, smart execution, and strong industry networks to deliver exceptional value.
+                            </p>
+
+                            <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
+                                <div style={{ flex: 1, minWidth: '200px' }}>
+                                    <h4 style={{ color: '#C00000', marginBottom: '1rem', fontSize: '1.2rem' }}>Our Commitments</h4>
+                                    <ul style={{ listStyleType: 'none', padding: 0 }}>
+                                        <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#C00000' }}>•</span> Professional Excellence</li>
+                                        <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#C00000' }}>•</span> Efficient Execution</li>
+                                        <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#C00000' }}>•</span> Strategic Problem-Solving</li>
+                                        <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#C00000' }}>•</span> Client-Centric Service</li>
+                                    </ul>
+                                </div>
+                                <div style={{ flex: 1, minWidth: '200px' }}>
+                                    <h4 style={{ color: '#C00000', marginBottom: '1rem', fontSize: '1.2rem' }}>Our Philosophy</h4>
+                                    <p style={{ marginBottom: '0.5rem' }}>We combine:</p>
+                                    <ul style={{ listStyleType: 'none', padding: 0 }}>
+                                        <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>✔ Hard Work</li>
+                                        <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>✔ Smart Work</li>
+                                        <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>✔ Strong Networks</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p style={{ fontStyle: 'italic', opacity: 0.8 }}>
+                                We believe that collaboration, trust, and continuous improvement form the foundation of long-term partnerships and successful project delivery.
+                            </p>
+                        </div>
                     </div>
                     <div ref={addToRefs} className={`${styles.imageContent} ${styles.blurInRight}`} style={{ transitionDelay: '0.2s' }}>
                         <img
-                            src="/distribution_image.png"
-                            alt="Innovative Vision Robotics"
-                            className={styles.sectionImage}
-                        />
-                    </div>                </section>
-
-                {/* 4. Leadership (Reverse: Image Left, Text Right) */}
-                <section className={`${styles.splitSection} ${styles.splitSectionReverse}`}>
-                    <div ref={addToRefs} className={`${styles.textContent} ${styles.blurInRight}`} style={{ transitionDelay: '0s' }}>
-                        <h2 className={styles.sectionHeading}>Leadership</h2>
-                        <p className={styles.sectionText}>
-                            Spearheaded by a team of visionary engineers and corporate strategists, our executive leadership combines decades of global expertise. Their dedication to integrity, innovation, and client success remains the driving force behind the Gujarat Nippon Group's international expansion.
-                        </p>
-                    </div>
-                    <div ref={addToRefs} className={`${styles.imageContent} ${styles.blurInLeft}`} style={{ transitionDelay: '0.2s' }}>
-                        <img
                             src="/export_image.png"
-                            alt="Executive Leadership Team"
+                            alt="Professional Excellence"
                             className={styles.sectionImage}
                         />
-                    </div>                </section>
-
-                {/* Divisions Grid Section */}
-                <section>
-                    <h2 className={styles.sectionTitle}>Our Divisions</h2>
-                    <div className={styles.divisionsGrid}>
-                        <article className={styles.divisionCard} style={{ animationDelay: '1.7s' }}>
-                            <h3 className={styles.cardTitle}>GNIPL</h3>
-                            <p className={styles.cardText}>
-                                Sourcing and supply of Industrial Spares and Consumables (Electrical, Mechanical, Hydraulic, Pneumatic, Chemicals, Grease and Lubricants). GNIPL being an engineering company undertakes design, manufacture and supply of plant & machineries for metal processing industries on turnkey basis... GNIPL represents reputed International Companies for supply of capital equipment (Zhuoshen, Vietsteel, Maker).
-                            </p>
-                        </article>
-
-                        <article className={styles.divisionCard} style={{ animationDelay: '1.8s' }}>
-                            <h3 className={styles.cardTitle}>Gujarat Nippon Enterprises Pvt Ltd</h3>
-                            <p className={styles.cardText}>
-                                Is into plastic moulding.
-                            </p>
-                        </article>
-
-                        <article className={styles.divisionCard} style={{ animationDelay: '1.9s' }}>
-                            <h3 className={styles.cardTitle}>Logic Plastics Pvt Ltd</h3>
-                            <p className={styles.cardText}>
-                                Manufactures & supplies Tooth Brushes for various renowned multinational brands.
-                            </p>
-                        </article>
                     </div>
                 </section>
 

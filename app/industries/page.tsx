@@ -62,13 +62,7 @@ const industries = [
 export default function IndustriesPage() {
     return (
         <main className={styles.pageWrapper}>
-            {/* Full Screen Hero Image */}
-            <div className={styles.heroFullScreen}>
-                <img src="/industries_served.png" alt="Industries Served Full Screen" className={styles.heroImage} />
-                <div className={styles.heroOverlay}>
-                    <h1 className={styles.heroTitle}>Industries Served</h1>
-                </div>
-            </div>
+
 
             <div className={styles.container}>
                 <p className={styles.pageSubtitle}>
@@ -78,19 +72,20 @@ export default function IndustriesPage() {
                 <div className={styles.grid}>
                     {industries.map((industry) => (
                         <article key={industry.id} className={styles.industryCard}>
+                            <span className={styles.cardTag}>Industry</span>
 
-                            {/* Default State */}
-                            <div className={styles.textContainer}>
-                                <h3 className={styles.industryTitleSolid}>{industry.title}</h3>
+                            <div className={styles.cardImageWrapper}>
+                                <img
+                                    src={industry.image}
+                                    alt={industry.title}
+                                    className={styles.cardImage}
+                                />
                             </div>
 
-                            {/* Hover State */}
-                            <div className={styles.hoverContent}>
-                                <h3 className={styles.industryTitle} style={{ textShadow: 'none', marginBottom: '1rem' }}>
-                                    {industry.title}
-                                </h3>
-                                <p className={styles.hoverText}>{industry.description}</p>
-                                <Link href="/contact" className={styles.hoverLink}>Inquire Now</Link>
+                            <h3 className={styles.cardTitle}>{industry.title}</h3>
+
+                            <div className={styles.cardFooter}>
+                                <p className={styles.cardDesc}>{industry.description}</p>
                             </div>
                         </article>
                     ))}

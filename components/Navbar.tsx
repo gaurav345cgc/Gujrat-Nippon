@@ -83,7 +83,6 @@ export default function Navbar() {
                             <Link href="/about" className={`${styles.navLink} ${pathname.startsWith('/about') ? styles.active : ''}`} data-active={pathname.startsWith('/about') ? "true" : "false"} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
                             <Link href="/products" className={`${styles.navLink} ${pathname.startsWith('/products') ? styles.active : ''}`} data-active={pathname.startsWith('/products') ? "true" : "false"} onClick={() => setIsMobileMenuOpen(false)}>Our Products</Link>
                             <Link href="/industries" className={`${styles.navLink} ${pathname.startsWith('/industries') ? styles.active : ''}`} data-active={pathname.startsWith('/industries') ? "true" : "false"} onClick={() => setIsMobileMenuOpen(false)}>Industries Served</Link>
-                            <Link href="/careers" className={`${styles.navLink} ${pathname.startsWith('/careers') ? styles.active : ''}`} data-active={pathname.startsWith('/careers') ? "true" : "false"} onClick={() => setIsMobileMenuOpen(false)}>Careers</Link>
                             <Link href="/downloads" className={`${styles.navLink} ${pathname.startsWith('/downloads') ? styles.active : ''}`} data-active={pathname.startsWith('/downloads') ? "true" : "false"} onClick={() => setIsMobileMenuOpen(false)}>Brochures</Link>
 
                             {/* Sliding Indicator */}
