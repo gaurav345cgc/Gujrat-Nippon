@@ -98,7 +98,7 @@ export default function AboutPage() {
                     <h2 className={styles.sectionTitle}>Our Goals</h2>
                     <div className={styles.goalsGrid}>
                         <article className={styles.goalCard} style={{ animationDelay: '0.1s' }}>
-                            <div className={styles.goalIcon}>👥</div>
+
                             <h3 className={styles.cardTitle}>People</h3>
                             <p className={styles.cardText}>
                                 To create equitable opportunities for growth and success for all our stakeholders — employees, partners, and clients — by fostering innovation, collaboration, and trust.
@@ -106,7 +106,7 @@ export default function AboutPage() {
                         </article>
 
                         <article className={styles.goalCard} style={{ animationDelay: '0.2s' }}>
-                            <div className={styles.goalIcon}>🌍</div>
+
                             <h3 className={styles.cardTitle}>Planet</h3>
                             <p className={styles.cardText}>
                                 To serve industries across the globe with sustainable and responsible engineering solutions that contribute positively to society and the environment.
@@ -114,7 +114,7 @@ export default function AboutPage() {
                         </article>
 
                         <article className={styles.goalCard} style={{ animationDelay: '0.3s' }}>
-                            <div className={styles.goalIcon}>📈</div>
+
                             <h3 className={styles.cardTitle}>Profits</h3>
                             <p className={styles.cardText}>
                                 To deliver measurable value to our business partners by ensuring minimum operating costs, maximum efficiency, and enhanced profitability across every project we undertake.

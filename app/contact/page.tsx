@@ -10,13 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
     return (
         <main className={styles.pageWrapper}>
-            {/* Full Screen Hero Image */}
-            <div className={styles.heroFullScreen}>
-                <img src="/contact_us.png" alt="Contact Us Full Screen" className={styles.heroImage} />
-                <div className={styles.heroOverlay}>
-                    <h1 className={styles.heroTitle}>Get In Touch</h1>
-                </div>
-            </div>
+
 
             <div className={styles.container}>
 

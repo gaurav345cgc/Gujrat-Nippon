@@ -43,7 +43,7 @@
 }
 
 .container {
-    padding: 6rem 2rem 4rem;
+    padding: 8rem 2rem 4rem;
     color: #2C3E50;
     max-width: 1200px;
     margin: 0 auto;
@@ -231,6 +231,6 @@
     }
 
     .container {
-        padding: 0 1rem 2rem;
+        padding: 6rem 1rem 2rem;
     }
 }
