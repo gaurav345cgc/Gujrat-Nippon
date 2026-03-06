@@ -1,181 +1,115 @@
-/* Color Palette Variables */
 .heroSection {
-  --primary-accent: #C00000;
-  --page-bg: transparent;
-  --text-dark: #1A1A1A;
-  --text-light: #FFFFFF;
-  --icon-color: #6C7A89;
-
   position: relative;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--page-bg);
-  font-family: 'Inter', sans-serif;
-  margin-bottom: 0;
-  /* Removed extra space beneath hero */
-}
-
-/* 3D Scene Container */
-.scene {
-  position: relative;
-  /* Removed uniform outer margins to attach image to the top */
-  margin: 0;
-  width: 100%;
-  max-width: none;
   height: 100vh;
-  min-height: 600px;
-  max-height: none;
-  border-radius: 0;
-  /* Removing border radius to meet the top navbar flush */
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
-  perspective: 1000px;
+  min-height: 700px;
+  display: flex;
+  align-items: flex-end;
+  padding: 4rem 2rem;
   overflow: hidden;
-  z-index: 10;
 }
 
-.parallaxBg {
+.bgImage {
   position: absolute;
-  top: -5%;
-  left: -5%;
-  width: 110%;
-  height: 110%;
-  background-color: #1A1A1A;
-  /* Dark fallback */
+  inset: 0;
   background-size: cover;
   background-position: center;
-  transition: transform 0.1s ease-out;
-  will-change: transform;
+  z-index: 1;
 }
 
 .bgOverlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%);
-  border-radius: 40px;
-  /* Match scene radius */
-  pointer-events: none;
-}
-
-/* Content Overlay Layer */
-.contentOverlay {
-  position: absolute;
   inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0.04, 0.1, 0.16, 0.5) 100%);
+  z-index: 2;
+}
+
+.heroContent {
+  position: relative;
   z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  /* Align to bottom */
+  justify-content: space-between;
   align-items: flex-end;
-  /* Align to right side */
-  padding: 2rem 2%;
-  /* Added bottom padding to lift it slightly */
-  pointer-events: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 2rem;
 }
 
-.contentOverlay>* {
-  pointer-events: auto;
-  /* Re-enable pointer events for interactive elements */
-}
-
-
-
-
-/* Hero Content */
-.heroTextContent {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  /* Left align text */
-  text-align: left;
-  max-width: 800px;
+.heroLeft {
+  flex: 1;
 }
 
 .heroTitle {
   color: var(--text-light);
-  line-height: 1.1;
-  margin-bottom: 2rem;
-  font-size: 5.5rem;
+  font-size: 4.5rem;
   font-weight: 500;
-  letter-spacing: -2px;
-  text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.3);
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -1.5px;
 }
 
-.lightText {
-  font-weight: 400;
-}
-
-.boldText {
-  font-weight: 600;
-}
-
-.heroArrowContainer {
-  display: inline-block;
-  pointer-events: auto;
-  text-decoration: none;
-  margin-top: -1rem;
-  /* Spacing from the text block above it */
-  margin-right: 2rem;
-  /* Slightly inset from the right edge compared to the text */
-}
-
-.heroArrowBtn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+.heroRight {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  transition: all 0.3s ease;
+  justify-content: flex-end;
 }
 
-.heroArrowBtn:hover {
-  background-color: white;
-  color: black;
-  transform: scale(1.05);
+.statsGrid {
+  display: flex;
+  gap: 4rem;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1400px) {
-  .heroTitle {
-    font-size: 4.5rem;
-    letter-spacing: -1.5px;
-  }
+.statItem {
+  display: flex;
+  flex-direction: column;
 }
 
+.statNumber {
+  color: var(--text-light);
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+  line-height: 1;
+}
+
+.statText {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  font-weight: 400;
+  max-width: 120px;
+  line-height: 1.3;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 1024px) {
+  .heroContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
   .heroTitle {
     font-size: 3.5rem;
-    letter-spacing: -1px;
   }
 
-  .contentOverlay {
-    padding: 2rem 8%;
+  .statsGrid {
+    gap: 2rem;
+    flex-wrap: wrap;
   }
 }
 
 @media (max-width: 768px) {
+  .heroSection {
+    padding: 2rem 1.5rem;
+    height: 80vh;
+  }
+
   .heroTitle {
     font-size: 2.8rem;
-    letter-spacing: -0.5px;
   }
 
-  .contentOverlay {
-    align-items: flex-start;
-    /* Move to left on very small screens or keep centered? */
-    justify-content: flex-end;
-    padding: 2rem 5% 10% 5%;
-  }
-
-  .scene {
-    margin: 0;
-    width: 100%;
-    min-height: 450px;
-    height: 70vh;
+  .statNumber {
+    font-size: 2.5rem;
   }
 }

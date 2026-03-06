@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Mrs_Saint_Delafield } from "next/font/google";
+import { Mrs_Saint_Delafield, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const mrsSaintDelafield = Mrs_Saint_Delafield({ subsets: ["latin"], weight: "400", variable: "--font-delafield" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+
 import Footer from "@/components/Footer";
 import "./globals.css";
+
 export const metadata: Metadata = {
   title: {
     template: "%s | Corporate Website",
@@ -27,13 +31,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={mrsSaintDelafield.variable}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
-      </head>
+    <html lang="en" className={`${mrsSaintDelafield.variable} ${inter.variable}`}>
       <body>
+        <SmoothScroll />
         <Navbar />
         <main>
           {children}

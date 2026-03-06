@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Hero from '../components/Hero';
 import HomeAbout from '../components/HomeAbout';
+
 import HomeProducts from '../components/HomeProducts';
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export default function HomePage() {
     <article>
       <Hero />
       <HomeAbout />
+
       <HomeProducts />
     </article>
   );

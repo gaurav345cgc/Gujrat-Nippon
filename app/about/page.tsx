@@ -49,14 +49,12 @@ export default function AboutPage() {
                     <div ref={addToRefs} className={`${styles.textContent} ${styles.blurInLeft}`} style={{ transitionDelay: '0s' }}>
                         <h2 className={styles.sectionHeading}>About Us</h2>
                         <div className={styles.sectionText}>
+                            <h3 style={{ marginBottom: '1rem', color: '#1B3A60' }}>Gujarat Nippon International</h3>
                             <p style={{ marginBottom: '1rem' }}>
                                 Gujarat Nippon International Private Limited is a globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution.
                             </p>
-                            <p style={{ marginBottom: '1rem' }}>
-                                Our expertise lies in delivering comprehensive engineering solutions that integrate technology alliances, industrial sourcing, and turnkey project capabilities. Our approach is centered on gaining a deep understanding of our clients’ requirements and providing customized solutions that enhance operational performance, productivity, and efficiency.
-                            </p>
                             <p>
-                                As we expand into new international markets, we aim to establish ourselves as a trusted partner for organizations seeking long-term value creation and reliable engineering support.
+                                Our mission is to provide efficient, precise, and excellent execution that empowers our business partners to achieve operational excellence and long-term success.
                             </p>
                         </div>
                     </div>

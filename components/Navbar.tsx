@@ -1,107 +1,100 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
     const [isNavVisible, setIsNavVisible] = useState(true);
-    const prevScrollY = useRef(0);
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
     const pathname = usePathname();
-    const navLinksRef = useRef<HTMLDivElement>(null);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0, opacity: 0 });
-
-    useEffect(() => {
-        // Update sliding indicator position based on active route
-        setTimeout(() => {
-            if (navLinksRef.current) {
-                const activeLink = navLinksRef.current.querySelector('[data-active="true"]') as HTMLElement;
-                if (activeLink) {
-                    setIndicatorStyle({
-                        left: activeLink.offsetLeft,
-                        width: activeLink.offsetWidth,
-                        opacity: 1
-                    });
-                } else {
-                    setIndicatorStyle(prev => ({ ...prev, opacity: 0 }));
-                }
-            }
-        }, 100); // slight delay to allow rendering
-    }, [pathname]);
 
     useEffect(() => {
         const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            if (currentScrollY > 100 && currentScrollY > prevScrollY.current) {
-                setIsNavVisible(false);
+            const currentScrollPos = window.scrollY;
+            if (currentScrollPos > 100 && currentScrollPos > prevScrollPos) {
+                setIsNavVisible(false); // scrolling down
             } else {
-                setIsNavVisible(true);
+                setIsNavVisible(true); // scrolling up
             }
-            prevScrollY.current = currentScrollY;
+            setPrevScrollPos(currentScrollPos);
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [prevScrollPos]);
 
     return (
         <div className={`${styles.navContainer} ${isNavVisible ? styles.navVisible : styles.navHidden}`}>
             <nav className={styles.topNavbar}>
-                <div className={styles.navWhiteSection}>
-                    <div className={styles.navLeft}>
-                        <Link href="/" style={{ textDecoration: 'none' }} onClick={() => setIsMobileMenuOpen(false)}>
-                            <strong className={styles.logoText}>Gujarat Nippon Group</strong>
-                        </Link>
-                    </div>
-
-                    <div className={`${styles.navRight} ${isMobileMenuOpen ? styles.navRightOpen : ''}`}>
-                        <div className={styles.navLinks} ref={navLinksRef}>
-                            <Link href="/about" className={`${styles.navLink} ${pathname.startsWith('/about') ? styles.active : ''}`} data-active={pathname.startsWith('/about') ? "true" : "false"} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-                            <Link href="/products" className={`${styles.navLink} ${pathname.startsWith('/products') ? styles.active : ''}`} data-active={pathname.startsWith('/products') ? "true" : "false"} onClick={() => setIsMobileMenuOpen(false)}>Our Products</Link>
-                            <Link href="/industries" className={`${styles.navLink} ${pathname.startsWith('/industries') ? styles.active : ''}`} data-active={pathname.startsWith('/industries') ? "true" : "false"} onClick={() => setIsMobileMenuOpen(false)}>Industries Served</Link>
-                            <Link href="/downloads" className={`${styles.navLink} ${pathname.startsWith('/downloads') ? styles.active : ''}`} data-active={pathname.startsWith('/downloads') ? "true" : "false"} onClick={() => setIsMobileMenuOpen(false)}>Brochures</Link>
-                            <Link href="/contact" className={`${styles.navLink} ${styles.mobileContactLink} ${pathname.startsWith('/contact') ? styles.active : ''}`} data-active={pathname.startsWith('/contact') ? "true" : "false"} onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
-
-                            {/* Sliding Indicator */}
-                            <div className={styles.navIndicator} style={{ left: indicatorStyle.left, width: indicatorStyle.width, opacity: indicatorStyle.opacity }} />
+                {/* Logo Section */}
+                <div className={styles.navLeft}>
+                    <Link href="/" className={styles.logoLink} onClick={() => setIsMobileMenuOpen(false)}>
+                        <img src="/evostel-logo.png" alt="Gujarat Nippon" className={styles.logoImage} />
+                        {/* Fallback if no image: GNIL text with leaf icon */}
+                        <div className={styles.logoFallback}>
+                            Gujarat Nippon Group
                         </div>
+                    </Link>
+                </div>
+
+                {/* Center Links Pill */}
+                <div className={`${styles.navCenter} ${isMobileMenuOpen ? styles.navCenterOpen : ''}`}>
+                    <div className={styles.linksPill}>
+                        <Link href="/" className={`${styles.navLink} ${pathname === '/' ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
+                            Home
+                        </Link>
+                        <Link href="/about" className={`${styles.navLink} ${pathname.startsWith('/about') ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
+                            About us
+                        </Link>
+                        <div className={styles.dropdownItem}>
+                            <Link href="/industries" className={`${styles.navLink} ${styles.hasDropdown} ${pathname.startsWith('/industries') ? styles.active : ''}`} onClick={(e) => {
+                                if (window.innerWidth <= 1024) { e.preventDefault(); } else { setIsMobileMenuOpen(false); }
+                            }}>
+                                Industries & Services
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </Link>
+                            <div className={styles.dropdownMenu}>
+                                <Link href="/industries/electrical" className={styles.dropdownLink}>Electrical supplies</Link>
+                                <Link href="/industries/control" className={styles.dropdownLink}>Control & Automation</Link>
+                                <Link href="/industries/fire-fighting" className={styles.dropdownLink}>
+                                    <span style={{ color: 'var(--primary-teal)' }}>▶</span>&nbsp;AC, Fire Fighting & Mechanical
+                                </Link>
+                                <Link href="/industries/aviation" className={styles.dropdownLink}>Airport lighting and Aviation</Link>
+                                <Link href="/industries/services" className={styles.dropdownLink}>Electrical services</Link>
+                            </div>
+                        </div>
+                        <Link href="/store" className={`${styles.navLink} ${pathname.startsWith('/store') ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
+                            Online store
+                        </Link>
+                        <Link href="/experience" className={`${styles.navLink} ${pathname.startsWith('/experience') ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
+                            The experience
+                        </Link>
                     </div>
                 </div>
 
-                {/* Hamburger Icon for Mobile — separate pill */}
-                <button
-                    className={styles.mobileMenuBtn}
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    aria-label="Toggle menu"
-                >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C00000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        {isMobileMenuOpen ? (
-                            <>
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </>
-                        ) : (
-                            <>
-                                <line x1="3" y1="12" x2="21" y2="12"></line>
-                                <line x1="3" y1="6" x2="21" y2="6"></line>
-                                <line x1="3" y1="18" x2="21" y2="18"></line>
-                            </>
-                        )}
-                    </svg>
-                </button>
-
-                <div className={styles.navTransparentSection}>
-                    <Link href="/contact" className={styles.contactButtonRed} onClick={() => setIsMobileMenuOpen(false)}>
-                        <span className={styles.contactBtnText}>Contact Us</span>
-                        <div className={styles.contactBtnIcon}>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C00000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </div>
+                {/* Right Action Group */}
+                <div className={styles.navRight}>
+                    <Link href="/contact" className={styles.contactPill}>
+                        <span className={styles.contactDot}></span> Contact us
                     </Link>
+                    <button className={styles.menuPill} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            {isMobileMenuOpen ? (
+                                <>
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </>
+                            ) : (
+                                <>
+                                    <line x1="4" y1="8" x2="20" y2="8"></line>
+                                    <line x1="4" y1="16" x2="20" y2="16"></line>
+                                </>
+                            )}
+                        </svg>
+                    </button>
                 </div>
             </nav>
         </div>

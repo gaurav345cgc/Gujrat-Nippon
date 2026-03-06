@@ -1,0 +1,205 @@
+.servicesSection {
+    width: 100%;
+    margin: 0;
+    min-height: 100vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 0;
+}
+
+.header {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.breadcrumb {
+    flex: 1;
+    color: var(--text-dark);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.titleContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 600px;
+}
+
+.actionContainer {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.learnMoreBtn {
+    background-color: #F8F9D7;
+    color: var(--text-dark);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.arrow {
+    font-size: 1rem;
+}
+
+/* CAROUSEL */
+.scrollWrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 3vw;
+    padding: 0 5vw;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.scrollWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.serviceCard {
+    flex: 0 0 86vw;
+    max-width: none;
+    height: 380px;
+    scroll-snap-align: center;
+    display: flex;
+    gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .serviceCard {
+        flex: 0 0 92%;
+        min-width: unset;
+        width: 92vw;
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.cardLeft {
+    flex: 3;
+    padding: 3.5rem 3rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-start;
+}
+
+.cardRight {
+    flex: 7;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .cardRight {
+        flex: none;
+        height: 300px;
+    }
+}
+
+.animatedImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cardTitle {
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+}
+
+.cardDesc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    max-width: 90%;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.iconBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dlBtn {
+    height: 40px;
+    padding: 0 1.25rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.nextArrow {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    user-select: none;
+}
+
+.nextArrow:hover {
+    opacity: 1;
+}

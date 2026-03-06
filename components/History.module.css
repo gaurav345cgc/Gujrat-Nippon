@@ -1,0 +1,104 @@
+.section {
+    padding: 6rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--background);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    letter-spacing: -0.5px;
+}
+
+.timelineWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.cardsScroll {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding-bottom: 2rem;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.cardsScroll::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.card {
+    min-width: 320px;
+    background-color: #FAFAFA;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.yearPill {
+    background-color: var(--primary-purple);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.35rem 0.85rem;
+    border-radius: 6px;
+    margin-bottom: 4rem;
+    /* Big spacing to match design */
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+}
+
+.cardDesc {
+    font-size: 0.9rem;
+    color: #6B7280;
+    line-height: 1.5;
+}
+
+.timelineLineWrapper {
+    margin-top: 2rem;
+    position: relative;
+}
+
+.timelineLine {
+    height: 1px;
+    background-color: #E5E7EB;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.timelineYears {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    overflow-x: auto;
+}
+
+.timelineYears span {
+    font-size: 0.8rem;
+    color: #9CA3AF;
+    background: transparent;
+    border: 1px solid #E5E7EB;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    white-space: nowrap;
+}

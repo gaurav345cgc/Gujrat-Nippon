@@ -1,0 +1,101 @@
+.advantageSection {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.heading {
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.advantageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.advantageText {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    max-width: 900px;
+    margin: 0;
+}
+
+.advantageTitle {
+    font-weight: 600;
+}
+
+@keyframes revealWord {
+    0% {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.word {
+    display: inline-block;
+    opacity: 0;
+    animation: revealWord 0.4s ease forwards;
+}
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ctaContainer {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color, #0B3B70);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.ctaContainer:hover {
+    transform: translateX(5px);
+}
+
+.ctaWord {
+    color: inherit;
+}
+
+.ctaArrow {
+    margin-left: 0.5rem;
+    color: inherit;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.ctaContainer:hover .ctaArrow {
+    transform: translateX(5px);
+}
