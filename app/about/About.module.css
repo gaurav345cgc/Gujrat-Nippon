@@ -1,0 +1,866 @@
+.pageWrapper {
+    background-color: #FFFFFF;
+    color: var(--text-dark);
+    width: 100%;
+    overflow-x: hidden;
+    font-family: inherit;
+}
+
+/* ---- SECTION 1: HERO ---- */
+.heroSection {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    background: url('/hero_image.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 0 20px;
+    max-width: 900px;
+}
+
+.heroTitle {
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.heroTitleAccent {
+    color: #4A9E96;
+    /* Teal accent */
+    font-weight: 600;
+    font-style: italic;
+}
+
+.heroSubtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.heroBtn {
+    margin-top: 2rem;
+    background-color: #7B7492;
+    /* Purple btn */
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 32px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+}
+
+.heroShapeContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    z-index: 5;
+}
+
+.heroShapeRed {
+    width: 250px;
+    height: 100%;
+    background-color: #4A9E96;
+    /* Teal */
+}
+
+.heroShapeWhite {
+    flex: 1;
+    height: 100%;
+    background-color: #FFFFFF;
+    /* Match next section background */
+    clip-path: polygon(30px 0, 100% 0, 100% 100%, 0 100%);
+    margin-left: -30px;
+}
+
+@media(min-width: 768px) {
+    .heroShapeContainer {
+        height: 45px;
+    }
+
+    .heroShapeWhite {
+        clip-path: polygon(45px 0, 100% 0, 100% 100%, 0 100%);
+        margin-left: -45px;
+    }
+}
+
+
+/* ---- SECTION 2 & 3: COMBINED DARK WRAPPER (ABOUT & PHILOSOPHY) ---- */
+.combinedDarkWrapper {
+    background-color: #222222;
+    /* Dark grey from design */
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    padding: 12rem 0 0 0;
+    /* padding top increased to push content down */
+}
+
+/* Very subtle full-height vertical line connecting sections */
+.connectingLine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(50% - 550px + 2rem);
+    /* Matches container left padding edge */
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.05);
+    z-index: 0;
+}
+
+@media(max-width: 1024px) {
+    .connectingLine {
+        left: 2rem;
+    }
+}
+
+.darkSection {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10rem;
+    /* space between about and projects increased */
+}
+
+.projectsSection {
+    position: relative;
+    z-index: 1;
+}
+
+.sharedContainer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.twoColumnRow {
+    display: flex;
+    gap: 0;
+    /* We handle spacing via columns */
+    align-items: flex-start;
+}
+
+@media(max-width: 900px) {
+    .twoColumnRow {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+/* This column matches the width of the projectsTabs (280px) to keep strict alignment */
+/* Reset margin-top to align tops perfectly with flexible content row */
+.leftTitleCol {
+    flex: 0 0 280px;
+    display: flex;
+    margin-top: 0;
+}
+
+/* Specific class to position About Company heading */
+.aboutLeftTitleCol {
+    flex: 0 0 280px;
+    display: flex;
+    margin-top: 0;
+    /* Aligned vertically exact with the start of the right column */
+}
+
+.rightContentCol {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Specifically compress About section content width */
+.aboutRightContentCol {
+    flex: 0 0 550px;
+    /* Fixed width to ensure right alignment */
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    /* Push the content towards the right */
+    margin-top: 6rem;
+    /* Push content DOWN, making heading sit higher relative to it */
+}
+
+.sectionHeading {
+    font-size: 3rem;
+    /* Reduced from 4rem */
+    font-weight: 300;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    border-left: 4px solid #4A9E96;
+    padding-left: 1.5rem;
+    white-space: nowrap;
+    /* Keep headings on a single line */
+}
+
+.headingAccent {
+    color: #4A9E96;
+    font-weight: 400;
+}
+
+/* ABOUT STATS */
+.statsRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    flex-wrap: nowrap;
+    /* Force 1 line */
+    width: 100%;
+}
+
+@media(min-width: 600px) {
+    .statsRow {
+        gap: 1.5rem;
+        /* Ensure tight enough to stay one line */
+    }
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    /* Make them share the space equally */
+}
+
+.statLabel {
+    color: #4A9E96;
+    /* Teal accent like design orange */
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+    /* Removed max-width to let text stack compactly if needed */
+}
+
+.statNum {
+    font-size: 2.5rem;
+    /* Reduced size to fit narrower layout in one line */
+    font-weight: 700;
+    line-height: 1;
+    color: #FFFFFF;
+    letter-spacing: -1px;
+}
+
+.aboutTextContainer {
+    margin-bottom: 3rem;
+    max-width: 100%;
+    /* Will follow parent aboutRightContentCol max-width */
+}
+
+.aboutText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #CCCCCC;
+    /* Light gray for dark bg */
+}
+
+.aboutBtnWhite {
+    align-self: flex-start;
+    background: #FFFFFF;
+    color: #1D1D1F;
+    border: none;
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4px;
+    /* match pill design if requested, but used 4px so far. let's keep 4px as before or matching learnMoreBtn */
+    display: inline-flex;
+    align-items: center;
+}
+
+.aboutBtnWhite:hover {
+    background: #4A9E96;
+    color: #FFFFFF;
+}
+
+/* Large watermark */
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translateY(-50%);
+    font-size: 30rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.02);
+    /* adjusted for dark bg */
+    z-index: 0;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.projectsTopDesc {
+    max-width: 500px;
+    color: #CCCCCC;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-left: auto;
+    /* Pushes content to the right */
+    text-align: right;
+    /* Right align the text to match reference */
+}
+
+.projectsLayout {
+    display: flex;
+    width: 100%;
+    height: 480px;
+}
+
+@media(max-width: 1024px) {
+    .projectsLayout {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.projectsTabs {
+    display: flex;
+    flex-direction: row;
+    width: 280px;
+}
+
+@media(max-width: 1024px) {
+    .projectsTabs {
+        width: 100%;
+        height: 120px;
+    }
+}
+
+.tabBox,
+.tabBoxActive {
+    flex: 1;
+    background-color: #4A9E96;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1.5rem 0;
+    /* Reduced padding to fit smaller box */
+    color: #FFFFFF;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+@media(max-width: 1024px) {
+
+    .tabBox,
+    .tabBoxActive {
+        justify-content: center;
+        padding: 0 1rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+.tabBox:last-child,
+.tabBoxActive:last-child {
+    border-right: none;
+}
+
+.tabBoxActive {
+    background-color: #3f8f87;
+    /* slightly darker for active or keep same? Design keeps same, just different content. Let's keep same but maybe bolder text. */
+}
+
+.tabTextContainer {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: left;
+    margin-bottom: 2rem;
+    white-space: nowrap;
+}
+
+@media(max-width: 1024px) {
+    .tabTextContainer {
+        writing-mode: horizontal-tb;
+        transform: none;
+        margin-bottom: 0;
+        margin-right: 1rem;
+        text-align: center;
+    }
+}
+
+.tabTitle {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+
+@media(max-width: 1024px) {
+    .tabTitle {
+        margin-right: 0;
+        margin-bottom: 0.2rem;
+    }
+}
+
+.tabSubtitle {
+    display: inline-block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+@media(max-width: 1024px) {
+    .tabTextContainer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.tabNumber {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+@media(max-width: 1024px) {
+    .tabNumber {
+        display: none;
+    }
+
+    /* Hide number on mobile to save space */
+}
+
+.projectsImageWrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+}
+
+@media(max-width: 1024px) {
+    .projectsImageWrapper {
+        flex-direction: column;
+    }
+}
+
+.projectsImage {
+    width: 100%;
+    height: 100%;
+    background: url('/export_image.png') no-repeat center center;
+    background-size: cover;
+}
+
+@media(max-width: 1024px) {
+    .projectsImage {
+        min-height: 400px;
+    }
+}
+
+.projectsFloatingCard {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: #FAFAFA;
+    padding: 2.5rem;
+    width: 70%;
+    max-width: 480px;
+    color: #1D1D1F;
+}
+
+@media(max-width: 1024px) {
+    .projectsFloatingCard {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        padding: 2rem;
+    }
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.cardSubtitle {
+    color: #7B7492;
+    font-size: 0.9rem;
+}
+
+.cardNum {
+    color: #1D1D1F;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.cardTitle {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #1D1D1F;
+    line-height: 1.2;
+}
+
+.cardText {
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.learnMoreBtn {
+    background: transparent;
+    color: #1D1D1F;
+    border: 1px solid #1D1D1F;
+    border-radius: 40px;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.learnMoreBtn:hover {
+    background: #1D1D1F;
+    color: #FFFFFF;
+}
+
+/* ---- SECTION 4: LATEST NEWS (OUR GOALS) ---- */
+.newsSection {
+    background-color: #FFFFFF;
+    padding: 6rem 2rem;
+}
+
+.newsContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.newsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    border-left: 2px solid #4A9E96;
+    padding-left: 2rem;
+}
+
+.newsTitle {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #1D1D1F;
+}
+
+.newsTitleAccent {
+    font-weight: 700;
+    color: #4A9E96;
+}
+
+.newsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.newsCard {
+    background: #F8F9FA;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.newsCardImg {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.newsCardBody {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.newsCardTitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1D1D1F;
+    margin-bottom: 1rem;
+}
+
+.newsCardText {
+    color: #666666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.newsCardBtn {
+    align-self: flex-start;
+    background: transparent;
+    color: #7B7492;
+    /* Purple text */
+    border: none;
+    padding: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.newsCardBtn:hover {
+    color: #4A9E96;
+}
+
+/* ---- SECTION 5: CUSTOMERS (VISION & MISSION) ---- */
+.testimonialsSection {
+    background-color: #F8F9FA;
+    padding: 6rem 2rem;
+}
+
+.testimonialsContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testiHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    border-left: 2px solid #7B7492;
+    /* Purple */
+    padding-left: 2rem;
+}
+
+.testiTitle {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #1D1D1F;
+    line-height: 1.2;
+}
+
+.testiTitleAccent {
+    color: #7B7492;
+    font-weight: 600;
+}
+
+.testiGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+@media(max-width: 600px) {
+    .testiGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.testiCard {
+    background: #FFFFFF;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+}
+
+.testiText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #1D1D1F;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    flex: 1;
+}
+
+.testiAuthor {
+    color: #4A9E96;
+    /* Teal */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* ---- SECTION 6: DOUBLE IMAGE ---- */
+.doubleImageSection {
+    display: flex;
+    height: 500px;
+}
+
+@media(max-width: 768px) {
+    .doubleImageSection {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.doubleImageBlock {
+    flex: 1;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+}
+
+.doubleImageBlock::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 60%);
+}
+
+.doubleImageContent {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    right: 3rem;
+    z-index: 2;
+    color: #FFFFFF;
+}
+
+.doubleImageTitle {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.doubleImageTitleAccent {
+    color: #4A9E96;
+    /* Teal */
+    font-weight: 600;
+}
+
+/* ---- SECTION 7: NEWSLETTER ---- */
+.newsletterSection {
+    background-color: #4A9E96;
+    /* Teal background */
+    padding: 5rem 2rem;
+    color: #FFFFFF;
+}
+
+.newsletterContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+@media(max-width: 900px) {
+    .newsletterContainer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+.newsletterLeft {
+    flex: 1;
+    border-left: 2px solid #FFFFFF;
+    padding-left: 2rem;
+}
+
+.newsletterTitle {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.newsletterTitleAccent {
+    font-weight: 700;
+}
+
+.newsletterRight {
+    flex: 1;
+}
+
+.newsletterText {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+.newsletterForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletterInput {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.newsletterInput::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletterInput:focus {
+    outline: none;
+    border-color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.newsletterBtn {
+    align-self: flex-start;
+    background: #FFFFFF;
+    color: #4A9E96;
+    border: none;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4px;
+}
+
+.newsletterBtn:hover {
+    background: #f0f0f0;
+}

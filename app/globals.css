@@ -1,0 +1,35 @@
+:root {
+  --background: #FFFFFF;
+  --foreground: #1D1D1F;
+  --primary-purple: #7B7492;
+  --primary-teal: #4A9E96;
+  --text-dark: #1D1D1F;
+  --text-light: #FFFFFF;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  min-height: 100vh;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
