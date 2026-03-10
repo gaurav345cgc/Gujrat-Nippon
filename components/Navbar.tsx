@@ -66,12 +66,13 @@ export default function Navbar() {
                                 <Link href="/industries/services" className={styles.dropdownLink}>Electrical services</Link>
                             </div>
                         </div>
-                        <Link href="/store" className={`${styles.navLink} ${pathname.startsWith('/store') ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
-                            Online store
+                        <Link href="/products" className={`${styles.navLink} ${pathname.startsWith('/products') ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
+                            Our Products
                         </Link>
-                        <Link href="/experience" className={`${styles.navLink} ${pathname.startsWith('/experience') ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
-                            The experience
+                        <Link href="/brochures" className={`${styles.navLink} ${pathname.startsWith('/brochures') ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
+                            Brochures
                         </Link>
+
                     </div>
                 </div>
 
