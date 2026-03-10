@@ -12,7 +12,7 @@ export default function AboutPage() {
                 <div className={styles.heroOverlay}></div>
                 <div className={styles.heroContent}>
                     <h1 className={styles.heroTitle}>
-                        About <span className={styles.heroTitleAccent}>GNIPL.</span>
+                        About <span className={styles.heroTitleAccent}>Gujarat Nippon.</span>
                     </h1>
                     <p className={styles.heroSubtitle}>
                         A globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution.
@@ -210,14 +210,14 @@ export default function AboutPage() {
                                 "To become a globally recognized one-stop hub for comprehensive engineering solutions and industrial supplies, known for reliability, efficiency, and execution excellence."
                             </p>
                             <span className={styles.testiAuthor}>Our Vision</span>
-                            <span style={{ color: '#7B7492', fontSize: '0.8rem', marginTop: '4px' }}>GNIPL</span>
+                            <span style={{ color: '#7B7492', fontSize: '0.8rem', marginTop: '4px' }}>Gujarat Nippon</span>
                         </div>
                         <div className={styles.testiCard}>
                             <p className={styles.testiText}>
                                 "To provide efficient, precise, and excellent execution that empowers our business partners to achieve operational excellence and long-term success."
                             </p>
                             <span className={styles.testiAuthor}>Our Mission</span>
-                            <span style={{ color: '#7B7492', fontSize: '0.8rem', marginTop: '4px' }}>GNIPL</span>
+                            <span style={{ color: '#7B7492', fontSize: '0.8rem', marginTop: '4px' }}>Gujarat Nippon</span>
                         </div>
                     </div>
 
@@ -253,7 +253,7 @@ export default function AboutPage() {
                 <div className={styles.newsletterContainer}>
                     <div className={styles.newsletterLeft}>
                         <h2 className={styles.newsletterTitle}>
-                            Stay up to date on<br />the latest <span className={styles.newsletterTitleAccent}>GNIPL news</span>
+                            Stay up to date on<br />the latest <span className={styles.newsletterTitleAccent}>Gujarat Nippon news</span>
                         </h2>
                     </div>
                     <div className={styles.newsletterRight}>
