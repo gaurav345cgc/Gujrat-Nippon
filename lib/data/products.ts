@@ -32,7 +32,7 @@ export const products: Product[] = [
     {
         id: '5',
         name: 'Plastic Moulding Systems',
-        description: 'Advanced plastic moulding technologies by Gujarat Nippon Enterprises.',
+        description: 'Advanced plastic moulding technologies by Gujarat Nippon International Pvt Ltd.',
         link: '/products/moulding',
         image: '/product_3.png'
     },

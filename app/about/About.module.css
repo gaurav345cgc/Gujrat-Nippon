@@ -45,8 +45,7 @@
 }
 
 .heroTitleAccent {
-    color: #4A9E96;
-    /* Teal accent */
+    color: #003153;
     font-weight: 600;
     font-style: italic;
 }
@@ -61,8 +60,7 @@
 
 .heroBtn {
     margin-top: 2rem;
-    background-color: #7B7492;
-    /* Purple btn */
+    background-color: #003153;
     color: #FFFFFF;
     border: none;
     padding: 14px 32px;
@@ -91,8 +89,7 @@
 .heroShapeRed {
     width: 250px;
     height: 100%;
-    background-color: #4A9E96;
-    /* Teal */
+    background-color: #003153;
 }
 
 .heroShapeWhite {
@@ -118,13 +115,11 @@
 
 /* ---- SECTION 2 & 3: COMBINED DARK WRAPPER (ABOUT & PHILOSOPHY) ---- */
 .combinedDarkWrapper {
-    background-color: #222222;
-    /* Dark grey from design */
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #1D1D1F;
     position: relative;
     overflow: hidden;
     padding: 12rem 0 0 0;
-    /* padding top increased to push content down */
 }
 
 /* Very subtle full-height vertical line connecting sections */
@@ -135,7 +130,7 @@
     left: calc(50% - 550px + 2rem);
     /* Matches container left padding edge */
     width: 1px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
     z-index: 0;
 }
 
@@ -215,20 +210,18 @@
 
 .sectionHeading {
     font-size: 3rem;
-    /* Reduced from 4rem */
     font-weight: 300;
-    color: #FFFFFF;
+    color: #1D1D1F;
     margin: 0;
     line-height: 1.1;
     letter-spacing: -1px;
-    border-left: 4px solid #4A9E96;
+    border-left: 4px solid #003153;
     padding-left: 1.5rem;
     white-space: nowrap;
-    /* Keep headings on a single line */
 }
 
 .headingAccent {
-    color: #4A9E96;
+    color: #003153;
     font-weight: 400;
 }
 
@@ -258,21 +251,18 @@
 }
 
 .statLabel {
-    color: #4A9E96;
-    /* Teal accent like design orange */
+    color: #003153;
     font-size: 0.8rem;
     font-weight: 600;
     line-height: 1.4;
     margin-bottom: 0.8rem;
-    /* Removed max-width to let text stack compactly if needed */
 }
 
 .statNum {
     font-size: 2.5rem;
-    /* Reduced size to fit narrower layout in one line */
     font-weight: 700;
     line-height: 1;
-    color: #FFFFFF;
+    color: #1D1D1F;
     letter-spacing: -1px;
 }
 
@@ -285,15 +275,14 @@
 .aboutText {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #CCCCCC;
-    /* Light gray for dark bg */
+    color: #666666;
 }
 
 .aboutBtnWhite {
     align-self: flex-start;
-    background: #FFFFFF;
+    background: transparent;
     color: #1D1D1F;
-    border: none;
+    border: 1px solid #1D1D1F;
     padding: 12px 28px;
     font-size: 0.9rem;
     font-weight: 700;
@@ -301,13 +290,12 @@
     cursor: pointer;
     transition: all 0.3s;
     border-radius: 4px;
-    /* match pill design if requested, but used 4px so far. let's keep 4px as before or matching learnMoreBtn */
     display: inline-flex;
     align-items: center;
 }
 
 .aboutBtnWhite:hover {
-    background: #4A9E96;
+    background: #003153;
     color: #FFFFFF;
 }
 
@@ -319,8 +307,7 @@
     transform: translateY(-50%);
     font-size: 30rem;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.02);
-    /* adjusted for dark bg */
+    color: rgba(0, 0, 0, 0.03);
     z-index: 0;
     line-height: 1;
     pointer-events: none;
@@ -328,13 +315,11 @@
 
 .projectsTopDesc {
     max-width: 500px;
-    color: #CCCCCC;
+    color: #666666;
     font-size: 0.95rem;
     line-height: 1.6;
     margin-left: auto;
-    /* Pushes content to the right */
     text-align: right;
-    /* Right align the text to match reference */
 }
 
 .projectsLayout {
@@ -366,14 +351,13 @@
 .tabBox,
 .tabBoxActive {
     flex: 1;
-    background-color: #4A9E96;
+    background-color: #003153;
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     padding: 1.5rem 0;
-    /* Reduced padding to fit smaller box */
     color: #FFFFFF;
     transition: all 0.3s;
     cursor: pointer;
@@ -396,8 +380,7 @@
 }
 
 .tabBoxActive {
-    background-color: #3f8f87;
-    /* slightly darker for active or keep same? Design keeps same, just different content. Let's keep same but maybe bolder text. */
+    background-color: #002240;
 }
 
 .tabTextContainer {
@@ -512,7 +495,7 @@
 }
 
 .cardSubtitle {
-    color: #7B7492;
+    color: #003153;
     font-size: 0.9rem;
 }
 
@@ -572,7 +555,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem;
-    border-left: 2px solid #4A9E96;
+    border-left: 2px solid #003153;
     padding-left: 2rem;
 }
 
@@ -584,7 +567,7 @@
 
 .newsTitleAccent {
     font-weight: 700;
-    color: #4A9E96;
+    color: #003153;
 }
 
 .newsGrid {
@@ -594,11 +577,12 @@
 }
 
 .newsCard {
-    background: #F8F9FA;
+    background: #FFFFFF;
     display: flex;
     flex-direction: column;
     border-radius: 8px;
     overflow: hidden;
+    border: 1px solid #E2E8F0;
 }
 
 .newsCardImg {
@@ -632,8 +616,7 @@
 .newsCardBtn {
     align-self: flex-start;
     background: transparent;
-    color: #7B7492;
-    /* Purple text */
+    color: #003153;
     border: none;
     padding: 0;
     font-size: 0.9rem;
@@ -646,12 +629,12 @@
 }
 
 .newsCardBtn:hover {
-    color: #4A9E96;
+    color: #003153;
 }
 
 /* ---- SECTION 5: CUSTOMERS (VISION & MISSION) ---- */
 .testimonialsSection {
-    background-color: #F8F9FA;
+    background-color: #FFFFFF;
     padding: 6rem 2rem;
 }
 
@@ -665,8 +648,7 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 3rem;
-    border-left: 2px solid #7B7492;
-    /* Purple */
+    border-left: 2px solid #003153;
     padding-left: 2rem;
 }
 
@@ -678,7 +660,7 @@
 }
 
 .testiTitleAccent {
-    color: #7B7492;
+    color: #003153;
     font-weight: 600;
 }
 
@@ -713,8 +695,7 @@
 }
 
 .testiAuthor {
-    color: #4A9E96;
-    /* Teal */
+    color: #003153;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -766,15 +747,13 @@
 }
 
 .doubleImageTitleAccent {
-    color: #4A9E96;
-    /* Teal */
+    color: #003153;
     font-weight: 600;
 }
 
 /* ---- SECTION 7: NEWSLETTER ---- */
 .newsletterSection {
-    background-color: #4A9E96;
-    /* Teal background */
+    background-color: #003153;
     padding: 5rem 2rem;
     color: #FFFFFF;
 }
@@ -850,7 +829,7 @@
 .newsletterBtn {
     align-self: flex-start;
     background: #FFFFFF;
-    color: #4A9E96;
+    color: #003153;
     border: none;
     padding: 12px 24px;
     font-size: 0.9rem;

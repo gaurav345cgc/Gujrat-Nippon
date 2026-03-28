@@ -1,8 +1,10 @@
 :root {
   --background: #FFFFFF;
   --foreground: #1D1D1F;
-  --primary-purple: #7B7492;
-  --primary-teal: #4A9E96;
+  --primary-blue: #003153;
+  --secondary-blue: #003153;
+  --primary-purple: #003153;
+  --primary-teal: #003153;
   --text-dark: #1D1D1F;
   --text-light: #FFFFFF;
 }

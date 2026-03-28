@@ -9,12 +9,12 @@ export default function HomeIndustries() {
     const [isVisible, setIsVisible] = useState(false);
 
     const tiles = [
-        "Oil & Gas",
-        "Industrial",
-        "Aviation",
-        "Water & Power",
+        "Metal Processing",
+        "Industrial Spares",
         "Manufacturing",
-        "Heavy Industries"
+        "Heavy Machinery",
+        "Chemicals",
+        "Construction Materials"
     ];
 
     return (
@@ -31,7 +31,7 @@ export default function HomeIndustries() {
                     <div className={styles.titleContainer}>
                         <h2 className={styles.title}>Our Industries</h2>
                         <p className={styles.description}>
-                            {"We serve a wide range of industries, including aviation, transportation, manufacturing, and more, providing solutions that drive efficiencies.".split(" ").map((word, index) => (
+                            {"We serve a wide range of global sectors, including heavy-duty metal processing, precision engineering, manufacturing, and more, providing solutions that drive efficiencies.".split(" ").map((word, index) => (
                                 <span
                                     key={index}
                                     className={styles.word}

@@ -2,10 +2,11 @@ import React from 'react';
 import styles from './Industries.module.css';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import PageHero from '../../components/PageHero';
 
 export const metadata: Metadata = {
-    title: 'Industries Served | Gujarat Nippon Group',
-    description: 'Discover the diverse range of global industries powered by Gujarat Nippon Group.',
+    title: 'Industries Served | Gujarat Nippon International Pvt Ltd',
+    description: 'Discover the diverse range of global industries powered by Gujarat Nippon International Pvt Ltd.',
 };
 
 const industries = [
@@ -62,11 +63,17 @@ const industries = [
 export default function IndustriesPage() {
     return (
         <main className={styles.pageWrapper}>
-
+            <PageHero
+                label="Global Industries"
+                titleMain="Industries"
+                titleAccent="We Serve"
+                description="Discover the diverse range of global industries powered by Gujarat Nippon International Pvt Ltd. From heavy-duty metal processing to precision plastics engineering."
+                bgImage="/industries-hero-bg.jpg"
+            />
 
             <div className={styles.container}>
                 <p className={styles.pageSubtitle}>
-                    Gujarat Nippon Group powers innovation across multiple sectors. From heavy-duty metal processing to precision plastics engineering, our comprehensive &quot;One Point Engineering Solutions&quot; equip industries worldwide to meet the demands of tomorrow.
+                    Gujarat Nippon International Pvt Ltd powers innovation across multiple sectors. From heavy-duty metal processing to precision plastics engineering, our comprehensive &quot;One Point Engineering Solutions&quot; equip industries worldwide to meet the demands of tomorrow.
                 </p>
 
                 <div className={styles.grid}>

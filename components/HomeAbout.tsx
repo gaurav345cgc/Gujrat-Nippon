@@ -42,9 +42,9 @@ export default function HomeAbout() {
                 >
                     <div className={styles.heading}>
                         <div className={styles.headingBold} style={{ marginBottom: '1rem', fontSize: '2.5rem' }}>About Us</div>
-                        <div className={styles.headingBold} style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Gujarat Nippon International</div>
+                        <div className={styles.headingBold} style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Gujarat Nippon International Pvt Ltd</div>
                         <div className={styles.headingLight} style={{ fontSize: '1.1rem', marginBottom: '1rem', lineHeight: '1.6' }}>
-                            Gujarat Nippon International Private Limited is a globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution.
+                            Gujarat Nippon International Pvt Ltd is a globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution.
                         </div>
                         <div className={styles.headingLight} style={{ fontSize: '1.1rem', marginBottom: '2.5rem', lineHeight: '1.6' }}>
                             Our mission is to provide efficient, precise, and excellent execution that empowers our business partners to achieve operational excellence and long-term success.
@@ -65,7 +65,7 @@ export default function HomeAbout() {
                             <img src="/about_us.png" alt="Export" className={styles.cardBg} />
                             <div className={styles.cardOverlay}></div>
                             <div className={styles.cardContent}>
-                                <h3 className={styles.cardTitle}>Export</h3>
+                                <h3 className={styles.cardTitle}>Global Reach</h3>
                                 <p className={styles.cardDesc}>
                                     We are leading exporters to Asian, African, and GCC markets to meet overseas customer needs.
                                 </p>
@@ -73,12 +73,12 @@ export default function HomeAbout() {
                         </div>
 
                         <div className={styles.distributionCard}>
-                            <img src="/distribution_image.png" alt="Local Distribution & Sales" className={styles.cardBg} />
+                            <img src="/distribution_image.png" alt="Engineering Excellence" className={styles.cardBg} />
                             <div className={styles.cardOverlay}></div>
                             <div className={styles.cardContent}>
-                                <h3 className={styles.cardTitle}>Local Distribution &amp; Sales</h3>
+                                <h3 className={styles.cardTitle}>Engineering Excellence</h3>
                                 <p className={styles.cardDesc}>
-                                    With our strong global presence we have outlets across key international hubs to serve the needs of our clients.
+                                    Delivering high-precision machinery and consistent, dependable project execution globally.
                                 </p>
                             </div>
                         </div>

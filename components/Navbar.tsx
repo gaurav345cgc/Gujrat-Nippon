@@ -32,10 +32,10 @@ export default function Navbar() {
                 {/* Logo Section */}
                 <div className={styles.navLeft}>
                     <Link href="/" className={styles.logoLink} onClick={() => setIsMobileMenuOpen(false)}>
-                        <img src="/evostel-logo.png" alt="Gujarat Nippon" className={styles.logoImage} />
+                        <img src="/evostel-logo.png" alt="Gujarat Nippon International Pvt Ltd" className={styles.logoImage} />
                         {/* Fallback if no image: GNIL text with leaf icon */}
                         <div className={styles.logoFallback}>
-                            Gujarat Nippon Group
+                            Gujarat Nippon International Pvt Ltd
                         </div>
                     </Link>
                 </div>
@@ -49,23 +49,9 @@ export default function Navbar() {
                         <Link href="/about" className={`${styles.navLink} ${pathname.startsWith('/about') ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
                             About us
                         </Link>
-                        <div className={styles.dropdownItem}>
-                            <Link href="/industries" className={`${styles.navLink} ${styles.hasDropdown} ${pathname.startsWith('/industries') ? styles.active : ''}`} onClick={(e) => {
-                                if (window.innerWidth <= 1024) { e.preventDefault(); } else { setIsMobileMenuOpen(false); }
-                            }}>
-                                Industries & Services
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                            </Link>
-                            <div className={styles.dropdownMenu}>
-                                <Link href="/industries/electrical" className={styles.dropdownLink}>Electrical supplies</Link>
-                                <Link href="/industries/control" className={styles.dropdownLink}>Control & Automation</Link>
-                                <Link href="/industries/fire-fighting" className={styles.dropdownLink}>
-                                    <span style={{ color: 'var(--primary-teal)' }}>▶</span>&nbsp;AC, Fire Fighting & Mechanical
-                                </Link>
-                                <Link href="/industries/aviation" className={styles.dropdownLink}>Airport lighting and Aviation</Link>
-                                <Link href="/industries/services" className={styles.dropdownLink}>Electrical services</Link>
-                            </div>
-                        </div>
+                        <Link href="/industries" className={`${styles.navLink} ${pathname.startsWith('/industries') ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
+                            Industries & Services
+                        </Link>
                         <Link href="/products" className={`${styles.navLink} ${pathname.startsWith('/products') ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
                             Our Products
                         </Link>

@@ -1,7 +1,7 @@
 .footerWrapper {
     width: 100%;
     position: relative;
-    font-family: 'Inter', sans-serif;
+    
     color: white;
 }
 
@@ -91,7 +91,7 @@
 }
 
 .mainFooter {
-    background-color: var(--primary-teal);
+    background-color: var(--primary-blue);
     padding: 2rem 4rem;
 }
 
@@ -128,7 +128,7 @@
     height: 32px;
     border-radius: 4px;
     background-color: white;
-    color: var(--primary-teal);
+    color: var(--primary-blue);
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;

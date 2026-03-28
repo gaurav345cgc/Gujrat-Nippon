@@ -45,7 +45,7 @@
     padding: 8rem 2rem 4rem;
     max-width: 1000px;
     margin: 0 auto;
-    color: #2C3E50;
+    color: #003153;
 }
 
 .contactLayout {
@@ -67,11 +67,11 @@
 }
 
 .companyName {
-    color: #1A1A1A;
+    color: #003153;
     font-size: 1.75rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: #C00000;
+    color: #003153;
 }
 
 .infoBlock {
@@ -82,7 +82,7 @@
 
 .infoLabel {
     font-weight: 700;
-    color: #1A1A1A;
+    color: #003153;
     margin-right: 0.5rem;
 }
 
@@ -110,7 +110,7 @@
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #1A1A1A;
+    color: #003153;
 }
 
 .input,
@@ -121,10 +121,10 @@
     /* Lighter borders */
     border-radius: 8px;
     /* Softer radius for inputs */
-    font-family: inherit;
+    
     font-size: 1rem;
-    color: #2C3E50;
-    background-color: #F8FAFC;
+    color: #003153;
+    background-color: #003153;
     /* Slightly lighter background */
     transition: border-color 0.3s, box-shadow 0.3s;
 }
@@ -138,13 +138,13 @@
 .input:focus,
 .textarea:focus {
     outline: none;
-    border-color: #C00000;
+    border-color: #003153;
     box-shadow: 0 0 0 3px rgba(192, 0, 0, 0.1);
 }
 
 .submitBtn {
     width: 100%;
-    background-color: #C00000;
+    background-color: #003153;
     color: #FFFFFF;
     border: none;
     padding: 1.2rem;
@@ -158,7 +158,7 @@
 }
 
 .submitBtn:hover {
-    background-color: #A00000;
+    background-color: #003153;
     /* Darker red on hover */
     box-shadow: 0 8px 20px rgba(192, 0, 0, 0.25);
     transform: translateY(-2px);

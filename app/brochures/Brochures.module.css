@@ -3,7 +3,7 @@
     background-color: #FFFFFF;
     color: var(--text-dark);
     overflow-x: hidden;
-    font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+    
 }
 
 /* ─── HERO ────────────────────────────────────────────────── */
@@ -41,7 +41,7 @@
     width: 700px;
     height: 700px;
     border-radius: 50%;
-    border: 120px solid #4A9E96;
+    border: 120px solid #003153;
     top: -180px;
     right: -180px;
     z-index: 3;
@@ -53,7 +53,7 @@
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    border: 80px solid #7B7492;
+    border: 80px solid #003153;
     bottom: -120px;
     right: 100px;
     z-index: 3;
@@ -86,7 +86,7 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--primary-teal);
+    background: var(--primary-blue);
     flex-shrink: 0;
     display: inline-block;
 }
@@ -102,7 +102,7 @@
 }
 
 .heroTitleAccent {
-    color: #4A9E96;
+    color: #003153;
     font-weight: 600;
     font-style: italic;
 }
@@ -131,7 +131,7 @@
 .heroShapeTeal {
     width: 250px;
     height: 100%;
-    background-color: #4A9E96;
+    background-color: #003153;
 }
 
 .heroShapeWhite {
@@ -158,7 +158,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    color: #888;
+    color: #003153;
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 2.5px;
@@ -177,7 +177,7 @@
 }
 
 .sectionTitleAccent {
-    color: #4A9E96;
+    color: #003153;
     font-weight: 600;
 }
 
@@ -187,37 +187,37 @@
     gap: 0.6rem;
     flex-wrap: wrap;
     margin-bottom: 3rem;
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid #003153;
     padding-bottom: 1.5rem;
 }
 
 .filterBtn {
     padding: 0.5rem 1.25rem;
     border-radius: 999px;
-    border: 1px solid #E5E7EB;
+    border: 1px solid #003153;
     background: transparent;
-    color: #6B7280;
+    color: #003153;
     font-size: 0.85rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.22s ease;
-    font-family: inherit;
+    
 }
 
 .filterBtn:hover {
-    border-color: #4A9E96;
-    color: #4A9E96;
+    border-color: #003153;
+    color: #003153;
 }
 
 .filterBtnActive {
-    background: #4A9E96;
-    border-color: #4A9E96;
+    background: #003153;
+    border-color: #003153;
     color: #FFFFFF;
 }
 
 .filterBtnActive:hover {
-    background: #3a8e86;
-    border-color: #3a8e86;
+    background: #002240;
+    border-color: #002240;
     color: #FFFFFF;
 }
 
@@ -279,14 +279,14 @@
 .cardTitle {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #111;
+    color: #003153;
     line-height: 1.25;
     margin: 0;
 }
 
 .cardDate {
     font-size: 0.85rem;
-    color: #999;
+    color: #003153;
     text-transform: uppercase;
     font-weight: 500;
     margin: 0;
@@ -295,10 +295,10 @@
 .learnMore {
     margin-top: 1rem;
     display: inline-block;
-    border: 1.5px solid #111;
+    border: 1.5px solid #003153;
     border-radius: 999px;
     padding: 0.65rem 2.2rem;
-    color: #111;
+    color: #003153;
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 800;
@@ -309,7 +309,7 @@
 }
 
 .learnMore:hover {
-    background: #111;
+    background: #003153;
     color: #FFF;
 }
 
@@ -319,7 +319,7 @@
 }
 
 .ctaInner {
-    background-color: #222222;
+    background-color: #003153;
     border-radius: 24px;
     padding: 5rem 4rem;
     display: flex;
@@ -340,7 +340,7 @@
     right: 0;
     width: 280px;
     height: 100%;
-    background: linear-gradient(135deg, #4A9E96 0%, #3a8e86 100%);
+    background: linear-gradient(135deg, #003153 0%, #002240 100%);
     clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
     opacity: 0.18;
 }
@@ -353,7 +353,7 @@
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border: 60px solid #7B7492;
+    border: 60px solid #003153;
     opacity: 0.12;
 }
 
@@ -382,7 +382,7 @@
 }
 
 .ctaTitleAccent {
-    color: #4A9E96;
+    color: #003153;
     font-weight: 600;
 }
 
@@ -402,7 +402,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    background: #4A9E96;
+    background: #003153;
     color: #FFFFFF;
     padding: 0.9rem 2rem;
     border-radius: 8px;
@@ -415,7 +415,7 @@
 }
 
 .ctaBtn:hover {
-    background: #3a8e86;
+    background: #002240;
     transform: translateY(-2px);
 }
 

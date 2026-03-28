@@ -1,14 +1,17 @@
-.container {
+.pageWrapper {
     background-color: transparent;
     min-height: 100vh;
-    padding: 8rem 2rem 4rem;
-    /* Restored padding-top so navbar doesn't cover it */
+}
+
+.container {
+    background-color: transparent;
+    padding: 4rem 2rem 4rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .pageTitle {
-    color: #1A1A1A;
+    color: #003153;
     font-size: 3rem;
     font-weight: 800;
     text-align: center;
@@ -41,7 +44,7 @@
     min-height: 200px;
     /* Added min height */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-    border: 1px solid #F0F0F0;
+    border: 1px solid #003153;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -83,7 +86,7 @@
 }
 
 .cardTag {
-    color: #DD3333;
+    color: #003153;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -129,14 +132,14 @@
 }
 
 .productName {
-    color: #1A1A1A;
+    color: #003153;
     font-size: 1.25rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
 }
 
 .productDescription {
-    color: #718096;
+    color: #003153;
     font-size: 0.75rem;
     font-weight: 500;
     margin: 0;
@@ -144,7 +147,7 @@
 }
 
 .cardArrow {
-    color: #1A1A1A;
+    color: #003153;
     font-size: 1.2rem;
     margin-bottom: 0.2rem;
     transition: transform 0.2s ease;

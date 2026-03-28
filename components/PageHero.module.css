@@ -1,0 +1,154 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 680px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.heroBg {
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    will-change: transform;
+    z-index: 1;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(10, 20, 30, 0.88) 0%,
+            rgba(26, 32, 44, 0.75) 50%,
+            rgba(74, 158, 150, 0.35) 100%);
+    z-index: 2;
+}
+
+/* decorative rings */
+.heroAccentRing {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    border: 120px solid #003153;
+    top: -180px;
+    right: -180px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.heroAccentRing2 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 80px solid #003153;
+    bottom: -120px;
+    right: 100px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
+}
+
+/* label + dot */
+.heroLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.labelDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--primary-blue, #003153);
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+/* hero title */
+.heroTitle {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: #FFFFFF;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+}
+
+.heroTitleAccent {
+    color: #003153;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.heroSub {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.72);
+    max-width: 540px;
+    margin-bottom: 2.5rem;
+}
+
+/* bottom shape — matches about page */
+.heroShapeBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    z-index: 11;
+}
+
+.heroShapeTeal {
+    width: 250px;
+    height: 100%;
+    background-color: #003153;
+}
+
+.heroShapeWhite {
+    flex: 1;
+    height: 100%;
+    background-color: #f7f9fc;
+    /* Default page bg, can be overridden */
+    clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
+    margin-left: -40px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 580px;
+    }
+
+    .heroContent {
+        padding: 0 1.5rem 4rem;
+    }
+
+    .heroTitle {
+        letter-spacing: -1px;
+    }
+
+    .heroAccentRing,
+    .heroAccentRing2 {
+        display: none;
+    }
+}

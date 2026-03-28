@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Contact Us',
-    description: 'Get in touch with Gujarat Nippon Group for industrial spares, plant machineries, and global engineering solutions.',
+    description: 'Get in touch with Gujarat Nippon International Pvt Ltd for industrial spares, plant machineries, and global engineering solutions.',
 };
 
 export default function ContactPage() {
@@ -36,10 +36,7 @@ export default function ContactPage() {
                             <span className={styles.infoLabel}>Email:</span> <a href="mailto:info@gujaratnippon.com">info@gujaratnippon.com</a>
                         </div>
 
-                        <div className={`${styles.infoBlock} ${styles.locationsBlock}`}>
-                            <span className={styles.infoLabel} style={{ display: 'block', marginBottom: '0.5rem', fontSize: '1.25rem' }}>Global Locations:</span>
-                            Industrial spares and supplies in Nigeria, Kenya, Dubai, Ghana, Zambia.
-                        </div>
+
                     </section>
 
                     {/* Right Column: Contact Form */}

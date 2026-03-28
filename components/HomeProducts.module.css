@@ -41,7 +41,7 @@
 }
 
 .brochureCard {
-    background-color: var(--primary-teal);
+    background-color: var(--primary-blue);
     border-radius: 12px;
     padding: 3rem;
     color: white;
@@ -68,7 +68,7 @@
 
 .downloadBtn {
     background-color: white;
-    color: var(--primary-teal);
+    color: var(--primary-blue);
     padding: 0.65rem 1.25rem;
     border-radius: 6px;
     text-decoration: none;
@@ -175,7 +175,7 @@
 }
 
 .progressText {
-    color: #6B7280;
+    color: #003153;
     font-size: 1rem;
     line-height: 1.5;
 }
@@ -283,7 +283,7 @@
 
 .arrowBtn:hover {
     border-color: var(--text-dark);
-    background: #f8f9fa;
+    background: #003153;
 }
 
 

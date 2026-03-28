@@ -73,9 +73,8 @@
 }
 
 .learnMoreBtn {
-    background-color: #F8F9D7;
-    /* Light yellow background */
-    color: var(--text-dark);
+    background-color: #003153;
+    color: #FFFFFF;
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     font-size: 0.8rem;
@@ -129,7 +128,7 @@
 }
 
 .tile {
-    background-color: #F4F6F8;
+    background-color: #003153;
     padding: 0 1.25rem;
     border-radius: 8px;
     display: flex;
@@ -144,7 +143,7 @@
 .tileText {
     font-size: 0.95rem;
     font-weight: 500;
-    color: var(--text-dark);
+    color: #FFFFFF;
 }
 
 /* ==================================

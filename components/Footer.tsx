@@ -36,7 +36,7 @@ export default function Footer() {
             <div className={styles.mainFooterBox}>
                 <div className={styles.mainFooter}>
                     <div className={styles.topBar}>
-                        <span className={styles.brandName}>Gujarat Nippon Group</span>
+                        <span className={styles.brandName}>Gujarat Nippon International Pvt Ltd</span>
                         <div className={styles.socialLinks}>
                             <a href="#" className={styles.socialIcon} aria-label="LinkedIn">
                                 in
@@ -57,7 +57,7 @@ export default function Footer() {
                         <div>
                             <h3 className={styles.columnTitle}>About</h3>
                             <p className={styles.text}>
-                                Gujarat Nippon International Private Limited is a globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution.
+                                Gujarat Nippon International Pvt Ltd is a globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution.
                             </p>
                             <p className={styles.text} style={{ fontWeight: 600, color: 'white' }}>
                                 Efficiency • Excellence • Executability
@@ -105,7 +105,7 @@ export default function Footer() {
                     {/* Bottom Bar: Copyright and Legal */}
                     <div className={styles.bottomBar}>
                         <p className={styles.copyright}>
-                            &copy; {currentYear} Gujarat Nippon Group. All rights reserved.
+                            &copy; {currentYear} Gujarat Nippon International Pvt Ltd. All rights reserved.
                         </p>
 
                         <div className={styles.legalLinks}>

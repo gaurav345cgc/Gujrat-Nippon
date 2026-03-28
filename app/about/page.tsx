@@ -12,14 +12,11 @@ export default function AboutPage() {
                 <div className={styles.heroOverlay}></div>
                 <div className={styles.heroContent}>
                     <h1 className={styles.heroTitle}>
-                        About <span className={styles.heroTitleAccent}>Gujarat Nippon.</span>
+                        About <span className={styles.heroTitleAccent}>Gujarat Nippon International Pvt Ltd.</span>
                     </h1>
                     <p className={styles.heroSubtitle}>
                         A globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution.
                     </p>
-                    <button className={styles.heroBtn}>
-                        GET QUOTE <ArrowRight size={16} />
-                    </button>
                 </div>
                 <div className={styles.heroShapeContainer}>
                     <div className={styles.heroShapeRed}></div>
@@ -64,7 +61,7 @@ export default function AboutPage() {
 
                                 <div className={styles.aboutTextContainer}>
                                     <div className={styles.aboutText}>
-                                        Gujarat Nippon International Private Limited is a globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution. Our mission is to provide efficient, precise, and excellent execution that empowers our business partners to achieve operational excellence and long-term success.
+                                        Gujarat Nippon International Pvt Ltd is a globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution. Our mission is to provide efficient, precise, and excellent execution that empowers our business partners to achieve operational excellence and long-term success.
                                     </div>
                                 </div>
 
@@ -126,10 +123,10 @@ export default function AboutPage() {
                                     <h3 className={styles.cardTitle}>Our Commitments</h3>
                                     <div className={styles.cardText}>
                                         <ul style={{ listStyleType: 'none', padding: 0 }}>
-                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#4A9E96', fontWeight: 'bold' }}>•</span> Professional Excellence</li>
-                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#4A9E96', fontWeight: 'bold' }}>•</span> Efficient Execution</li>
-                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#4A9E96', fontWeight: 'bold' }}>•</span> Strategic Problem-Solving</li>
-                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#4A9E96', fontWeight: 'bold' }}>•</span> Client-Centric Service</li>
+                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#003153', fontWeight: 'bold' }}>•</span> Professional Excellence</li>
+                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#003153', fontWeight: 'bold' }}>•</span> Efficient Execution</li>
+                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#003153', fontWeight: 'bold' }}>•</span> Strategic Problem-Solving</li>
+                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#003153', fontWeight: 'bold' }}>•</span> Client-Centric Service</li>
                                         </ul>
                                     </div>
                                     <button className={styles.learnMoreBtn}>
@@ -150,8 +147,8 @@ export default function AboutPage() {
                             Our <span className={styles.newsTitleAccent}>Goals</span>
                         </h2>
                         <div style={{ display: 'flex', gap: '10px' }}>
-                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid #E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7B7492', cursor: 'pointer' }}><ArrowLeft size={20} /></div>
-                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#4A9E96', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', cursor: 'pointer' }}><ArrowRight size={20} /></div>
+                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid #E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#003153', cursor: 'pointer' }}><ArrowLeft size={20} /></div>
+                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#003153', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', cursor: 'pointer' }}><ArrowRight size={20} /></div>
                         </div>
                     </div>
 
@@ -199,8 +196,8 @@ export default function AboutPage() {
                             Vision & <br /><span className={styles.testiTitleAccent}>Mission</span>
                         </h2>
                         <div style={{ display: 'flex', gap: '10px', marginTop: '1rem' }}>
-                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid #E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7B7492', cursor: 'pointer' }}><ArrowLeft size={20} /></div>
-                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#7B7492', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', cursor: 'pointer' }}><ArrowRight size={20} /></div>
+                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid #E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#003153', cursor: 'pointer' }}><ArrowLeft size={20} /></div>
+                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#003153', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', cursor: 'pointer' }}><ArrowRight size={20} /></div>
                         </div>
                     </div>
 
@@ -210,14 +207,14 @@ export default function AboutPage() {
                                 "To become a globally recognized one-stop hub for comprehensive engineering solutions and industrial supplies, known for reliability, efficiency, and execution excellence."
                             </p>
                             <span className={styles.testiAuthor}>Our Vision</span>
-                            <span style={{ color: '#7B7492', fontSize: '0.8rem', marginTop: '4px' }}>Gujarat Nippon</span>
+                            <span style={{ color: '#003153', fontSize: '0.8rem', marginTop: '4px' }}>Gujarat Nippon International Pvt Ltd</span>
                         </div>
                         <div className={styles.testiCard}>
                             <p className={styles.testiText}>
                                 "To provide efficient, precise, and excellent execution that empowers our business partners to achieve operational excellence and long-term success."
                             </p>
                             <span className={styles.testiAuthor}>Our Mission</span>
-                            <span style={{ color: '#7B7492', fontSize: '0.8rem', marginTop: '4px' }}>Gujarat Nippon</span>
+                            <span style={{ color: '#003153', fontSize: '0.8rem', marginTop: '4px' }}>Gujarat Nippon International Pvt Ltd</span>
                         </div>
                     </div>
 
@@ -253,7 +250,7 @@ export default function AboutPage() {
                 <div className={styles.newsletterContainer}>
                     <div className={styles.newsletterLeft}>
                         <h2 className={styles.newsletterTitle}>
-                            Stay up to date on<br />the latest <span className={styles.newsletterTitleAccent}>Gujarat Nippon news</span>
+                            Stay up to date on<br />the latest <span className={styles.newsletterTitleAccent}>Gujarat Nippon International Pvt Ltd news</span>
                         </h2>
                     </div>
                     <div className={styles.newsletterRight}>

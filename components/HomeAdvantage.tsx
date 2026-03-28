@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import styles from './HomeAdvantage.module.css';
-import { motion } from 'framer-motion';
+
 
 const capabilities = [
     {
@@ -65,16 +65,7 @@ export default function HomeAdvantage() {
     const ctaWords = currentCap.cta.split(" ");
 
     return (
-        <motion.section
-            className={styles.advantageSection}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={{
-                hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-            }}
-        >
+        <section className={styles.advantageSection}>
             <div className={styles.container}>
                 <h2 className={styles.heading}>Engineering Capabilities</h2>
 
@@ -86,15 +77,13 @@ export default function HomeAdvantage() {
                                     <span
                                         key={`title-${index}`}
                                         className={styles.word}
-                                        style={{ animationDelay: `${index * 0.05}s` }}
-                                    >
+                                        style={{ animationDelay: `${index * 0.05}s` }}>
                                         {word}&nbsp;
                                     </span>
                                 ))}
                                 <span
                                     className={styles.word}
-                                    style={{ animationDelay: `${titleWords.length * 0.05}s` }}
-                                >
+                                    style={{ animationDelay: `${titleWords.length * 0.05}s` }}>
                                     :&nbsp;
                                 </span>
                             </strong>
@@ -102,8 +91,7 @@ export default function HomeAdvantage() {
                                 <span
                                     key={`text-${index}`}
                                     className={styles.word}
-                                    style={{ animationDelay: `${(titleWords.length + 1 + index) * 0.05}s` }}
-                                >
+                                    style={{ animationDelay: `${(titleWords.length + 1 + index) * 0.05}s` }}>
                                     {word}&nbsp;
                                 </span>
                             ))}
@@ -114,21 +102,19 @@ export default function HomeAdvantage() {
                                 <span
                                     key={`cta-${index}`}
                                     className={`${styles.word} ${styles.ctaWord}`}
-                                    style={{ animationDelay: `${(titleWords.length + 1 + textWords.length + index) * 0.05}s` }}
-                                >
+                                    style={{ animationDelay: `${(titleWords.length + 1 + textWords.length + index) * 0.05}s` }}>
                                     {word}&nbsp;
                                 </span>
                             ))}
                             <span
                                 className={`${styles.word} ${styles.ctaArrow}`}
-                                style={{ animationDelay: `${(titleWords.length + 1 + textWords.length + ctaWords.length) * 0.05}s` }}
-                            >
+                                style={{ animationDelay: `${(titleWords.length + 1 + textWords.length + ctaWords.length) * 0.05}s` }}>
                                 →
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
-        </motion.section>
+        </section>
     );
 }

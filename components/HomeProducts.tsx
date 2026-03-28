@@ -102,7 +102,7 @@ export default function HomeProducts() {
                     >
                         <h2 className={styles.brochureTitle}>Main Brochure</h2>
                         <p className={styles.brochureText}>
-                            We deliver electrical, lighting, and automation solutions for infrastructure, energy, manufacturing, aviation, and more.
+                            We deliver complete turnkey plant machineries, industrial spares, specialized capital equipment, and comprehensive engineering solutions.
                         </p>
                         <Link href="/brochure.pdf" className={styles.downloadBtn}>
                             Download Brochure
@@ -116,11 +116,11 @@ export default function HomeProducts() {
                             <img src="/brochure.jpg" alt="Brochure" />
                         </div>
                         <div className={styles.industryPills}>
-                            <div className={styles.pill}>Heavy Industries</div>
-                            <div className={styles.pill}>Light Industry</div>
-                            <div className={styles.pill}>Oil & Gas</div>
-                            <div className={styles.pill}>Water & Power</div>
-                            <div className={styles.pill}>Aviation</div>
+                            <div className={styles.pill}>Metal Processing</div>
+                            <div className={styles.pill}>Plastics</div>
+                            <div className={styles.pill}>Heavy Machinery</div>
+                            <div className={styles.pill}>Consumables</div>
+                            <div className={styles.pill}>Spares</div>
                         </div>
                     </motion.div>
                 </div>

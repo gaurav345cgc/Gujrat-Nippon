@@ -27,7 +27,7 @@ export default function PageHeader() {
     }
 
     // Default to the first overview image if page not found
-    const headerInfo = PAGE_HEADERS[basePath] || { title: 'Gujarat Nippon', image: '/distribution_image.png' };
+    const headerInfo = PAGE_HEADERS[basePath] || { title: 'Gujarat Nippon International Pvt Ltd', image: '/distribution_image.png' };
 
     return (
         <div className={styles.headerContainer}>

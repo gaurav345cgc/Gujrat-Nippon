@@ -42,7 +42,7 @@
 }
 
 .indicatorIcon {
-    color: var(--primary-teal);
+    color: var(--primary-blue);
 }
 
 .contentSplit {
@@ -92,7 +92,7 @@
 }
 
 .aboutBtn {
-    background-color: var(--primary-purple);
+    background-color: var(--primary-blue);
     color: var(--text-light);
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
@@ -106,7 +106,8 @@
 }
 
 .aboutBtn:hover {
-    background-color: #6a637d;
+    background-color: #002240;
+    /* Slightly darker shade for hover effect */
     transform: translateY(-2px);
 }
 
@@ -186,7 +187,7 @@
 }
 
 .cardTitle {
-    color: #F8C356;
+    color: var(--primary-blue);
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.6rem;

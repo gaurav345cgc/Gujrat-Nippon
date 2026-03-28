@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./Hero.module.css";
-import { motion } from "framer-motion";
+
 
 export default function Hero() {
 
@@ -13,25 +13,15 @@ export default function Hero() {
             <div className={styles.bgOverlay} />
 
             <div className={styles.heroContent}>
-                <motion.div
-                    className={styles.heroLeft}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
-                >
+                <div className={styles.heroLeft}>
                     <h1 className={styles.heroTitle}>
                         Engineering<br />
                         Precision Systems<br />
                         For Global Industries
                     </h1>
-                </motion.div>
+                </div>
 
-                <motion.div
-                    className={styles.heroRight}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.8, 0.25, 1] }}
-                >
+                <div className={styles.heroRight}>
                     <div className={styles.statsGrid}>
                         <div className={styles.statItem}>
                             <div className={styles.statNumber}>47+</div>
@@ -46,8 +36,8 @@ export default function Hero() {
                             <div className={styles.statText}>Completed project</div>
                         </div>
                     </div>
-                </motion.div>
-            </div>
-        </header>
+                </div>
+            </div >
+        </header >
     );
 }

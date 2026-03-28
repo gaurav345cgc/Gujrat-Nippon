@@ -6,7 +6,7 @@ import { documents } from '../../lib/data/downloads';
 
 export const metadata: Metadata = {
     title: 'Brochures & Downloads',
-    description: 'Download corporate brochures, technical specifications, and compliance certificates for Gujarat Nippon Group.',
+    description: 'Download corporate brochures, technical specifications, and compliance certificates for Gujarat Nippon International Pvt Ltd.',
 };
 
 export default function DownloadsPage() {

@@ -7,7 +7,7 @@
 }
 
 .description {
-    color: #4A5568;
+    color: #003153;
     font-size: 1.15rem;
     line-height: 1.6;
     margin-bottom: 3rem;
@@ -36,7 +36,7 @@
 }
 
 .documentCard {
-    background-color: #EEEEEE;
+    background-color: #003153;
     border-radius: 16px;
     padding: 2rem;
     box-shadow: none;
@@ -80,12 +80,12 @@
 .documentCard:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    border-color: #C00000;
+    border-color: #003153;
 }
 
 .iconWrapper {
-    background-color: #F8F9FA;
-    color: #C00000;
+    background-color: #003153;
+    color: #003153;
     width: 64px;
     height: 64px;
     border-radius: 50%;
@@ -97,19 +97,19 @@
 }
 
 .documentCard:hover .iconWrapper {
-    background-color: #C00000;
+    background-color: #003153;
     color: #FFFFFF;
 }
 
 .docTitle {
-    color: #1A1A1A;
+    color: #003153;
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .docMeta {
-    color: #718096;
+    color: #003153;
     font-size: 0.85rem;
     margin-bottom: 1.5rem;
     font-weight: 500;
@@ -121,8 +121,8 @@
     align-items: center;
     gap: 0.5rem;
     background-color: transparent;
-    color: #C00000;
-    border: 2px solid #C00000;
+    color: #003153;
+    border: 2px solid #003153;
     padding: 0.75rem 1.5rem;
     border-radius: 9999px;
     font-weight: 700;
@@ -133,7 +133,7 @@
 }
 
 .documentCard:hover .downloadBtn {
-    background-color: #C00000;
+    background-color: #003153;
     color: #FFFFFF;
 }
 
