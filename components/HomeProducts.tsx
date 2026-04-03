@@ -3,7 +3,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styles from './HomeProducts.module.css';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import HomeIndustries from './HomeIndustries';
 import HomeAdvantage from './HomeAdvantage';
 import HomeServices from './HomeServices';
@@ -41,7 +40,6 @@ export default function HomeProducts() {
         const currentRef = scrollRef.current;
         if (currentRef) {
             currentRef.addEventListener('scroll', handleScroll);
-            // Initialize
             handleScroll();
         }
         return () => {
@@ -58,7 +56,6 @@ export default function HomeProducts() {
                 const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
                 const maxScrollLeft = scrollWidth - clientWidth;
 
-                // If we are at the end, scroll back to 0. Otherwise, scroll by card width (approx 350+gap)
                 if (scrollLeft >= maxScrollLeft - 10) {
                     scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
                 } else {
@@ -83,23 +80,10 @@ export default function HomeProducts() {
 
     return (
         <div className={styles.wrapper}>
-            {/* Main Brochure Section */}
-            <motion.section
-                className={styles.brochureSection}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={{
-                    hidden: { opacity: 0 },
-                    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
-                }}
-            >
+            <section className={styles.brochureSection}>
                 <span className={styles.breadcrumb}>• Our Full Brochure</span>
                 <div className={styles.brochureContainer}>
-                    <motion.div
-                        className={styles.brochureCard}
-                        variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } } }}
-                    >
+                    <div className={styles.brochureCard}>
                         <h2 className={styles.brochureTitle}>Main Brochure</h2>
                         <p className={styles.brochureText}>
                             We deliver complete turnkey plant machineries, industrial spares, specialized capital equipment, and comprehensive engineering solutions.
@@ -107,11 +91,8 @@ export default function HomeProducts() {
                         <Link href="/brochure.pdf" className={styles.downloadBtn}>
                             Download Brochure
                         </Link>
-                    </motion.div>
-                    <motion.div
-                        className={styles.industryVisuals}
-                        variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } } }}
-                    >
+                    </div>
+                    <div className={styles.industryVisuals}>
                         <div className={styles.visualMainImage}>
                             <img src="/brochure.jpg" alt="Brochure" />
                         </div>
@@ -122,31 +103,18 @@ export default function HomeProducts() {
                             <div className={styles.pill}>Consumables</div>
                             <div className={styles.pill}>Spares</div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
-            </motion.section>
+            </section>
 
             <HomeIndustries />
-
             <HomeAdvantage />
-
             <HomeServices />
 
-
-            {/* Our Products Section Instead of News */}
-            <motion.section
-                className={styles.newsSection}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-            >
+            <section className={styles.newsSection}>
                 <div className={styles.newsHeader}>
                     <div className={styles.productLeftHeader}>
                         <h2 className={styles.newsTitle}>Our Products</h2>
-                    </div>
-                    <div className={styles.productRightHeader}>
-                        {/* Empty for now, or you could place something else here */}
                     </div>
                 </div>
 
@@ -182,7 +150,7 @@ export default function HomeProducts() {
                         <button className={styles.arrowBtn} onClick={scrollRightFn}>→</button>
                     </div>
                 </div>
-            </motion.section>
+            </section>
         </div>
     );
 }

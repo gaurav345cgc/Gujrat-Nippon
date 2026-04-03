@@ -46,10 +46,6 @@
     font-weight: 400;
     color: var(--text-dark);
     margin-bottom: 0.5rem;
-    /* Title fade in animation setup */
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    transition-delay: 0s;
 }
 
 .description {
@@ -57,13 +53,6 @@
     font-size: 0.95rem;
     line-height: 1.5;
     max-width: 600px;
-}
-
-.word {
-    display: inline-block;
-    opacity: 0;
-    transform: translateX(-15px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .actionContainer {
@@ -112,11 +101,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Expanding from slightly smaller scale */
-    opacity: 0;
-    transform: scale(0.92);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    transition-delay: 0.4s;
 }
 
 .tilesContainer {
@@ -134,10 +118,6 @@
     display: flex;
     align-items: center;
     flex: 1;
-    /* Slides upward with staggered timing */
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .tileText {
@@ -146,24 +126,13 @@
     color: #FFFFFF;
 }
 
-/* ==================================
-             ANIMATIONS 
-   ================================== */
-.industriesSection.animate .title {
-    opacity: 1;
-}
-
-.industriesSection.animate .word {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.industriesSection.animate .mainImage {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.industriesSection.animate .tile {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .breadcrumb, .actionContainer {
+        display: none;
+    }
 }

@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './HomeAdvantage.module.css';
 
-
 const capabilities = [
     {
         title: "Turnkey Industrial Plant Engineering",
@@ -60,10 +59,6 @@ export default function HomeAdvantage() {
 
     const currentCap = capabilities[currentIndex];
 
-    const titleWords = currentCap.title.split(" ");
-    const textWords = currentCap.text.split(" ");
-    const ctaWords = currentCap.cta.split(" ");
-
     return (
         <section className={styles.advantageSection}>
             <div className={styles.container}>
@@ -73,44 +68,14 @@ export default function HomeAdvantage() {
                     <div className={styles.contentWrapper} key={currentIndex}>
                         <p className={styles.advantageText}>
                             <strong className={styles.advantageTitle}>
-                                {titleWords.map((word, index) => (
-                                    <span
-                                        key={`title-${index}`}
-                                        className={styles.word}
-                                        style={{ animationDelay: `${index * 0.05}s` }}>
-                                        {word}&nbsp;
-                                    </span>
-                                ))}
-                                <span
-                                    className={styles.word}
-                                    style={{ animationDelay: `${titleWords.length * 0.05}s` }}>
-                                    :&nbsp;
-                                </span>
+                                {currentCap.title}:&nbsp;
                             </strong>
-                            {textWords.map((word, index) => (
-                                <span
-                                    key={`text-${index}`}
-                                    className={styles.word}
-                                    style={{ animationDelay: `${(titleWords.length + 1 + index) * 0.05}s` }}>
-                                    {word}&nbsp;
-                                </span>
-                            ))}
+                            {currentCap.text}
                         </p>
 
                         <div className={styles.ctaContainer}>
-                            {ctaWords.map((word, index) => (
-                                <span
-                                    key={`cta-${index}`}
-                                    className={`${styles.word} ${styles.ctaWord}`}
-                                    style={{ animationDelay: `${(titleWords.length + 1 + textWords.length + index) * 0.05}s` }}>
-                                    {word}&nbsp;
-                                </span>
-                            ))}
-                            <span
-                                className={`${styles.word} ${styles.ctaArrow}`}
-                                style={{ animationDelay: `${(titleWords.length + 1 + textWords.length + ctaWords.length) * 0.05}s` }}>
-                                →
-                            </span>
+                            <span className={styles.ctaWord}>{currentCap.cta}</span>
+                            <span className={styles.ctaArrow}>→</span>
                         </div>
                     </div>
                 </div>

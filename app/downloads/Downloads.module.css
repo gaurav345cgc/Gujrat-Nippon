@@ -36,55 +36,25 @@
 }
 
 .documentCard {
-    background-color: #003153;
+    background-color: #FFFFFF;
     border-radius: 16px;
     padding: 2rem;
-    box-shadow: none;
-    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E2E8F0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-
-    /* Animation */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideUpFade 0.5s ease-out forwards;
-}
-
-.documentCard:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.documentCard:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.documentCard:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.documentCard:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.documentCard:nth-child(5) {
-    animation-delay: 0.5s;
-}
-
-.documentCard:nth-child(6) {
-    animation-delay: 0.6s;
 }
 
 .documentCard:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    border-color: #003153;
 }
 
 .iconWrapper {
-    background-color: #003153;
+    background-color: #F8FAFC;
     color: #003153;
     width: 64px;
     height: 64px;
@@ -102,14 +72,14 @@
 }
 
 .docTitle {
-    color: #003153;
+    color: #1D1D1F;
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .docMeta {
-    color: #003153;
+    color: #64748B;
     font-size: 0.85rem;
     margin-bottom: 1.5rem;
     font-weight: 500;
@@ -135,18 +105,6 @@
 .documentCard:hover .downloadBtn {
     background-color: #003153;
     color: #FFFFFF;
-}
-
-@keyframes slideUpFade {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 @media (max-width: 768px) {

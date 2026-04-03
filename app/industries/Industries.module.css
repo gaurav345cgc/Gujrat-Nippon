@@ -32,79 +32,40 @@
 
 @media (min-width: 1024px) {
     .grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 /* Card */
 .industryCard {
     background-color: #FFFFFF;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-    border: 1px solid #003153;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border-radius: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-
-    opacity: 0;
-    transform: translateY(30px);
-    animation: slideUpFade 0.6s ease-out forwards;
+    transition: transform 0.3s ease;
 }
 
 .industryCard:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+    box-shadow: none;
 }
 
-/* Staggered animation */
-.industryCard:nth-child(1) {
-    animation-delay: 0.05s;
-}
-
-.industryCard:nth-child(2) {
-    animation-delay: 0.1s;
-}
-
-.industryCard:nth-child(3) {
-    animation-delay: 0.15s;
-}
-
-.industryCard:nth-child(4) {
-    animation-delay: 0.2s;
-}
-
-.industryCard:nth-child(5) {
-    animation-delay: 0.25s;
-}
-
-.industryCard:nth-child(6) {
-    animation-delay: 0.3s;
-}
-
-.industryCard:nth-child(7) {
-    animation-delay: 0.35s;
-}
-
-.industryCard:nth-child(8) {
-    animation-delay: 0.4s;
-}
 
 .cardTag {
+    font-size: 0.85rem;
     color: #003153;
-    font-size: 0.75rem;
-    font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 0.75rem;
-    letter-spacing: 0.5px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
 .cardImageWrapper {
+    position: relative;
     width: 100%;
-    aspect-ratio: 4/3;
+    aspect-ratio: 1.5;
     overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 1.25rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%, 0 88%);
 }
 
 .cardImage {
@@ -112,62 +73,59 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
-    filter: grayscale(0.6);
 }
 
 .industryCard:hover .cardImage {
     transform: scale(1.05);
-    filter: grayscale(0);
+}
+
+.cardBody {
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
 }
 
 .cardTitle {
-    color: #003153;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 0.75rem;
-}
-
-.cardFooter {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: auto;
-    gap: 1rem;
+    color: #003153;
+    line-height: 1.25;
+    margin: 0;
 }
 
 .cardDesc {
-    color: #003153;
-    font-size: 0.75rem;
-    font-weight: 500;
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.6;
     margin: 0;
-    text-transform: uppercase;
-    line-height: 1.4;
-    letter-spacing: 0.3px;
+    text-transform: none;
+    letter-spacing: normal;
 }
 
-.cardArrow {
+.learnMore {
+    margin-top: auto;
+    display: inline-block;
+    border: 1.5px solid #003153;
+    border-radius: 999px;
+    padding: 0.65rem 2.2rem;
     color: #003153;
-    flex-shrink: 0;
-    transition: transform 0.2s ease;
-    display: flex;
-    align-items: center;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: fit-content;
+    transition: all 0.25s ease;
+    cursor: pointer;
 }
 
-.industryCard:hover .cardArrow {
-    transform: translateX(4px);
+.learnMore:hover {
+    background: #003153;
+    color: #FFF;
 }
 
-@keyframes slideUpFade {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 @media (max-width: 768px) {
     .container {

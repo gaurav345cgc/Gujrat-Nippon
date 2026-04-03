@@ -2,36 +2,15 @@
 
 import React, { useRef, useEffect } from 'react';
 import styles from './HomeServices.module.css';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
-function ServiceCard({ svc, containerRef, scrollRight }: { svc: any, containerRef: React.RefObject<HTMLDivElement | null>, scrollRight: () => void }) {
-    const cardRef = useRef<HTMLDivElement>(null);
-
-    const { scrollXProgress } = useScroll({
-        target: cardRef,
-        container: containerRef,
-        axis: "x",
-        offset: ["start end", "center center"]
-    });
-
-    // Add a smooth spring physics layer on top of the plain scroll progress so it doesn't just snap blindly via fast touchpad scrolling
-    const smoothProgress = useSpring(scrollXProgress, { stiffness: 100, damping: 20, restDelta: 0.001 });
-
-    // Stronger animation: Starts noticeably zoomed and stretched
-    const scale = useTransform(smoothProgress, [0, 1], [1.12, 1]);
-    const scaleX = useTransform(smoothProgress, [0, 1], [1.2, 1]);
-
+function ServiceCard({ svc, scrollRight }: { svc: any, scrollRight: () => void }) {
     return (
-        <div ref={cardRef} className={styles.serviceCard}>
-            <motion.div
+        <div className={styles.serviceCard}>
+            <div
                 className={styles.cardLeft}
                 style={{
                     backgroundColor: svc.bgColor,
                     color: svc.textColor,
-                    scale,
-                    scaleX,
-                    transformOrigin: "left center",
-                    willChange: "transform"
                 }}>
                 <h3 className={styles.cardTitle}>{svc.title}</h3>
                 <p className={styles.cardDesc}>{svc.description}</p>
@@ -52,17 +31,11 @@ function ServiceCard({ svc, containerRef, scrollRight }: { svc: any, containerRe
                         Download Brochure
                     </div>
                 </div>
-            </motion.div>
+            </div>
             <div className={styles.cardRight}>
-                <motion.img
+                <img
                     src={svc.image}
                     alt={svc.title}
-                    style={{
-                        scale,
-                        scaleX,
-                        transformOrigin: "right center",
-                        willChange: "transform"
-                    }}
                     className={styles.animatedImage}
                 />
             </div>
@@ -71,16 +44,7 @@ function ServiceCard({ svc, containerRef, scrollRight }: { svc: any, containerRe
 }
 
 export default function HomeServices() {
-    const sectionRef = useRef<HTMLElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
-
-    // Track vertical scroll progress of the entire section
-    const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        offset: ["0 1", "1 0"] // start tracking when section enters viewport from bottom, end when it leaves from top
-    });
-
-    // Remove the global vertical scale since the horizontal scale per card is added.
 
     const services = [
         {
@@ -160,20 +124,19 @@ export default function HomeServices() {
                 const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
                 const maxScrollLeft = scrollWidth - clientWidth;
 
-                // Cycle back to beginning if we hit the end, otherwise scroll forward by one card
                 if (scrollLeft >= maxScrollLeft - 10) {
                     scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
                 } else {
                     scrollRight();
                 }
             }
-        }, 7000);
+        }, 5000);
 
         return () => clearInterval(interval);
     }, []);
 
     return (
-        <section className={styles.servicesSection} ref={sectionRef}>
+        <section className={styles.servicesSection}>
             <div className={styles.container}>
                 <div className={styles.header}>
                     <div className={styles.breadcrumb}>
@@ -194,7 +157,7 @@ export default function HomeServices() {
 
                 <div className={styles.scrollWrapper} ref={scrollRef}>
                     {services.map((svc, index) => (
-                        <ServiceCard key={index} svc={svc} containerRef={scrollRef} scrollRight={scrollRight} />
+                        <ServiceCard key={index} svc={svc} scrollRight={scrollRight} />
                     ))}
                 </div>
             </div>

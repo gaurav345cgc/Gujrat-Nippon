@@ -1,13 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './HomeIndustries.module.css';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 
 export default function HomeIndustries() {
-    const [isVisible, setIsVisible] = useState(false);
-
     const tiles = [
         "Metal Processing",
         "Industrial Spares",
@@ -18,11 +15,7 @@ export default function HomeIndustries() {
     ];
 
     return (
-        <motion.section
-            className={`${styles.industriesSection} ${isVisible ? styles.animate : ''}`}
-            onViewportEnter={() => setIsVisible(true)}
-            viewport={{ once: true, amount: 0.25 }}
-        >
+        <section className={styles.industriesSection}>
             <div className={styles.container}>
                 <div className={styles.header}>
                     <div className={styles.breadcrumb}>
@@ -31,15 +24,7 @@ export default function HomeIndustries() {
                     <div className={styles.titleContainer}>
                         <h2 className={styles.title}>Our Industries</h2>
                         <p className={styles.description}>
-                            {"We serve a wide range of global sectors, including heavy-duty metal processing, precision engineering, manufacturing, and more, providing solutions that drive efficiencies.".split(" ").map((word, index) => (
-                                <span
-                                    key={index}
-                                    className={styles.word}
-                                    style={{ transitionDelay: `${index * 0.08 + 0.2}s` }}
-                                >
-                                    {word}&nbsp;
-                                </span>
-                            ))}
+                            We serve a wide range of global sectors, including heavy-duty metal processing, precision engineering, manufacturing, and more, providing solutions that drive efficiencies.
                         </p>
                     </div>
                     <div className={styles.actionContainer}>
@@ -62,7 +47,6 @@ export default function HomeIndustries() {
                             <div
                                 key={index}
                                 className={styles.tile}
-                                style={{ transitionDelay: `${index * 0.2 + 1.2}s` }}
                             >
                                 <span className={styles.tileText}>{tile}</span>
                             </div>
@@ -70,6 +54,6 @@ export default function HomeIndustries() {
                     </div>
                 </div>
             </div>
-        </motion.section>
+        </section>
     );
 }

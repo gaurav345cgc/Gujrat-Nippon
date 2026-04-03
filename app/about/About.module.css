@@ -337,8 +337,9 @@
 
 .projectsTabs {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 280px;
+    height: 100%;
 }
 
 @media(max-width: 1024px) {
@@ -352,12 +353,12 @@
 .tabBoxActive {
     flex: 1;
     background-color: #003153;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
-    padding: 1.5rem 0;
+    justify-content: space-between;
+    padding: 0 2rem;
     color: #FFFFFF;
     transition: all 0.3s;
     cursor: pointer;
@@ -384,10 +385,10 @@
 }
 
 .tabTextContainer {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
+    writing-mode: horizontal-tb;
+    transform: none;
     text-align: left;
-    margin-bottom: 2rem;
+    margin-right: 1rem;
     white-space: nowrap;
 }
 
@@ -436,10 +437,8 @@
 
 @media(max-width: 1024px) {
     .tabNumber {
-        display: none;
+        display: block;
     }
-
-    /* Hide number on mobile to save space */
 }
 
 .projectsImageWrapper {
@@ -457,7 +456,7 @@
 .projectsImage {
     width: 100%;
     height: 100%;
-    background: url('/export_image.png') no-repeat center center;
+    background: url('/philosophy_about.jpg') no-repeat center center;
     background-size: cover;
 }
 

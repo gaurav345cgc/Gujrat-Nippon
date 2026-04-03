@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from 'react';
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import React, { useState } from 'react';
 import styles from './Brochures.module.css';
 
 /* ─── DATA ─────────────────────────────────────────────────── */
@@ -114,87 +113,36 @@ const brochures = [
     },
 ];
 
-/* ─── ANIMATION VARIANTS ────────────────────────────────────── */
-const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (i: number) => ({
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.6,
-            ease: [0.25, 0.8, 0.25, 1],
-            delay: i * 0.08
-        },
-    }),
-};
-
-const stagger = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
-};
-
 /* ─── SUB-COMPONENTS ────────────────────────────────────────── */
 function HeroSection() {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-    const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-    const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-
     return (
-        <section className={styles.hero} ref={ref}>
-            <motion.div className={styles.heroBg} style={{ y }} />
+        <section className={styles.hero}>
+            <div className={styles.heroBg} />
             <div className={styles.heroOverlay} />
 
             {/* Geometric accents */}
-            <motion.div
-                className={styles.heroAccentRing}
-                initial={{ scale: 0.6, opacity: 0 }}
-                animate={{ scale: 1, opacity: 0.15 }}
-                transition={{ duration: 1.4, ease: 'easeOut' }}
-            />
-            <motion.div
-                className={styles.heroAccentRing2}
-                initial={{ scale: 0.6, opacity: 0 }}
-                animate={{ scale: 1, opacity: 0.08 }}
-                transition={{ duration: 1.8, ease: 'easeOut', delay: 0.2 }}
-            />
+            <div className={styles.heroAccentRing} />
+            <div className={styles.heroAccentRing2} />
 
-            <motion.div className={styles.heroContent} style={{ opacity }}>
+            <div className={styles.heroContent}>
                 {/* Label */}
-                <motion.div
-                    className={styles.heroLabel}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                >
+                <div className={styles.heroLabel}>
                     <span className={styles.labelDot} />
                     Resources & Downloads
-                </motion.div>
+                </div>
 
                 {/* Heading */}
-                <motion.h1
-                    className={styles.heroTitle}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.9, ease: [0.25, 0.8, 0.25, 1], delay: 0.2 }}
-                >
+                <h1 className={styles.heroTitle}>
                     Our <span className={styles.heroTitleAccent}>Brochures</span>
                     <br />& Documents
-                </motion.h1>
+                </h1>
 
                 {/* Sub */}
-                <motion.p
-                    className={styles.heroSub}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                >
+                <p className={styles.heroSub}>
                     Access our comprehensive library of corporate documentation, technical
                     brochures, and official quality certifications — all in one place.
-                </motion.p>
-
-
-            </motion.div>
+                </p>
+            </div>
 
             {/* Bottom shape */}
             <div className={styles.heroShapeBar}>
@@ -207,13 +155,7 @@ function HeroSection() {
 
 function FilterBar({ active, onChange }: { active: string; onChange: (c: string) => void }) {
     return (
-        <motion.div
-            className={styles.filterBar}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-        >
+        <div className={styles.filterBar}>
             {categories.map((cat) => (
                 <button
                     key={cat}
@@ -223,30 +165,20 @@ function FilterBar({ active, onChange }: { active: string; onChange: (c: string)
                     {cat}
                 </button>
             ))}
-        </motion.div>
+        </div>
     );
 }
 
 function BrochureGrid({ filter }: { filter: string }) {
     const filtered = filter === 'All' ? brochures : brochures.filter((b) => b.category === filter);
-    const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: '-5%' });
 
     return (
-        <motion.div
-            className={styles.grid}
-            ref={ref}
-            variants={stagger}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-        >
-            {filtered.map((doc, i) => (
-                <motion.article
+        <div className={styles.grid}>
+            {filtered.map((doc) => (
+                <article
                     key={doc.id}
                     id={`brochure-${doc.id}`}
                     className={styles.card}
-                    variants={fadeUp as any}
-                    custom={i}
                 >
                     {/* Image Container with Clip Path */}
                     <div className={styles.imageWrapper}>
@@ -272,24 +204,15 @@ function BrochureGrid({ filter }: { filter: string }) {
                             Learn More
                         </a>
                     </div>
-                </motion.article>
+                </article>
             ))}
-        </motion.div>
+        </div>
     );
 }
 
 function CtaBanner() {
-    const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: '-10%' });
-
     return (
-        <motion.section
-            className={styles.cta}
-            ref={ref}
-            initial={{ opacity: 0, y: 40 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.25, 0.8, 0.25, 1] }}
-        >
+        <section className={styles.cta}>
             <div className={styles.ctaInner}>
                 <div className={styles.ctaLeft}>
                     <p className={styles.ctaOverline}>
@@ -315,7 +238,7 @@ function CtaBanner() {
                     </a>
                 </div>
             </div>
-        </motion.section>
+        </section>
     );
 }
 
@@ -330,27 +253,15 @@ export default function BrochuresPage() {
             <section className={styles.librarySection}>
                 <div className={styles.libraryContainer}>
                     {/* Section label */}
-                    <motion.div
-                        className={styles.sectionLabel}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                    >
+                    <div className={styles.sectionLabel}>
                         <span className={styles.labelDot} style={{ background: 'var(--primary-teal)' }} />
                         Document Library
-                    </motion.div>
+                    </div>
 
-                    <motion.h2
-                        className={styles.sectionTitle}
-                        initial={{ opacity: 0, y: 25 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                    >
+                    <h2 className={styles.sectionTitle}>
                         Browse & Download
                         <span className={styles.sectionTitleAccent}> Resources</span>
-                    </motion.h2>
+                    </h2>
 
                     <FilterBar active={activeFilter} onChange={setActiveFilter} />
                     <BrochureGrid filter={activeFilter} key={activeFilter} />

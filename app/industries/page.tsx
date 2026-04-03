@@ -89,10 +89,10 @@ export default function IndustriesPage() {
                                 />
                             </div>
 
-                            <h3 className={styles.cardTitle}>{industry.title}</h3>
-
-                            <div className={styles.cardFooter}>
+                            <div className={styles.cardBody}>
+                                <h3 className={styles.cardTitle}>{industry.title}</h3>
                                 <p className={styles.cardDesc}>{industry.description}</p>
+                                <div className={styles.learnMore}>Learn More</div>
                             </div>
                         </article>
                     ))}

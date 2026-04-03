@@ -86,7 +86,6 @@
     overflow-x: auto;
     gap: 3vw;
     padding: 0 5vw;
-    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
 }
@@ -99,7 +98,6 @@
     flex: 0 0 86vw;
     max-width: none;
     height: 380px;
-    scroll-snap-align: center;
     display: flex;
     gap: 1.5rem;
 }

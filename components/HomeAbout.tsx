@@ -3,25 +3,12 @@
 import React from 'react';
 import styles from './HomeAbout.module.css';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 
 export default function HomeAbout() {
     return (
-        <motion.section
-            className={styles.container}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
-            }}
-        >
+        <section className={styles.container}>
             {/* The header area with About Us spans across the top conceptually, but in the design it aligns with the split. */}
-            <motion.div
-                className={styles.indicatorWrapper}
-                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            >
+            <div className={styles.indicatorWrapper}>
                 <div className={styles.indicatorLeft}>
                     <span className={styles.indicatorDot}>•</span>
                     <span className={styles.indicatorText}>About us</span>
@@ -33,13 +20,10 @@ export default function HomeAbout() {
                         <line x1="12" y1="3" x2="12" y2="15"></line>
                     </svg>
                 </div>
-            </motion.div>
+            </div>
 
             <div className={styles.contentSplit}>
-                <motion.div
-                    className={styles.leftCol}
-                    variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6 } } }}
-                >
+                <div className={styles.leftCol}>
                     <div className={styles.heading}>
                         <div className={styles.headingBold} style={{ marginBottom: '1rem', fontSize: '2.5rem' }}>About Us</div>
                         <div className={styles.headingBold} style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Gujarat Nippon International Pvt Ltd</div>
@@ -54,37 +38,34 @@ export default function HomeAbout() {
                     <Link href="/about" className={styles.aboutBtn}>
                         About us <span className={styles.arrowIcon}>→</span>
                     </Link>
-                </motion.div>
+                </div>
 
-                <motion.div
-                    className={styles.rightCol}
-                    variants={{ hidden: { opacity: 0, scale: 0.95 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } } }}
-                >
+                <div className={styles.rightCol}>
                     <div className={styles.imagesContainer}>
                         <div className={styles.exportCard}>
-                            <img src="/about_us.png" alt="Export" className={styles.cardBg} />
+                            <img src="/export_image.png" alt="Exports" className={styles.cardBg} />
                             <div className={styles.cardOverlay}></div>
                             <div className={styles.cardContent}>
-                                <h3 className={styles.cardTitle}>Global Reach</h3>
+                                <h3 className={styles.cardTitle}>Exports</h3>
                                 <p className={styles.cardDesc}>
-                                    We are leading exporters to Asian, African, and GCC markets to meet overseas customer needs.
+                                    Leading supplier to Asian, African, and GCC markets with strategic engineering exports.
                                 </p>
                             </div>
                         </div>
 
                         <div className={styles.distributionCard}>
-                            <img src="/distribution_image.png" alt="Engineering Excellence" className={styles.cardBg} />
+                            <img src="/distribution_image.png" alt="Local" className={styles.cardBg} />
                             <div className={styles.cardOverlay}></div>
                             <div className={styles.cardContent}>
-                                <h3 className={styles.cardTitle}>Engineering Excellence</h3>
+                                <h3 className={styles.cardTitle}>Local</h3>
                                 <p className={styles.cardDesc}>
-                                    Delivering high-precision machinery and consistent, dependable project execution globally.
+                                    Delivering high-precision engineering and dependable project execution across local territories.
                                 </p>
                             </div>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
-        </motion.section>
+        </section>
     );
 }

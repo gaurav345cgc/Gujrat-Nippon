@@ -155,7 +155,7 @@ export default function AboutPage() {
                     <div className={styles.newsGrid}>
                         {/* Goal 1 */}
                         <div className={styles.newsCard}>
-                            <img src="/industries_served.png" alt="People" className={styles.newsCardImg} />
+                            <img src="/people_about.jpg" alt="People" className={styles.newsCardImg} />
                             <div className={styles.newsCardBody}>
                                 <h3 className={styles.newsCardTitle}>People</h3>
                                 <p className={styles.newsCardText}>To create equitable opportunities for growth and success for all our stakeholders — employees, partners, and clients — by fostering innovation, collaboration, and trust.</p>
@@ -164,7 +164,7 @@ export default function AboutPage() {
                         </div>
                         {/* Goal 2 */}
                         <div className={styles.newsCard}>
-                            <img src="/hero_image.png" alt="Planet" className={styles.newsCardImg} />
+                            <img src="/planet_about.jpg" alt="Planet" className={styles.newsCardImg} />
                             <div className={styles.newsCardBody}>
                                 <h3 className={styles.newsCardTitle}>Planet</h3>
                                 <p className={styles.newsCardText}>To serve industries across the globe with sustainable and responsible engineering solutions that contribute positively to society and the environment.</p>
@@ -173,7 +173,7 @@ export default function AboutPage() {
                         </div>
                         {/* Goal 3 */}
                         <div className={styles.newsCard}>
-                            <img src="/export_image.png" alt="Profits" className={styles.newsCardImg} />
+                            <img src="/profit_about.jpg" alt="Profits" className={styles.newsCardImg} />
                             <div className={styles.newsCardBody}>
                                 <h3 className={styles.newsCardTitle}>Profits</h3>
                                 <p className={styles.newsCardText}>To deliver measurable value to our business partners by ensuring minimum operating costs, maximum efficiency, and enhanced profitability across every project.</p>
@@ -224,46 +224,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* 6. DOUBLE IMAGE SPLIT */}
-            <section className={styles.doubleImageSection}>
-                <div className={styles.doubleImageBlock} style={{ backgroundImage: "url('/export_image.png')" }}>
-                    <div className={styles.doubleImageContent}>
-                        <h2 className={styles.doubleImageTitle}>
-                            What efficiency<br />can make <span className={styles.doubleImageTitleAccent}>changes.</span>
-                        </h2>
-                    </div>
-                </div>
-                <div className={styles.doubleImageBlock} style={{ backgroundImage: "url('/industries_served.png')" }}>
-                    <div className={styles.doubleImageContent}>
-                        <h2 className={styles.doubleImageTitle} style={{ marginBottom: '1.5rem' }}>
-                            Start your<br />engineering journey.<br /><span className={styles.doubleImageTitleAccent}>Today.</span>
-                        </h2>
-                        <button className={styles.heroBtn}>
-                            CONSULT US <ArrowRight size={16} />
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            {/* 7. NEWSLETTER */}
-            <section className={styles.newsletterSection}>
-                <div className={styles.newsletterContainer}>
-                    <div className={styles.newsletterLeft}>
-                        <h2 className={styles.newsletterTitle}>
-                            Stay up to date on<br />the latest <span className={styles.newsletterTitleAccent}>Gujarat Nippon International Pvt Ltd news</span>
-                        </h2>
-                    </div>
-                    <div className={styles.newsletterRight}>
-                        <p className={styles.newsletterText}>Get our latest news, updates and business insights straight to your inbox.</p>
-                        <form className={styles.newsletterForm} onSubmit={(e) => e.preventDefault()}>
-                            <input type="email" placeholder="Email Address" className={styles.newsletterInput} />
-                            <button type="submit" className={styles.newsletterBtn}>
-                                SUBSCRIBE <ArrowRight size={16} style={{ marginLeft: '8px' }} />
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </section>
         </main>
     );
 }

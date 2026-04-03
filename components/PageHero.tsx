@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
 import styles from './PageHero.module.css';
 
 interface PageHeroProps {
@@ -21,63 +20,33 @@ export default function PageHero({
     description,
     bgImage
 }: PageHeroProps) {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-    const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-    const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-
     return (
-        <section className={styles.hero} ref={ref}>
-            <motion.div className={styles.heroBg} style={{ y, backgroundImage: `url('${bgImage}')` }} />
+        <section className={styles.hero}>
+            <div className={styles.heroBg} style={{ backgroundImage: `url('${bgImage}')` }} />
             <div className={styles.heroOverlay} />
 
             {/* Geometric accents */}
-            <motion.div
-                className={styles.heroAccentRing}
-                initial={{ scale: 0.6, opacity: 0 }}
-                animate={{ scale: 1, opacity: 0.15 }}
-                transition={{ duration: 1.4, ease: 'easeOut' }}
-            />
-            <motion.div
-                className={styles.heroAccentRing2}
-                initial={{ scale: 0.6, opacity: 0 }}
-                animate={{ scale: 1, opacity: 0.08 }}
-                transition={{ duration: 1.8, ease: 'easeOut', delay: 0.2 }}
-            />
+            <div className={styles.heroAccentRing} />
+            <div className={styles.heroAccentRing2} />
 
-            <motion.div className={styles.heroContent} style={{ opacity }}>
+            <div className={styles.heroContent}>
                 {/* Label */}
-                <motion.div
-                    className={styles.heroLabel}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                >
+                <div className={styles.heroLabel}>
                     <span className={styles.labelDot} />
                     {label}
-                </motion.div>
+                </div>
 
                 {/* Heading */}
-                <motion.h1
-                    className={styles.heroTitle}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.9, ease: [0.25, 0.8, 0.25, 1], delay: 0.2 }}
-                >
+                <h1 className={styles.heroTitle}>
                     {titleMain} <span className={styles.heroTitleAccent}>{titleAccent}</span>
                     {titleRest && <><br />{titleRest}</>}
-                </motion.h1>
+                </h1>
 
                 {/* Sub */}
-                <motion.p
-                    className={styles.heroSub}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                >
+                <p className={styles.heroSub}>
                     {description}
-                </motion.p>
-            </motion.div>
+                </p>
+            </div>
 
             {/* Bottom shape */}
             <div className={styles.heroShapeBar}>
