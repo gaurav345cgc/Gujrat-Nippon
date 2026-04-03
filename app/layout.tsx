@@ -10,10 +10,15 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Corporate Website",
-    default: "Corporate Website | Your Trusted Industry Partner",
+    template: "%s | Gujarat Nippon International Pvt Ltd",
+    default: "Gujarat Nippon International Pvt Ltd | Your Trusted Industry Partner",
   },
   description: "Delivering industry-leading solutions and certifications around the globe.",
+  icons: {
+    icon: '/logo.svg',
+    shortcut: '/logo.svg',
+    apple: '/logo.svg',
+  },
 };
 
 export default function RootLayout({

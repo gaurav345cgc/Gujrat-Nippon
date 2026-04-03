@@ -10,10 +10,15 @@ export default function Navbar() {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const pathname = usePathname();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollPos = window.scrollY;
+
+            // Set scrolled state for transparency toggle
+            setIsScrolled(currentScrollPos > 50);
+
             if (currentScrollPos > 100 && currentScrollPos > prevScrollPos) {
                 setIsNavVisible(false); // scrolling down
             } else {
@@ -27,20 +32,43 @@ export default function Navbar() {
     }, [prevScrollPos]);
 
     return (
-        <div className={`${styles.navContainer} ${isNavVisible ? styles.navVisible : styles.navHidden}`}>
+        <div className={`${styles.navContainer} ${isNavVisible ? styles.navVisible : styles.navHidden} ${isScrolled ? styles.scrolled : ''}`}>
             <nav className={styles.topNavbar}>
                 {/* Logo Section */}
                 <div className={styles.navLeft}>
                     <Link href="/" className={styles.logoLink} onClick={() => setIsMobileMenuOpen(false)}>
-                        <img src="/evostel-logo.png" alt="Gujarat Nippon International Pvt Ltd" className={styles.logoImage} />
-                        {/* Fallback if no image: GNIL text with leaf icon */}
+                        <div style={{
+                            width: '44px', /* Standardized to match menu pill */
+                            height: '44px', 
+                            borderRadius: '50%',
+                            overflow: 'hidden',
+                            marginRight: '12px',
+                            background: 'white',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            flexShrink: 0
+                        }}>
+                            <img
+                                src="/logo.svg"
+                                alt="Gujarat Nippon"
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'contain',
+                                    transform: 'scale(1.15) translate(-4%, -4%)', /* Nudged slightly LEFT and UP */
+                                    transformOrigin: 'center',
+                                    transition: 'transform 0.3s ease'
+                                }}
+                            />
+                        </div>
                         <div className={styles.logoFallback}>
                             Gujarat Nippon International Pvt Ltd
                         </div>
                     </Link>
                 </div>
 
-                {/* Center Links Pill */}
+                {/* Center Links (Primary surfing menu) */}
                 <div className={`${styles.navCenter} ${isMobileMenuOpen ? styles.navCenterOpen : ''}`}>
                     <div className={styles.linksPill}>
                         <Link href="/" className={`${styles.navLink} ${pathname === '/' ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
@@ -58,17 +86,16 @@ export default function Navbar() {
                         <Link href="/brochures" className={`${styles.navLink} ${pathname.startsWith('/brochures') ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
                             Brochures
                         </Link>
-
                     </div>
                 </div>
 
-                {/* Right Action Group */}
+                {/* Right Actions (Quick Actions and Toggle) */}
                 <div className={styles.navRight}>
-                    <Link href="/contact" className={styles.contactPill}>
-                        <span className={styles.contactDot}></span> Contact us
+                    <Link href="/contact" className={`${styles.navLink} ${pathname === '/contact' ? styles.active : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
+                        Contact us
                     </Link>
                     <button className={styles.menuPill} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             {isMobileMenuOpen ? (
                                 <>
                                     <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -77,7 +104,7 @@ export default function Navbar() {
                             ) : (
                                 <>
                                     <line x1="4" y1="8" x2="20" y2="8"></line>
-                                    <line x1="4" y1="16" x2="20" y2="16"></line>
+                                    <line x1="14" y1="16" x2="20" y2="16"></line>
                                 </>
                             )}
                         </svg>
