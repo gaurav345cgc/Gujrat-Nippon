@@ -102,7 +102,7 @@
 }
 
 .heroTitleAccent {
-    color: #003153;
+    color: #BAE6FD; /* Crisp light blue for high hero visibility */
     font-weight: 600;
     font-style: italic;
 }
