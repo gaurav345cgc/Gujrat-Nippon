@@ -84,12 +84,12 @@ export default function HomeProducts() {
                 <span className={styles.breadcrumb}>• Our Full Brochure</span>
                 <div className={styles.brochureContainer}>
                     <div className={styles.brochureCard}>
-                        <h2 className={styles.brochureTitle}>Main Brochure</h2>
+                        <h2 className={styles.brochureTitle}>Our Brochures</h2>
                         <p className={styles.brochureText}>
                             We deliver complete turnkey plant machineries, industrial spares, specialized capital equipment, and comprehensive engineering solutions.
                         </p>
-                        <Link href="/brochure.pdf" className={styles.downloadBtn}>
-                            Download Brochure
+                        <Link href="/brochures" className={styles.downloadBtn}>
+                            View Brochures
                         </Link>
                     </div>
                     <div className={styles.industryVisuals}>
