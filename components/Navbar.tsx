@@ -63,7 +63,8 @@ export default function Navbar() {
                             />
                         </div>
                         <div className={styles.logoFallback}>
-                            Gujarat Nippon International Pvt Ltd
+                            <span className={styles.brandName}>Gujarat Nippon</span>
+                            <span className={styles.companyType}>International Pvt Ltd</span>
                         </div>
                     </Link>
                 </div>

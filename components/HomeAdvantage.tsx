@@ -62,20 +62,29 @@ export default function HomeAdvantage() {
     return (
         <section className={styles.advantageSection}>
             <div className={styles.container}>
-                <h2 className={styles.heading}>Engineering Capabilities</h2>
+                <div className={styles.splitLayout}>
+                    <div className={styles.leftCol}>
+                        <div className={styles.imageContainer}>
+                            <img src="/energineering.jpg" alt="Engineering Capabilities" className={styles.mainImage} />
+                        </div>
+                    </div>
+                    
+                    <div className={styles.rightCol}>
+                        <h2 className={styles.heading}>Engineering Capabilities</h2>
+                        <div className={styles.advantageContainer}>
+                            <div className={styles.contentWrapper} key={currentIndex}>
+                                <p className={styles.advantageText}>
+                                    <strong className={styles.advantageTitle}>
+                                        {currentCap.title}:&nbsp;
+                                    </strong>
+                                    {currentCap.text}
+                                </p>
 
-                <div className={styles.advantageContainer}>
-                    <div className={styles.contentWrapper} key={currentIndex}>
-                        <p className={styles.advantageText}>
-                            <strong className={styles.advantageTitle}>
-                                {currentCap.title}:&nbsp;
-                            </strong>
-                            {currentCap.text}
-                        </p>
-
-                        <div className={styles.ctaContainer}>
-                            <span className={styles.ctaWord}>{currentCap.cta}</span>
-                            <span className={styles.ctaArrow}>→</span>
+                                <div className={styles.ctaContainer}>
+                                    <span className={styles.ctaWord}>{currentCap.cta}</span>
+                                    <span className={styles.ctaArrow}>→</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

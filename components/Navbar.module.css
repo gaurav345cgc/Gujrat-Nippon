@@ -6,22 +6,19 @@
     width: 100%;
     z-index: 1000;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 1rem 0 1rem 0;
+    padding: 1.5rem 0 1.5rem 0;
     /* Minimal bottom padding as requested */
     font-family: var(--font-inter), sans-serif;
-    background-color: transparent;
+    background-color: #FFFFFF;
     border-bottom: 1px solid transparent;
 }
 
-/* Scrolled state with substantial, opaque dark glass effect */
+/* Scrolled state with solid blue background */
 .scrolled {
-    padding: 0.6rem 0 0.1rem 0;
+    padding: 1rem 0 1rem 0;
     /* Tightest possible bottom framing for centered look */
-    background-color: rgba(14, 18, 24, 0.88);
-    backdrop-filter: blur(28px);
-    -webkit-backdrop-filter: blur(28px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
+    background-color: #FFFFFF;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .topNavbar {
@@ -29,9 +26,9 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1850px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 4rem;
+    padding: 0 1.5rem;
     transition: all 0.5s ease;
 }
 
@@ -54,14 +51,30 @@
 
 .logoFallback {
     display: flex;
-    align-items: center;
-    color: #FFFFFF;
-    font-weight: 500;
-    font-size: 1rem; /* Slightly reduced as requested */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: var(--primary-blue);
     letter-spacing: -0.2px;
     transition: all 0.4s ease;
     white-space: nowrap;
 }
+
+.brandName {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.companyType {
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.85;
+    line-height: 1.1;
+    margin-top: 0.1rem;
+}
+
+
 
 /* Center Links */
 .navCenter {
@@ -80,9 +93,9 @@
 }
 
 .navLink {
-    color: #FFFFFF;
+    color: var(--primary-blue);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 500;
     padding: 0.4rem 0.75rem;
     transition: all 0.3s ease;
@@ -92,15 +105,19 @@
 
 .navLink:hover {
     opacity: 1;
-    color: #FFFFFF;
+    color: var(--primary-blue);
 }
 
+
+
 .navLink.active {
-    color: #FFFFFF;
+    color: var(--primary-blue);
     opacity: 1;
     position: relative;
     font-weight: 600;
 }
+
+
 
 .navLink.active::after {
     content: '';
@@ -109,9 +126,11 @@
     left: 0.75rem;
     right: 0.75rem;
     height: 1.5px;
-    background-color: #FFFFFF;
+    background-color: var(--primary-blue);
     border-radius: 2px;
 }
+
+
 
 /* Right Actions Group */
 .navRight {
@@ -124,22 +143,24 @@
 
 .menuPill {
     display: flex;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 49, 83, 0.05);
+    border: 1px solid rgba(0, 49, 83, 0.15);
     border-radius: 50%;
     width: 44px; /* Standardized to match logo circle */
     height: 44px;
     align-items: center;
     justify-content: center;
-    color: #FFFFFF;
+    color: var(--primary-blue);
     cursor: pointer;
     transition: all 0.4s ease;
 }
 
 .menuPill:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 49, 83, 0.1);
+    border-color: rgba(0, 49, 83, 0.25);
 }
+
+
 
 /* Mobile Responsiveness */
 @media (max-width: 1200px) {

@@ -3,7 +3,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styles from './HomeProducts.module.css';
 import Link from 'next/link';
-import HomeIndustries from './HomeIndustries';
 import HomeAdvantage from './HomeAdvantage';
 import HomeServices from './HomeServices';
 
@@ -80,34 +79,6 @@ export default function HomeProducts() {
 
     return (
         <div className={styles.wrapper}>
-            <section className={styles.brochureSection}>
-                <span className={styles.breadcrumb}>• Our Full Brochure</span>
-                <div className={styles.brochureContainer}>
-                    <div className={styles.brochureCard}>
-                        <h2 className={styles.brochureTitle}>Our Brochures</h2>
-                        <p className={styles.brochureText}>
-                            We deliver complete turnkey plant machineries, industrial spares, specialized capital equipment, and comprehensive engineering solutions.
-                        </p>
-                        <Link href="/brochures" className={styles.downloadBtn}>
-                            View Brochures
-                        </Link>
-                    </div>
-                    <div className={styles.industryVisuals}>
-                        <div className={styles.visualMainImage}>
-                            <img src="/brochure.jpg" alt="Brochure" />
-                        </div>
-                        <div className={styles.industryPills}>
-                            <div className={styles.pill}>Metal Processing</div>
-                            <div className={styles.pill}>Plastics</div>
-                            <div className={styles.pill}>Heavy Machinery</div>
-                            <div className={styles.pill}>Consumables</div>
-                            <div className={styles.pill}>Spares</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <HomeIndustries />
             <HomeAdvantage />
             <HomeServices />
 
