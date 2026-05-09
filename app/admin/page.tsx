@@ -35,7 +35,7 @@ export default function AdminDashboardPage() {
                     <dt>Brochure Downloads</dt>
                     <dd>5,210</dd>
 
-                    <dt>Active Users</dt>
+                    <dt>Active Customers</dt>
                     <dd>89</dd>
                 </dl>
             </section>

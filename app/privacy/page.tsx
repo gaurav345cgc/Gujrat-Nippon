@@ -14,7 +14,7 @@ export default function PrivacyPage() {
 
             <section>
                 <h2>1. Information We Collect</h2>
-                <p>We collect information to provide better services to our global clients.</p>
+                <p>We collect information to provide better services to our global customers.</p>
             </section>
 
             <section>

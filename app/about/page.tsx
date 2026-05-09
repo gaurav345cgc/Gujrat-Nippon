@@ -94,45 +94,30 @@ export default function AboutPage() {
                                 <div className={styles.tabBox}>
                                     <div className={styles.tabTextContainer}>
                                         <span className={styles.tabTitle}>Strong Networks</span>
-                                        <span className={styles.tabSubtitle}>Core Value</span>
                                     </div>
                                     <span className={styles.tabNumber}>01</span>
                                 </div>
                                 <div className={styles.tabBox}>
                                     <div className={styles.tabTextContainer}>
                                         <span className={styles.tabTitle}>Smart Work</span>
-                                        <span className={styles.tabSubtitle}>Core Value</span>
                                     </div>
                                     <span className={styles.tabNumber}>02</span>
                                 </div>
                                 <div className={styles.tabBoxActive}>
                                     <div className={styles.tabTextContainer}>
                                         <span className={styles.tabTitle}>Hard Work</span>
-                                        <span className={styles.tabSubtitle}>Core Value</span>
                                     </div>
                                     <span className={styles.tabNumber}>03</span>
+                                </div>
+                                <div className={styles.tabBox}>
+                                    <div className={styles.tabTextContainer}>
+                                        <span className={styles.tabTitle}>Our Commitments</span>
+                                    </div>
+                                    <span className={styles.tabNumber}>04</span>
                                 </div>
                             </div>
                             <div className={styles.projectsImageWrapper}>
                                 <div className={styles.projectsImage}></div>
-                                <div className={styles.projectsFloatingCard}>
-                                    <div className={styles.cardHeader}>
-                                        <span className={styles.cardNum}>04</span>
-                                        <span className={styles.cardSubtitle}>Our Team</span>
-                                    </div>
-                                    <h3 className={styles.cardTitle}>Our Commitments</h3>
-                                    <div className={styles.cardText}>
-                                        <ul style={{ listStyleType: 'none', padding: 0 }}>
-                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#0077C0', fontWeight: 'bold' }}>•</span> Professional Excellence</li>
-                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#0077C0', fontWeight: 'bold' }}>•</span> Efficient Execution</li>
-                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#0077C0', fontWeight: 'bold' }}>•</span> Strategic Problem-Solving</li>
-                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#0077C0', fontWeight: 'bold' }}>•</span> Client-Centric Service</li>
-                                        </ul>
-                                    </div>
-                                    <button className={styles.learnMoreBtn}>
-                                        LEARN MORE
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -158,7 +143,7 @@ export default function AboutPage() {
                             <img src="/people_about.jpg" alt="People" className={styles.newsCardImg} />
                             <div className={styles.newsCardBody}>
                                 <h3 className={styles.newsCardTitle}>People</h3>
-                                <p className={styles.newsCardText}>To create equitable opportunities for growth and success for all our stakeholders — employees, partners, and clients — by fostering innovation, collaboration, and trust.</p>
+                                <p className={styles.newsCardText}>To create equitable opportunities for growth and success for all our stakeholders — employees, partners, and customers — by fostering innovation, collaboration, and trust.</p>
                                 <button className={styles.newsCardBtn}>READ MORE <ArrowRight size={14} style={{ marginLeft: '4px' }} /></button>
                             </div>
                         </div>
