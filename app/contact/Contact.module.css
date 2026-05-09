@@ -45,7 +45,7 @@
     padding: 8rem 2rem 4rem;
     max-width: 1000px;
     margin: 0 auto;
-    color: #003153;
+    color: #0077C0;
 }
 
 .contactLayout {
@@ -67,11 +67,11 @@
 }
 
 .companyName {
-    color: #003153;
+    color: #0077C0;
     font-size: 1.75rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: #003153;
+    color: #0077C0;
 }
 
 .infoBlock {
@@ -82,7 +82,7 @@
 
 .infoLabel {
     font-weight: 700;
-    color: #003153;
+    color: #0077C0;
     margin-right: 0.5rem;
 }
 
@@ -110,7 +110,7 @@
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #003153;
+    color: #0077C0;
 }
 
 .input,
@@ -123,8 +123,8 @@
     /* Softer radius for inputs */
     
     font-size: 1rem;
-    color: #003153;
-    background-color: #003153;
+    color: #0077C0;
+    background-color: #0077C0;
     /* Slightly lighter background */
     transition: border-color 0.3s, box-shadow 0.3s;
 }
@@ -138,13 +138,13 @@
 .input:focus,
 .textarea:focus {
     outline: none;
-    border-color: #003153;
+    border-color: #0077C0;
     box-shadow: 0 0 0 3px rgba(192, 0, 0, 0.1);
 }
 
 .submitBtn {
     width: 100%;
-    background-color: #003153;
+    background-color: #0077C0;
     color: #FFFFFF;
     border: none;
     padding: 1.2rem;
@@ -158,7 +158,7 @@
 }
 
 .submitBtn:hover {
-    background-color: #003153;
+    background-color: #0077C0;
     /* Darker red on hover */
     box-shadow: 0 8px 20px rgba(192, 0, 0, 0.25);
     transform: translateY(-2px);

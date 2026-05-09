@@ -93,7 +93,7 @@
 }
 
 .navLink {
-    color: var(--primary-blue);
+    color: #000000;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -105,13 +105,13 @@
 
 .navLink:hover {
     opacity: 1;
-    color: var(--primary-blue);
+    color: #000000;
 }
 
 
 
 .navLink.active {
-    color: var(--primary-blue);
+    color: #000000;
     opacity: 1;
     position: relative;
     font-weight: 600;
@@ -143,8 +143,8 @@
 
 .menuPill {
     display: flex;
-    background: rgba(0, 49, 83, 0.05);
-    border: 1px solid rgba(0, 49, 83, 0.15);
+    background: rgba(0, 119, 192, 0.05);
+    border: 1px solid rgba(0, 119, 192, 0.15);
     border-radius: 50%;
     width: 44px; /* Standardized to match logo circle */
     height: 44px;
@@ -156,8 +156,8 @@
 }
 
 .menuPill:hover {
-    background: rgba(0, 49, 83, 0.1);
-    border-color: rgba(0, 49, 83, 0.25);
+    background: rgba(0, 119, 192, 0.1);
+    border-color: rgba(0, 119, 192, 0.25);
 }
 
 

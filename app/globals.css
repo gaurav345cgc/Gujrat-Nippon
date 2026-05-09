@@ -1,10 +1,10 @@
 :root {
   --background: #FFFFFF;
   --foreground: #1D1D1F;
-  --primary-blue: #003153;
-  --secondary-blue: #003153;
-  --primary-purple: #003153;
-  --primary-teal: #003153;
+  --primary-blue: #0077C0;
+  --secondary-blue: #0077C0;
+  --primary-purple: #0077C0;
+  --primary-teal: #0077C0;
   --text-dark: #1D1D1F;
   --text-light: #FFFFFF;
 }

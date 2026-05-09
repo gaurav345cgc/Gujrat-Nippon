@@ -1,139 +1,74 @@
 "use client";
 
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import styles from './HomeServices.module.css';
 
-function ServiceCard({ svc, scrollRight }: { svc: any, scrollRight: () => void }) {
+function ServiceCard({ svc }: { svc: any }) {
     return (
-        <div className={styles.serviceCard}>
-            <div
-                className={styles.cardLeft}
-                style={{
-                    backgroundColor: svc.bgColor,
-                    color: svc.textColor,
-                }}>
-                <h3 className={styles.cardTitle}>{svc.title}</h3>
-                <p className={styles.cardDesc}>{svc.description}</p>
+        <div
+            className={styles.serviceCard}
+            style={{
+                backgroundColor: svc.bgColor,
+                color: svc.textColor,
+            }}>
+            <h3 className={styles.cardTitle}>{svc.title}</h3>
+            <p className={styles.cardDesc}>{svc.description}</p>
 
-                <div className={styles.nextArrow} onClick={scrollRight}>
-                    ▶
+            <div className={styles.buttons}>
+                <div
+                    className={styles.iconBtn}
+                    style={{ backgroundColor: svc.btnBg, color: svc.btnColor }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                 </div>
-
-                <div className={styles.buttons}>
-                    <div
-                        className={styles.iconBtn}
-                        style={{ backgroundColor: svc.btnBg, color: svc.btnColor }}>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                    </div>
-                    <div
-                        className={styles.dlBtn}
-                        style={{ backgroundColor: svc.btnBg, color: svc.btnColor }}>
-                        Download Brochure
-                    </div>
+                <div
+                    className={styles.dlBtn}
+                    style={{ backgroundColor: svc.btnBg, color: svc.btnColor }}>
+                    Download Brochure
                 </div>
-            </div>
-            <div className={styles.cardRight}>
-                <img
-                    src={svc.image}
-                    alt={svc.title}
-                    className={styles.animatedImage}
-                />
             </div>
         </div>
     );
 }
 
 export default function HomeServices() {
-    const scrollRef = useRef<HTMLDivElement>(null);
-
     const services = [
         {
             title: "Turnkey Plant Engineering",
             description: "We design, manufacture, and supply complete plant machinery setups on a turnkey basis for industrial processing facilities.",
-            bgColor: "#003153",
+            bgColor: "#0077C0",
             textColor: "#FFFFFF",
             image: "/services1.jpg",
             btnBg: "#FFFFFF",
-            btnColor: "#003153"
+            btnColor: "#0077C0"
         },
         {
             title: "Equipment Refurbishment Services",
             description: "We restore and rebuild high-wear heavy machinery components to exact original specifications using advanced automated welding processes.",
-            bgColor: "#003153",
+            bgColor: "#0077C0",
             textColor: "#FFFFFF",
             image: "/service2.jpg",
             btnBg: "#FFFFFF",
-            btnColor: "#003153"
+            btnColor: "#0077C0"
         },
         {
             title: "Modernization and Retrofitting",
             description: "We upgrade and revamp legacy mechanical infrastructure and electrical systems to enhance overall plant productivity and efficiency.",
-            bgColor: "#003153",
+            bgColor: "#0077C0",
             textColor: "#FFFFFF",
             image: "/service3.jpg",
             btnBg: "#FFFFFF",
-            btnColor: "#003153"
+            btnColor: "#0077C0"
         },
         {
             title: "Strategic Industrial Sourcing",
             description: "We globally procure and supply specialized industrial spares, chemicals, consumables, and capital equipment from trusted international manufacturers.",
-            bgColor: "#003153",
+            bgColor: "#0077C0",
             textColor: "#FFFFFF",
             image: "/services2.jpg",
             btnBg: "#FFFFFF",
-            btnColor: "#003153"
-        },
-        {
-            title: "Precision Tool Resharpening",
-            description: "We utilize advanced CNC machinery to precisely regrind industrial cutting blades and saws to produce an ultra-sharp edge.",
-            bgColor: "#003153",
-            textColor: "#FFFFFF",
-            image: "/services1.jpg",
-            btnBg: "#FFFFFF",
-            btnColor: "#003153"
-        },
-        {
-            title: "Electrical System Commissioning",
-            description: "We expertly install, revamp, and commission comprehensive industrial electrical networks, including control panels and automation drives.",
-            bgColor: "#003153",
-            textColor: "#FFFFFF",
-            image: "/service2.jpg",
-            btnBg: "#FFFFFF",
-            btnColor: "#003153"
-        },
-        {
-            title: "Container Relining Services",
-            description: "We provide specialized repair and re-lining services to restore heavy aluminium extrusion containers to peak operational standards.",
-            bgColor: "#003153",
-            textColor: "#FFFFFF",
-            image: "/service3.jpg",
-            btnBg: "#FFFFFF",
-            btnColor: "#003153"
+            btnColor: "#0077C0"
         }
     ];
-
-    const scrollRight = () => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: typeof window !== 'undefined' ? window.innerWidth * 0.86 : 600, behavior: 'smooth' });
-        }
-    };
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if (scrollRef.current) {
-                const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-                const maxScrollLeft = scrollWidth - clientWidth;
-
-                if (scrollLeft >= maxScrollLeft - 10) {
-                    scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    scrollRight();
-                }
-            }
-        }, 5000);
-
-        return () => clearInterval(interval);
-    }, []);
 
     return (
         <section className={styles.servicesSection}>
@@ -155,9 +90,9 @@ export default function HomeServices() {
                     </div>
                 </div>
 
-                <div className={styles.scrollWrapper} ref={scrollRef}>
+                <div className={styles.cardsGrid}>
                     {services.map((svc, index) => (
-                        <ServiceCard key={index} svc={svc} scrollRight={scrollRight} />
+                        <ServiceCard key={index} svc={svc} />
                     ))}
                 </div>
             </div>

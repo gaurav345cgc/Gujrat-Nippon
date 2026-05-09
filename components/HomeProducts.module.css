@@ -175,7 +175,7 @@
 }
 
 .progressText {
-    color: #003153;
+    color: #0077C0;
     font-size: 1rem;
     line-height: 1.5;
 }
@@ -283,7 +283,7 @@
 
 .arrowBtn:hover {
     border-color: var(--text-dark);
-    background: #003153;
+    background: #0077C0;
 }
 
 

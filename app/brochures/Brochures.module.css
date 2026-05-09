@@ -41,7 +41,7 @@
     width: 700px;
     height: 700px;
     border-radius: 50%;
-    border: 120px solid #003153;
+    border: 120px solid #0077C0;
     top: -180px;
     right: -180px;
     z-index: 3;
@@ -53,7 +53,7 @@
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    border: 80px solid #003153;
+    border: 80px solid #0077C0;
     bottom: -120px;
     right: 100px;
     z-index: 3;
@@ -131,7 +131,7 @@
 .heroShapeTeal {
     width: 250px;
     height: 100%;
-    background-color: #003153;
+    background-color: #0077C0;
 }
 
 .heroShapeWhite {
@@ -158,7 +158,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    color: #003153;
+    color: #0077C0;
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 2.5px;
@@ -177,7 +177,7 @@
 }
 
 .sectionTitleAccent {
-    color: #003153;
+    color: #0077C0;
     font-weight: 600;
 }
 
@@ -187,16 +187,16 @@
     gap: 0.6rem;
     flex-wrap: wrap;
     margin-bottom: 3rem;
-    border-bottom: 1px solid #003153;
+    border-bottom: 1px solid #0077C0;
     padding-bottom: 1.5rem;
 }
 
 .filterBtn {
     padding: 0.5rem 1.25rem;
     border-radius: 999px;
-    border: 1px solid #003153;
+    border: 1px solid #0077C0;
     background: transparent;
-    color: #003153;
+    color: #0077C0;
     font-size: 0.85rem;
     font-weight: 500;
     cursor: pointer;
@@ -205,19 +205,19 @@
 }
 
 .filterBtn:hover {
-    border-color: #003153;
-    color: #003153;
+    border-color: #0077C0;
+    color: #0077C0;
 }
 
 .filterBtnActive {
-    background: #003153;
-    border-color: #003153;
+    background: #0077C0;
+    border-color: #0077C0;
     color: #FFFFFF;
 }
 
 .filterBtnActive:hover {
-    background: #002240;
-    border-color: #002240;
+    background: #004c85;
+    border-color: #004c85;
     color: #FFFFFF;
 }
 
@@ -286,14 +286,14 @@
 .cardTitle {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #003153;
+    color: #0077C0;
     line-height: 1.25;
     margin: 0;
 }
 
 .cardDate {
     font-size: 0.85rem;
-    color: #003153;
+    color: #0077C0;
     text-transform: uppercase;
     font-weight: 500;
     margin: 0;
@@ -302,10 +302,10 @@
 .learnMore {
     margin-top: auto;
     display: inline-block;
-    border: 1.5px solid #003153;
+    border: 1.5px solid #0077C0;
     border-radius: 999px;
     padding: 0.65rem 2.2rem;
-    color: #003153;
+    color: #0077C0;
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 800;
@@ -316,7 +316,7 @@
 }
 
 .learnMore:hover {
-    background: #003153;
+    background: #0077C0;
     color: #FFF;
 }
 
@@ -326,7 +326,7 @@
 }
 
 .ctaInner {
-    background-color: #003153;
+    background-color: #0077C0;
     border-radius: 24px;
     padding: 5rem 4rem;
     display: flex;
@@ -347,7 +347,7 @@
     right: 0;
     width: 280px;
     height: 100%;
-    background: linear-gradient(135deg, #003153 0%, #002240 100%);
+    background: linear-gradient(135deg, #0077C0 0%, #004c85 100%);
     clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
     opacity: 0.18;
 }
@@ -360,7 +360,7 @@
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border: 60px solid #003153;
+    border: 60px solid #0077C0;
     opacity: 0.12;
 }
 
@@ -389,7 +389,7 @@
 }
 
 .ctaTitleAccent {
-    color: #003153;
+    color: #0077C0;
     font-weight: 600;
 }
 
@@ -409,7 +409,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    background: #003153;
+    background: #0077C0;
     color: #FFFFFF;
     padding: 0.9rem 2rem;
     border-radius: 8px;
@@ -422,7 +422,7 @@
 }
 
 .ctaBtn:hover {
-    background: #002240;
+    background: #004c85;
     transform: translateY(-2px);
 }
 

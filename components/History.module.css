@@ -70,7 +70,7 @@
 
 .cardDesc {
     font-size: 0.9rem;
-    color: #003153;
+    color: #0077C0;
     line-height: 1.5;
 }
 
@@ -81,7 +81,7 @@
 
 .timelineLine {
     height: 1px;
-    background-color: #003153;
+    background-color: #0077C0;
     width: 100%;
     margin-bottom: 1rem;
 }
@@ -97,7 +97,7 @@
     font-size: 0.8rem;
     color: #9CA3AF;
     background: transparent;
-    border: 1px solid #003153;
+    border: 1px solid #0077C0;
     padding: 0.25rem 0.75rem;
     border-radius: 4px;
     white-space: nowrap;

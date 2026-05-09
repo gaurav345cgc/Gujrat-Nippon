@@ -60,7 +60,7 @@
 
 .heroBtn {
     margin-top: 2rem;
-    background-color: #003153;
+    background-color: #0077C0;
     color: #FFFFFF;
     border: none;
     padding: 14px 32px;
@@ -89,7 +89,7 @@
 .heroShapeRed {
     width: 250px;
     height: 100%;
-    background-color: #003153;
+    background-color: #0077C0;
 }
 
 .heroShapeWhite {
@@ -215,13 +215,13 @@
     margin: 0;
     line-height: 1.1;
     letter-spacing: -1px;
-    border-left: 4px solid #003153;
+    border-left: 4px solid #0077C0;
     padding-left: 1.5rem;
     white-space: nowrap;
 }
 
 .headingAccent {
-    color: #003153;
+    color: #0077C0;
     font-weight: 400;
 }
 
@@ -251,7 +251,7 @@
 }
 
 .statLabel {
-    color: #003153;
+    color: #0077C0;
     font-size: 0.8rem;
     font-weight: 600;
     line-height: 1.4;
@@ -295,7 +295,7 @@
 }
 
 .aboutBtnWhite:hover {
-    background: #003153;
+    background: #0077C0;
     color: #FFFFFF;
 }
 
@@ -352,7 +352,7 @@
 .tabBox,
 .tabBoxActive {
     flex: 1;
-    background-color: #003153;
+    background-color: #0077C0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     flex-direction: row;
@@ -381,7 +381,7 @@
 }
 
 .tabBoxActive {
-    background-color: #002240;
+    background-color: #004c85;
 }
 
 .tabTextContainer {
@@ -494,7 +494,7 @@
 }
 
 .cardSubtitle {
-    color: #003153;
+    color: #0077C0;
     font-size: 0.9rem;
 }
 
@@ -554,7 +554,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem;
-    border-left: 2px solid #003153;
+    border-left: 2px solid #0077C0;
     padding-left: 2rem;
 }
 
@@ -566,7 +566,7 @@
 
 .newsTitleAccent {
     font-weight: 700;
-    color: #003153;
+    color: #0077C0;
 }
 
 .newsGrid {
@@ -615,7 +615,7 @@
 .newsCardBtn {
     align-self: flex-start;
     background: transparent;
-    color: #003153;
+    color: #0077C0;
     border: none;
     padding: 0;
     font-size: 0.9rem;
@@ -628,7 +628,7 @@
 }
 
 .newsCardBtn:hover {
-    color: #003153;
+    color: #0077C0;
 }
 
 /* ---- SECTION 5: CUSTOMERS (VISION & MISSION) ---- */
@@ -647,7 +647,7 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 3rem;
-    border-left: 2px solid #003153;
+    border-left: 2px solid #0077C0;
     padding-left: 2rem;
 }
 
@@ -659,7 +659,7 @@
 }
 
 .testiTitleAccent {
-    color: #003153;
+    color: #0077C0;
     font-weight: 600;
 }
 
@@ -694,7 +694,7 @@
 }
 
 .testiAuthor {
-    color: #003153;
+    color: #0077C0;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -746,13 +746,13 @@
 }
 
 .doubleImageTitleAccent {
-    color: #003153;
+    color: #0077C0;
     font-weight: 600;
 }
 
 /* ---- SECTION 7: NEWSLETTER ---- */
 .newsletterSection {
-    background-color: #003153;
+    background-color: #0077C0;
     padding: 5rem 2rem;
     color: #FFFFFF;
 }
@@ -828,7 +828,7 @@
 .newsletterBtn {
     align-self: flex-start;
     background: #FFFFFF;
-    color: #003153;
+    color: #0077C0;
     border: none;
     padding: 12px 24px;
     font-size: 0.9rem;

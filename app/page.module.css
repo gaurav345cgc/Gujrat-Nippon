@@ -3,11 +3,11 @@
   --foreground: #fff;
 
   --text-primary: #000;
-  --text-secondary: #003153;
+  --text-secondary: #0077C0;
 
-  --button-primary-hover: #003153;
-  --button-secondary-hover: #003153;
-  --button-secondary-border: #003153;
+  --button-primary-hover: #0077C0;
+  --button-secondary-hover: #0077C0;
+  --button-secondary-border: #0077C0;
 
   display: flex;
   min-height: 100vh;
@@ -131,11 +131,11 @@ a.secondary {
     --background: #000;
     --foreground: #000;
 
-    --text-primary: #003153;
-    --text-secondary: #003153;
+    --text-primary: #0077C0;
+    --text-secondary: #0077C0;
 
-    --button-primary-hover: #003153;
-    --button-secondary-hover: #003153;
-    --button-secondary-border: #003153;
+    --button-primary-hover: #0077C0;
+    --button-secondary-hover: #0077C0;
+    --button-secondary-border: #0077C0;
   }
 }

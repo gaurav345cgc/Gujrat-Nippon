@@ -8,7 +8,7 @@ export default function Hero() {
 
     return (
         <header className={styles.heroSection}>
-            <div className={styles.bgImage} style={{ backgroundImage: "url('/hero.avif')" }} />
+            <div className={styles.bgImage} style={{ backgroundImage: "url('/steel_tmt_bars.png')" }} />
             {/* Dark gradient overlay for text readability at the bottom */}
             <div className={styles.bgOverlay} />
 

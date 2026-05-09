@@ -95,7 +95,7 @@
 .ctaContainer {
     display: inline-flex;
     align-items: center;
-    color: var(--primary-color, #003153);
+    color: var(--primary-color, #0077C0);
     font-weight: 600;
     cursor: pointer;
     font-size: 1.1rem;

@@ -64,7 +64,7 @@
 }
 
 .learnMoreBtn {
-    background-color: #003153;
+    background-color: #0077C0;
     color: #FFFFFF;
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
@@ -80,81 +80,51 @@
     font-size: 1rem;
 }
 
-/* CAROUSEL */
-.scrollWrapper {
-    display: flex;
-    overflow-x: auto;
-    gap: 3vw;
-    padding: 0 5vw;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-}
-
-.scrollWrapper::-webkit-scrollbar {
-    display: none;
-}
-
-.serviceCard {
-    flex: 0 0 86vw;
-    max-width: none;
-    height: 380px;
-    display: flex;
+/* GRID LAYOUT */
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
+    padding: 0 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 @media (max-width: 1024px) {
-    .serviceCard {
-        flex: 0 0 92%;
-        min-width: unset;
-        width: 92vw;
-        flex-direction: column;
-        height: auto;
+    .cardsGrid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-.cardLeft {
-    flex: 3;
-    padding: 3.5rem 3rem;
+@media (max-width: 600px) {
+    .cardsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.serviceCard {
+    padding: 2.5rem 2rem;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     position: relative;
     justify-content: flex-start;
-}
-
-.cardRight {
-    flex: 7;
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-}
-
-@media (max-width: 1024px) {
-    .cardRight {
-        flex: none;
-        height: 300px;
-    }
-}
-
-.animatedImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    min-height: 320px;
 }
 
 .cardTitle {
-    font-size: 1.75rem;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-    line-height: 1.15;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .cardDesc {
     font-size: 0.9rem;
     line-height: 1.5;
     opacity: 0.9;
-    max-width: 90%;
+    margin-bottom: 2rem;
 }
 
 .buttons {
@@ -172,32 +142,19 @@
     justify-content: center;
     font-weight: 500;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .dlBtn {
     height: 40px;
-    padding: 0 1.25rem;
+    padding: 0 1rem;
     border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     cursor: pointer;
-}
-
-.nextArrow {
-    position: absolute;
-    right: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    font-size: 1.2rem;
-    opacity: 0.6;
-    transition: opacity 0.2s;
-    user-select: none;
-}
-
-.nextArrow:hover {
-    opacity: 1;
+    flex-grow: 1;
+    white-space: nowrap;
 }
