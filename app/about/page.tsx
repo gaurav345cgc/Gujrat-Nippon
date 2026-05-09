@@ -12,7 +12,7 @@ export default function AboutPage() {
                 <div className={styles.heroOverlay}></div>
                 <div className={styles.heroContent}>
                     <h1 className={styles.heroTitle}>
-                        About <span className={styles.heroTitleAccent}>Gujarat Nippon International Pvt Ltd.</span>
+                        About <span className={styles.heroTitleAccent}>Gujarat Nippon</span> <span className={styles.heroTitleSuffix}>International Pvt Ltd.</span>
                     </h1>
                     <p className={styles.heroSubtitle}>
                         A globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution.
