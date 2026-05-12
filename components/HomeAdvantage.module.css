@@ -66,6 +66,12 @@
     display: inline-block;
 }
 
+@media (min-width: 1200px) {
+    .heading {
+        font-size: 3rem;
+    }
+}
+
 .advantageContainer {
     width: 100%;
     display: flex;

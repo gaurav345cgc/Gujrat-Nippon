@@ -229,7 +229,7 @@
 .newsSection {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 8rem 2rem 2rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -238,22 +238,31 @@
 
 .newsHeader {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-bottom: 3rem;
+    width: 100%;
 }
 
 .productLeftHeader {
     display: flex;
+    justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .newsTitle {
-    font-size: 3rem;
-    font-weight: 400;
+    font-size: 2.5rem;
+    font-weight: 300;
     color: var(--text-dark);
     margin: 0;
-    text-align: left;
+    text-align: center;
+}
+
+@media (min-width: 1200px) {
+    .newsTitle {
+        font-size: 3rem;
+    }
 }
 
 .productRightHeader {

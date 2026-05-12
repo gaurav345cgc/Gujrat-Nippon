@@ -1,6 +1,7 @@
 .servicesSection {
     width: 100%;
     margin: 0;
+    padding-top: 8rem;
     min-height: 100vh;
     background-color: transparent;
     display: flex;
@@ -44,10 +45,16 @@
 }
 
 .title {
-    font-size: 2.25rem;
-    font-weight: 400;
+    font-size: 2.5rem;
+    font-weight: 300;
     color: var(--text-dark);
     margin-bottom: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+    .title {
+        font-size: 3rem;
+    }
 }
 
 .description {
