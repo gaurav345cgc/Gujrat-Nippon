@@ -1,0 +1,361 @@
+.page {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding-top: 120px; /* offset fixed navbar */
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(0, 119, 192, 0.35), transparent 60%),
+    radial-gradient(900px 500px at 90% 20%, rgba(0, 119, 192, 0.25), transparent 55%),
+    linear-gradient(135deg, rgba(10, 20, 30, 0.96) 0%, rgba(26, 32, 44, 0.88) 55%, rgba(0, 119, 192, 0.45) 100%);
+  z-index: 1;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.25) 100%);
+  z-index: 2;
+}
+
+.heroAccentRing {
+  position: absolute;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  border: 96px solid #0077C0;
+  top: -220px;
+  right: -220px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.heroAccentRing2 {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 72px solid #0077C0;
+  bottom: -210px;
+  right: 100px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 3.5rem;
+}
+
+.breadcrumbs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.crumbLink {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+}
+
+.crumbLink:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.crumbSep {
+  opacity: 0.7;
+}
+
+.heroLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+
+.labelDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary-blue, #0077C0);
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.title {
+  font-size: clamp(2.25rem, 4.8vw, 3.9rem);
+  font-weight: 500;
+  line-height: 1.05;
+  color: #fff;
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 720px;
+}
+
+.heroShapeBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  z-index: 11;
+}
+
+.heroShapeTeal {
+  width: 250px;
+  height: 100%;
+  background-color: #0077C0;
+}
+
+.heroShapeWhite {
+  flex: 1;
+  height: 100%;
+  background-color: #f7f9fc;
+  clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
+  margin-left: -40px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 4.5rem;
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .highlights {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.highlightCard {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 1.05rem 1.05rem;
+}
+
+.highlightLabel {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(2, 6, 23, 0.55);
+  margin-bottom: 0.35rem;
+}
+
+.highlightValue {
+  font-size: 0.98rem;
+  font-weight: 900;
+  color: #0b2b43;
+  line-height: 1.25;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 1.6fr 0.9fr;
+    align-items: start;
+  }
+}
+
+.section {
+  padding: 1.6rem 1.6rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.section + .section {
+  margin-top: 1.25rem;
+}
+
+.sectionTitle {
+  color: #0077C0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  margin-bottom: 0.75rem;
+}
+
+.text {
+  color: #333;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin-bottom: 0.9rem;
+}
+
+.list {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+  color: #444;
+  line-height: 1.75;
+}
+
+.list li + li {
+  margin-top: 0.35rem;
+}
+
+.sidebar {
+  position: relative;
+}
+
+.ctaCard {
+  background: linear-gradient(135deg, rgba(0, 119, 192, 0.12) 0%, rgba(0, 119, 192, 0.05) 45%, rgba(255, 255, 255, 1) 100%);
+  border: 1px solid rgba(0, 119, 192, 0.25);
+  padding: 1.4rem;
+}
+
+.sectionNav {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.9rem 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.sectionNavTitle {
+  font-weight: 900;
+  color: #0b2b43;
+  margin-bottom: 0.55rem;
+}
+
+.sectionNavLink {
+  display: block;
+  margin-top: 0.35rem;
+  color: #0077C0;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.sectionNavLink:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+  .ctaCard {
+    position: sticky;
+    top: 92px;
+  }
+}
+
+.ctaTitle {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0b2b43;
+  margin-bottom: 0.65rem;
+}
+
+.ctaText {
+  color: #334155;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.ctaButton {
+  margin-top: 1rem;
+  display: inline-block;
+  border: 1.5px solid #0077C0;
+  border-radius: 999px;
+  padding: 0.75rem 1.6rem;
+  color: #fff;
+  background: #0077C0;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: fit-content;
+  transition: all 0.25s ease;
+}
+
+.ctaButton:hover {
+  background: #055f98;
+  border-color: #055f98;
+}
+
+.quickLinks {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.quickLink {
+  display: inline-block;
+  margin-top: 0.65rem;
+  color: #0077C0;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.quickLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .heroAccentRing,
+  .heroAccentRing2 {
+    display: none;
+  }
+
+  .heroContent {
+    padding: 0 1.25rem 3rem;
+  }
+
+  .container {
+    padding: 2.75rem 1rem 3.5rem;
+  }
+
+  .section {
+    padding: 1.25rem;
+  }
+}
+

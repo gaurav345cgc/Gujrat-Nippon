@@ -21,6 +21,19 @@ const products = [
     { type: "PRODUCT", img: "/product_2.png", title: "MDF Resins & Adhesives", desc: "Industrial adhesives for MDF manufacturing", action: "View" }
 ];
 
+function getHomepageProductAlt(img: string, title: string) {
+    if (img === '/product_1.png' && title.toLowerCase().includes('turnkey')) {
+        return 'Turnkey cold rolling mill supplied by Gujarat Nippon International';
+    }
+    if (img === '/product_2.png' && title.toLowerCase().includes('capital')) {
+        return 'Capital equipment supplied by Gujarat Nippon International';
+    }
+    if (img === '/product_3.png' && title.toLowerCase().includes('moulding')) {
+        return 'Plastic moulding system supplied by Gujarat Nippon International';
+    }
+    return `${title} supplied by Gujarat Nippon International`;
+}
+
 export default function HomeProducts() {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [scrollProgress, setScrollProgress] = useState(0);
@@ -93,7 +106,11 @@ export default function HomeProducts() {
                     {products.map((p, idx) => (
                         <div key={idx} className={styles.productCard}>
                             <div className={styles.productImageContainer}>
-                                <img src={p.img} alt={p.title} className={styles.productImage} />
+                                <img
+                                    src={p.img}
+                                    alt={getHomepageProductAlt(p.img, p.title)}
+                                    className={styles.productImage}
+                                />
                                 <div className={styles.productOverlay}></div>
                             </div>
                             <div className={styles.cardForeground}>

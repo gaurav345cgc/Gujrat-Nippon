@@ -5,21 +5,21 @@ export const products: Product[] = [
         id: '1',
         name: 'Industrial Spares & Consumables',
         description: 'Comprehensive electrical, mechanical, hydraulic, and pneumatic supplies.',
-        link: '/products/spares',
+        link: '/products/industrial-spares-consumables',
         image: '/product_4.png'
     },
     {
         id: '2',
         name: 'Chemicals, Grease & Lubricants',
         description: 'High-quality preventative maintenance supplies for industrial use.',
-        link: '/products/chemicals',
+        link: '/products/industrial-chemicals-lubricants',
         image: '/product_1.png'
     },
     {
         id: '3',
         name: 'Turnkey Plant & Machineries',
         description: 'Design, manufacture and supply of plant machineries for metal processing.',
-        link: '/products/turnkey',
+        link: '/products/turnkey-plant-engineering',
         image: '/product_3.png'
     },
     {
@@ -33,7 +33,7 @@ export const products: Product[] = [
         id: '5',
         name: 'Plastic Moulding Systems',
         description: 'Advanced plastic moulding technologies by Gujarat Nippon International Pvt Ltd.',
-        link: '/products/moulding',
+        link: '/products/plastic-moulding-systems',
         image: '/product_3.png'
     },
     {

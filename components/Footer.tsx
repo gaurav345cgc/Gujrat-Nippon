@@ -16,7 +16,10 @@ export default function Footer() {
                         <div className={styles.logoCircle}>
                             <img src="/logo.svg" alt="Gujarat Nippon" className={styles.logoImg} />
                         </div>
-                        <span className={styles.brandName}>Gujarat Nippon<br />International Pvt Ltd</span>
+                        <span className={styles.brandName}>
+                            Gujarat Nippon<br />
+                            International Pvt. Ltd.
+                        </span>
                     </div>
                 </div>
 
@@ -36,9 +39,13 @@ export default function Footer() {
                 <div className={styles.linkCol}>
                     <h3 className={styles.columnTitle}>Contact Info</h3>
                     <ul className={styles.contactList}>
-                        <li>123 Industrial Phase II,<br />Global Export Zone, India</li>
-                        <li>+91 123 456 7890</li>
-                        <li>info@gujaratnippon.com</li>
+                        <li>
+                            21, Navyug Industrial Estate, M.I.D.C Cross Road,<br />
+                            J.B. Nagar, Andheri (East), Mumbai &ndash; 400069
+                        </li>
+                        <li>Tel: +91-22-4099 7000</li>
+                        <li>CIN: U51900MH2004PTC149572</li>
+                        <li>Email: <a href="mailto:info@gujaratnippon.com">info@gujaratnippon.com</a></li>
                     </ul>
                 </div>
 
@@ -46,6 +53,7 @@ export default function Footer() {
                 <div className={styles.socialCol}>
                     <h3 className={styles.columnTitle}>Social Links</h3>
                     <div className={styles.socialIcons}>
+                        {/* Replace '#' with real social media links */}
                         <a href="#" aria-label="Facebook">FB</a>
                         <a href="#" aria-label="Twitter">TW</a>
                         <a href="#" aria-label="LinkedIn">IN</a>
@@ -55,7 +63,9 @@ export default function Footer() {
 
             {/* Bottom Bar */}
             <div className={styles.bottomBar}>
-                <p>Designed By Gujarat Nippon | &copy; {currentYear} Gujarat Nippon International Pvt Ltd. All rights reserved.</p>
+                <p>
+                    Designed By Gujarat Nippon | &copy; {currentYear} Gujarat Nippon International Pvt. Ltd. All rights reserved.
+                </p>
             </div>
         </footer>
     );

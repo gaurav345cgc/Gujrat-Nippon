@@ -123,10 +123,17 @@
     /* Softer radius for inputs */
     
     font-size: 1rem;
-    color: #0077C0;
+    color: #fff; /* Ensures text written inside is white */
     background-color: #0077C0;
     /* Slightly lighter background */
     transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Set placeholder color to white for input and textarea */
+.input::placeholder,
+.textarea::placeholder {
+    color: #fff !important;
+    opacity: 1;
 }
 
 .textarea {

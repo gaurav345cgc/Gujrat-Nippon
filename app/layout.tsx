@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     template: "%s | Gujarat Nippon International Pvt Ltd",
     default: "Gujarat Nippon International Pvt Ltd | Your Trusted Industry Partner",
   },
-  description: "Delivering industry-leading solutions and certifications around the globe.",
+  description:
+    "Gujarat Nippon International supplies turnkey plant machinery, industrial spares, and capital equipment for steel, plastics, and energy industries across India, Africa, and GCC.",
   icons: {
     icon: '/logo.svg',
     shortcut: '/logo.svg',

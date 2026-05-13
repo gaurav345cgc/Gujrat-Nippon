@@ -15,8 +15,7 @@ export default function Hero() {
             <div className={styles.heroContent}>
                 <div className={styles.heroLeft}>
                     <h1 className={styles.heroTitle}>
-                        Engineering Precision Systems<br />
-                        For Global Industries
+                        Turnkey Plant Engineering &amp; Industrial Supply — Mumbai, India
                     </h1>
                 </div>
             </div>
