@@ -15,7 +15,8 @@ export default function Hero() {
             <div className={styles.heroContent}>
                 <div className={styles.heroLeft}>
                     <h1 className={styles.heroTitle}>
-                        Turnkey Plant Engineering &amp; Industrial Supply — Mumbai, India
+                    Engineering Precision Systems<br />
+                    For Global Industries
                     </h1>
                 </div>
             </div>
