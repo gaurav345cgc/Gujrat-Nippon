@@ -6,7 +6,7 @@
     width: 100%;
     z-index: 1000;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 1.5rem 0 1.5rem 0;
+    padding: 2.25rem 0;
     /* Minimal bottom padding as requested */
     font-family: var(--font-inter), sans-serif;
     background-color: #FFFFFF;
@@ -15,7 +15,7 @@
 
 /* Scrolled state with solid blue background */
 .scrolled {
-    padding: 1rem 0 1rem 0;
+    padding: 1.5rem 0;
     /* Tightest possible bottom framing for centered look */
     background-color: #FFFFFF;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -61,14 +61,14 @@
 }
 
 .brandName {
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 1.8rem;
+    font-weight: 800;
     line-height: 1.1;
 }
 
 .companyType {
-    font-size: 0.75rem;
-    font-weight: 400;
+    font-size: 1.3rem;
+    font-weight: 500;
     opacity: 0.85;
     line-height: 1.1;
     margin-top: 0.1rem;
@@ -95,9 +95,9 @@
 .navLink {
     color: #000000;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 500;
-    padding: 0.4rem 0.75rem;
+    padding: 0.5rem 0.85rem;
     transition: all 0.3s ease;
     white-space: nowrap;
     opacity: 0.8;

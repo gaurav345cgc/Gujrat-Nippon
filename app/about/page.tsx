@@ -30,7 +30,6 @@ export default function AboutPage() {
 
                 {/* 2. ABOUT COMPANY (with stats) */}
                 <section className={styles.darkSection}>
-                    <div className={styles.watermark}>S</div>
                     <div className={styles.sharedContainer}>
                         <div className={styles.twoColumnRow}>
                             <div className={styles.aboutLeftTitleCol}>
