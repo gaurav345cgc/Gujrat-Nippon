@@ -7,7 +7,8 @@ import PageHero from '../../components/PageHero';
 
 export const metadata: Metadata = {
     title: 'Products',
-    description: 'Explore our high-performance industrial solutions and metal processing equipment.',
+    description:
+        "Explore Gujarat Nippon's full range — turnkey plant machinery, industrial spares, chemicals, capital equipment, plastic moulding systems, and logistics manufacturing.",
 };
 
 export default function ProductsPage() {

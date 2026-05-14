@@ -4,7 +4,8 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Contact Us',
-    description: 'Get in touch with Gujarat Nippon International Pvt Ltd for industrial spares, plant machineries, and global engineering solutions.',
+    description:
+        'Contact Gujarat Nippon International at our Mumbai MIDC office for industrial machinery quotes, engineering consultations, and export-import inquiries.',
 };
 
 export default function ContactPage() {

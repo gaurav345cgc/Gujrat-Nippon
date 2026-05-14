@@ -65,7 +65,11 @@ export default function HomeAdvantage() {
                 <div className={styles.splitLayout}>
                     <div className={styles.leftCol}>
                         <div className={styles.imageContainer}>
-                            <img src="/energineering.jpg" alt="Engineering Capabilities" className={styles.mainImage} />
+                            <img
+                                src="/engineering.jpg"
+                                alt="Turnkey plant engineering — Gujarat Nippon International"
+                                className={styles.mainImage}
+                            />
                         </div>
                     </div>
                     

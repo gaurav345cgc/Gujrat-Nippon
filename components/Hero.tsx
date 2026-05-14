@@ -15,8 +15,8 @@ export default function Hero() {
             <div className={styles.heroContent}>
                 <div className={styles.heroLeft}>
                     <h1 className={styles.heroTitle}>
-                        Engineering Precision Systems<br />
-                        For Global Industries
+                    Engineering Precision Systems<br />
+                    For Global Industries
                     </h1>
                 </div>
             </div>

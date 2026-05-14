@@ -1,8 +1,13 @@
-"use client";
-
+import { Metadata } from 'next';
 import React from 'react';
 import styles from './About.module.css';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: 'About',
+    description:
+        "18+ years, 510+ projects, 210+ export-import deals — Gujarat Nippon is Mumbai's trusted one-stop engineering solutions partner for global industrial buyers.",
+};
 
 export default function AboutPage() {
     return (
