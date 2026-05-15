@@ -323,7 +323,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
                     <ul>
                         {industry.relatedProducts.map((p) => (
                             <li key={p.slug}>
-                                <Link href={`/products/${p.slug}`}>{p.label}</Link>
+                                <Link href="/products">{p.label}</Link>
                             </li>
                         ))}
                     </ul>

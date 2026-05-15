@@ -92,8 +92,8 @@ export default function IndustriesPage() {
                 <p className={styles.pageSubtitle}>
                     Gujarat Nippon International Pvt Ltd supplies engineering solutions and industrial products to the
                     sectors below. For{' '}
-                    <Link href="/products/turnkey-plant-engineering" className={styles.inlineLink}>
-                        turnkey plant engineering solutions
+                    <Link href="/products" className={styles.inlineLink}>
+                        our products and engineering solutions
                     </Link>{' '}
                     or to{' '}
                     <Link href="/contact" className={styles.inlineLink}>

@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Products.module.css';
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { products } from '../../lib/data/products';
 import PageHero from '../../components/PageHero';
 
@@ -22,27 +21,23 @@ export default function ProductsPage() {
                 bgImage="/hero_bg2.png"
             />
             <div className={styles.container}>
-
                 <div className={styles.productGrid}>
                     {products.map((product) => (
-                        <Link href={product.link} key={product.id} style={{ textDecoration: 'none' }}>
-                            <article className={styles.productCard}>
-                                <div className={styles.cardTag}>PRODUCT FEATURE</div>
-                                <div className={styles.imageContainer}>
-                                    <img
-                                        src={product.image}
-                                        alt={`${product.name} — Gujarat Nippon International industrial supply`}
-                                        className={styles.productImage}
-                                    />
-                                </div>
+                        <article key={product.id} className={styles.productCard}>
+                            <div className={styles.cardTag}>PRODUCT FEATURE</div>
+                            <div className={styles.imageContainer}>
+                                <img
+                                    src={product.image}
+                                    alt={`${product.name} — Gujarat Nippon International industrial supply`}
+                                    className={styles.productImage}
+                                />
+                            </div>
 
-                                <div className={styles.cardBody}>
-                                    <h2 className={styles.productName}>{product.name}</h2>
-                                    <p className={styles.productDescription}>{product.description}</p>
-                                    <div className={styles.learnMore}>View product range</div>
-                                </div>
-                            </article>
-                        </Link>
+                            <div className={styles.cardBody}>
+                                <h2 className={styles.productName}>{product.name}</h2>
+                                <p className={styles.productDescription}>{product.description}</p>
+                            </div>
+                        </article>
                     ))}
                 </div>
             </div>
