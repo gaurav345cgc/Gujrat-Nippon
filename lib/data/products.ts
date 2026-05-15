@@ -26,7 +26,7 @@ export const products: Product[] = [
         id: '4',
         name: 'Capital Equipment',
         description: 'Representing reputed International Companies (Zhuoshen, Vietsteel, Maker).',
-        link: '/products/equipment',
+        link: '/products/capital-equipment',
         image: '/product_2.png'
     },
     {
@@ -40,7 +40,7 @@ export const products: Product[] = [
         id: '6',
         name: 'Logic Plastics Manufacturing',
         description: 'High-volume production lines for various renowned multinational brands.',
-        link: '/products/logic-plastics',
+        link: '/products/logic-plastics-manufacturing',
         image: '/product_4.png'
     }
 ];

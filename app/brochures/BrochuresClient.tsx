@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import styles from './Brochures.module.css';
 
 /* ─── DATA ─────────────────────────────────────────────────── */
@@ -133,14 +134,13 @@ function HeroSection() {
 
                 {/* Heading */}
                 <h1 className={styles.heroTitle}>
-                    Our <span className={styles.heroTitleAccent}>Brochures</span>
-                    <br />& Documents
+                    Product Brochures <span className={styles.heroTitleAccent}>{'& Technical Catalogues'}</span>
                 </h1>
 
                 {/* Sub */}
                 <p className={styles.heroSub}>
-                    Access our comprehensive library of corporate documentation, technical
-                    brochures, and official quality certifications — all in one place.
+                    Corporate profiles, technical brochures and certificates for plant engineering, spares, capital
+                    equipment and export programmes — supplied in PDF format for engineering and procurement teams.
                 </p>
             </div>
 
@@ -197,11 +197,11 @@ function BrochureGrid({ filter }: { filter: string }) {
                         <a
                             href={doc.url}
                             className={styles.learnMore}
-                            aria-label={`Learn more about ${doc.title}`}
+                            aria-label={`Download PDF: ${doc.title}`}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Learn More
+                            Download PDF
                         </a>
                     </div>
                 </article>
@@ -229,13 +229,13 @@ function CtaBanner() {
                         Our team is ready to provide custom documentation, technical datasheets, or
                         any other material you may need for your project.
                     </p>
-                    <a href="/contact" className={styles.ctaBtn}>
-                        Contact Us
+                    <Link href="/contact" className={styles.ctaBtn}>
+                        Enquire about our products
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12" />
                             <polyline points="12 5 19 12 12 19" />
                         </svg>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

@@ -51,7 +51,7 @@ export default function Navbar() {
                         }}>
                             <img
                                 src="/logo.svg"
-                                alt="Gujarat Nippon"
+                                alt="Gujarat Nippon International Pvt Ltd — logo"
                                 style={{
                                     width: '100%',
                                     height: '100%',

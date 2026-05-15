@@ -5,8 +5,17 @@ import styles from './ProductDetail.module.css';
 type ProductPage = {
     slug: string;
     name: string;
-    metaTitle: string;
+    pageTitleAbsolute: string;
+    breadcrumbLabel: string;
+    h1: string;
     metaDescription: string;
+    supplyHeading: string;
+    industriesHeading: string;
+    whyHeading: string;
+    overviewHeading: string;
+    supplyIntro: string;
+    industriesIntro: string;
+    whyIntro: string;
     highlights: { label: string; value: string }[];
     whatWeSupply: string[];
     whoItsFor: string[];
@@ -15,222 +24,309 @@ type ProductPage = {
     ctaLabel: string;
 };
 
+const RELATED: Record<string, { href: string; anchor: string }[]> = {
+    'turnkey-plant-engineering': [
+        { href: '/industries/steel-metal-processing', anchor: 'steel and metal processing industry' },
+        { href: '/brochures', anchor: 'download our turnkey plant brochure' },
+    ],
+    'industrial-spares-consumables': [
+        { href: '/brochures', anchor: 'industrial spares and components catalogue' },
+        { href: '/industries', anchor: 'industries we supply spares to' },
+    ],
+    'industrial-chemicals-lubricants': [
+        { href: '/products/turnkey-plant-engineering', anchor: 'rolling mills and metal processing plants' },
+        { href: '/brochures', anchor: 'technical catalogues for greases and rolling oils' },
+    ],
+    'capital-equipment': [
+        { href: '/contact', anchor: 'contact us for a capital equipment quote' },
+        { href: '/brochures', anchor: 'capital equipment and machinery catalogues' },
+    ],
+    'plastic-moulding-systems': [
+        { href: '/industries/plastics-moulding', anchor: 'plastics and moulding industry solutions' },
+        { href: '/contact', anchor: 'send us your project requirement' },
+    ],
+    'logic-plastics-manufacturing': [
+        { href: '/brochures', anchor: 'download our product catalogues' },
+        { href: '/industries/consumer-goods', anchor: 'consumer goods manufacturing supply' },
+    ],
+};
+
 const PRODUCTS: ProductPage[] = [
     {
         slug: 'turnkey-plant-engineering',
         name: 'Turnkey Plant & Machineries',
-        metaTitle: 'Turnkey',
+        pageTitleAbsolute: 'Turnkey Plant — Cold Rolling, Tube Mills | Gujarat Nippon',
+        breadcrumbLabel: 'Turnkey plant engineering',
+        h1: 'Turnkey Plant Engineering — Cold Rolling Mills, Tube Mills & Industrial Plants',
         metaDescription:
-            'End-to-end design, manufacture, and supply of cold rolling mills, hot rolling mills, tube mills, strip galvanizing lines, and PEB structures on a turnkey basis.',
+            'We undertake end-to-end design, manufacture and supply of cold rolling mills, hot rolling mills, tube mills, strip galvanizing lines and PEB structures on a complete turnkey basis.',
+        supplyHeading: 'What We Supply — Our Turnkey Plant & Machineries Range',
+        industriesHeading: 'Industries We Cater To',
+        whyHeading: 'Why Choose Gujarat Nippon for Turnkey Plant Engineering',
+        overviewHeading: 'Cold rolling mill supplier India — scope and delivery',
+        supplyIntro:
+            'We undertake design, manufacture and supply of plant and machineries for metal processing industries on a turnkey basis where the contract requires it, including revamping and modernization of existing lines.',
+        industriesIntro:
+            'This range is suited to steel and metal processing plants, coil and tube producers, and buyers in India, Africa and the GCC planning new capacity or line upgrades.',
+        whyIntro:
+            'Customers appoint us for agreed specifications, timely execution, transparent dealings and documentation suited to domestic programmes and export dispatch.',
         highlights: [
-            { label: 'Delivery model', value: 'End-to-end turnkey supply' },
+            { label: 'Delivery model', value: 'Turnkey supply' },
             { label: 'Best for', value: 'New lines & upgrades' },
             { label: 'Coverage', value: 'India • Africa • GCC' },
-            { label: 'Focus', value: 'Commissioning-ready dispatch' },
+            { label: 'Focus', value: 'Agreed quality standards' },
         ],
         whatWeSupply: [
-            'Cold rolling mills (CRM), hot rolling mills (HRM), tube mills, and slitting/coil processing lines',
-            'Strip galvanizing lines and supporting utilities',
-            'PEB structures and fabrication-aligned project supply',
-            'Engineering-led coordination: technical scope, sourcing, manufacturing, dispatch, and documentation',
+            'Cold rolling mills (CRM), hot rolling mills (HRM) and tube mills',
+            'Slitting, cut-to-length, strip galvanising and colour coating lines',
+            'Heat treatment furnaces, deep drawing presses and PEB structures',
+            'Project coordination: scope, sourcing, manufacture, dispatch and documentation',
         ],
         whoItsFor: [
-            'Steel and metal processing companies planning new capacity, modernization, or line upgrades',
-            'Industrial buyers who need a single partner to reduce vendor fragmentation and execution risk',
-            'Global buyers in Africa and GCC markets looking for export-ready supply and documentation discipline',
+            'Steel and metal processing companies — new lines, upgrades or revamping',
+            'Buyers seeking one partner for plant machinery rather than fragmented vendors',
+            'Export programmes requiring packing and documentation discipline',
         ],
         whyChoose: [
-            'Execution focus: practical scope control, clear timelines, and procurement aligned to commissioning needs',
-            'Engineering-first buying: fitment, performance, and lifecycle value are prioritized over short-term cost',
-            'Export-import readiness for cross-border delivery, packaging, and documentation-heavy shipments',
+            '18+ years of execution across industrial projects; 510+ industry projects completed',
+            'Engineering-led supply aligned to customer drawings and quality standards',
+            'Export-import capability with after sales support per contract scope',
         ],
         body: [
-            'Turnkey projects succeed when technical scope, procurement, manufacturing, and dispatch move together. Gujarat Nippon International supports industrial buyers with a structured, engineering-led approach to end-to-end plant machinery supply—so your team spends less time coordinating vendors and more time preparing for installation and ramp-up.',
-            'We work with customers who value predictable execution: a clear bill of supply, documented specifications, and disciplined timelines. Whether you are commissioning a new line or modernizing an existing mill, we help translate production targets into an equipment and spares plan that reduces commissioning surprises and protects throughput from day one.',
-            'Our turnkey capability is especially relevant where downtime is expensive and schedules are tight. Buyers typically come to us for rolling mill lines, coil processing, galvanizing support, and PEB structures. Beyond supply, we keep procurement aligned with what commissioning teams actually need: correct grades, correct interfaces, and the right supporting components delivered in the right sequence.',
-            'If your requirement includes export delivery, we support packaging and documentation discipline so shipments arrive ready for site acceptance. Share your target capacity, layout constraints, power/utility details, and destination—we will respond with a practical supply plan, lead-time expectations, and the next actions needed to move from concept to dispatch.',
+            'As a cold rolling mill supplier India metal processors use for coordinated line supply, Gujarat Nippon International Pvt Ltd undertakes turnkey design, manufacture and supply with emphasis on a clear bill of supply and disciplined timelines.',
+            'Share target capacity, layout constraints and destination with our Mumbai office. We will respond with scope clarification, lead-time guidance and next steps for quotation and dispatch.',
         ],
-        ctaLabel: 'Talk to our Turnkey specialists',
+        ctaLabel: 'Contact us for turnkey requirements',
     },
     {
         slug: 'industrial-spares-consumables',
         name: 'Industrial Spares & Consumables',
-        metaTitle: 'Spares',
+        pageTitleAbsolute: 'Industrial Spares — Electrical, Hydraulic | Gujarat Nippon',
+        breadcrumbLabel: 'Industrial spares',
+        h1: 'Industrial Spares & Consumables Supply — Electrical, Mechanical, Hydraulic & Pneumatic',
         metaDescription:
-            'Comprehensive supply of electrical, mechanical, hydraulic, and pneumatic spares and consumables for steel plants, manufacturing facilities, and process industries.',
+            'We supply electrical, mechanical, hydraulic and pneumatic spares and consumables to steel plants, automotive facilities and process industries across India and export markets.',
+        supplyHeading: 'What We Supply — Our Industrial Spares & Consumables Range',
+        industriesHeading: 'Industries We Cater To',
+        whyHeading: 'Why Choose Gujarat Nippon for Industrial Spares',
+        overviewHeading: 'Industrial spares supplier Mumbai — repeat orders and uptime',
+        supplyIntro:
+            'We supply mechanical, electrical, hydraulic and pneumatic spares and consumables as per customer specifications, with focus on correct grades and timely delivery for maintenance and production teams.',
+        industriesIntro:
+            'We cater to steel plants, automotive facilities, plastics and moulding lines, chemical and process plants, and other manufacturing sites in domestic and export markets.',
+        whyIntro:
+            'We help consolidate spares sourcing under one roof, with competitive pricing where the enquiry permits and dependable documentation on repeat orders.',
         highlights: [
             { label: 'Category', value: 'Electrical • Mechanical • Hydraulic • Pneumatic' },
-            { label: 'Outcome', value: 'Lower downtime risk' },
-            { label: 'Ideal for', value: 'MRO & shutdown windows' },
-            { label: 'Approach', value: 'Spec discipline & repeatability' },
+            { label: 'Ideal for', value: 'MRO & shutdowns' },
+            { label: 'Approach', value: 'Spec as per drawing' },
+            { label: 'Support', value: 'Repeat procurement' },
         ],
         whatWeSupply: [
-            'Electrical spares: switches, panels/components, sensors, cables and industrial essentials',
-            'Mechanical spares and consumables for routine maintenance and breakdown prevention',
-            'Hydraulic and pneumatic components aligned to plant uptime requirements',
-            'Spares standardization support for repeat procurement and faster replenishment cycles',
+            'Electrical spares: switches, sensors, cables, panels and industrial essentials',
+            'Mechanical spares and consumables for routine maintenance',
+            'Hydraulic and pneumatic components for plant uptime',
+            'Standardisation support for commonly used items across sites',
         ],
         whoItsFor: [
-            'Maintenance and purchase teams responsible for uptime in steel plants and manufacturing facilities',
-            'Factories that want to reduce downtime caused by delayed or mismatched spares',
-            'Buyers who need consistent specifications across repeat orders and multiple sites',
+            'Maintenance and purchase teams in steel and manufacturing plants',
+            'Plants reducing downtime from delayed or mismatched spares',
+            'Multi-site buyers needing consistent specifications on repeat orders',
         ],
         whyChoose: [
-            'Specification discipline: reduce mismatch risk with clear technical alignment and repeatability',
-            'Procurement efficiency: consolidate sourcing to cut vendor count and purchasing overhead',
-            'Operational impact: better spares availability protects throughput and lowers downtime cost',
+            'Specification discipline on make, model and criticality',
+            'Strategic alliances with manufacturers for reliable supply',
+            'Packing and documentation suited to export shipments where required',
         ],
         body: [
-            'Spares procurement looks simple until a line stops. The real cost is not the part—it is the downtime, the rework, and the lost dispatch window. Gujarat Nippon International supplies industrial spares and consumables with an uptime-first mindset: right specification, predictable lead times, and repeatable procurement that plant teams can rely on.',
-            'We support buyers who need a dependable supply stream of electrical, mechanical, hydraulic, and pneumatic spares for steel plants, manufacturing facilities, and process industries. Instead of one-off buying, we help customers build consistency: standardizing commonly used items, aligning alternates, and reducing the risk of “almost correct” replacements that fail early or do not fit.',
-            'Our approach is designed for maintenance reality. Plants operate under pressure: breakdowns happen, shutdown windows are short, and procurement must act fast. We help shorten the cycle from requirement to dispatch by keeping specifications clear, documentation organized, and sourcing coordinated—so teams can restore operations quickly and reduce repeat failures.',
-            'If you are managing multiple lines, multiple sites, or export shipments, we can also support packaging and documentation discipline to keep deliveries acceptance-ready. Share your spares list, equipment make/model, criticality ranking, and target timelines. We will respond with availability guidance, recommended standardization options, and a clean RFQ path to move quickly.',
+            'Industrial spares supplier Mumbai teams contact when they need dependable replenishment for electrical, mechanical, hydraulic and pneumatic requirements across steel plants and process industries.',
+            'Send your spares list, equipment details and target dates. We will confirm availability, lead times and quotation steps.',
         ],
-        ctaLabel: 'Talk to our Spares specialists',
+        ctaLabel: 'Contact us for spares enquiries',
     },
     {
         slug: 'industrial-chemicals-lubricants',
         name: 'Chemicals, Grease & Lubricants',
-        metaTitle: 'Chemicals',
+        pageTitleAbsolute: 'Industrial Chemicals & Lubricants — Gujarat Nippon',
+        breadcrumbLabel: 'Chemicals & lubricants',
+        h1: 'Industrial Chemicals, Greases & Lubricants Supply',
         metaDescription:
-            'Industrial chemicals, greases, and lubricants supplied for plant maintenance, equipment health, and process reliability across heavy industry.',
+            'Supply of industrial chemicals, rolling oils, greases, lubricants and rust preventives for steel rolling mills, automotive plants and manufacturing facilities.',
+        supplyHeading: 'What We Supply — Our Chemicals, Greases & Lubricants Range',
+        industriesHeading: 'Industries We Cater To',
+        whyHeading: 'Why Choose Gujarat Nippon for Industrial Chemicals & Lubricants',
+        overviewHeading: 'Industrial chemicals lubricants supplier India — grades and batches',
+        supplyIntro:
+            'We offer greases, lubricants and industrial chemicals for plant maintenance and production processes, supplied as per grade and batch requirements with consistent documentation.',
+        industriesIntro:
+            'We supply steel rolling mills, automotive plants, plastics and moulding facilities, and other process industries where equipment health and repeat procurement matter.',
+        whyIntro:
+            'Maintenance teams benefit from predictable grades, transparent dealings and the option to combine chemical supply with spares and equipment from the same office.',
         highlights: [
-            { label: 'Use case', value: 'Maintenance & reliability' },
-            { label: 'Benefit', value: 'Reduced wear & failures' },
-            { label: 'Fit for', value: 'Preventive maintenance programs' },
-            { label: 'Consistency', value: 'Grades • batches • documentation' },
+            { label: 'Products', value: 'Oils • greases • chemicals' },
+            { label: 'Use', value: 'Maintenance & process' },
+            { label: 'Supply', value: 'Per specification' },
+            { label: 'Markets', value: 'India & export' },
         ],
         whatWeSupply: [
-            'Industrial-grade chemicals for plant operations and maintenance programs',
-            'Greases and lubricants selected to protect equipment health and reduce wear',
-            'Preventive maintenance supplies to stabilize performance and reduce breakdown frequency',
-            'Repeat procurement support: consistent grades, batch discipline, and documentation readiness',
+            'Rolling oils, greases and lubricants for metal processing and general plant use',
+            'Rust preventives and industrial chemicals for maintenance programmes',
+            'Grades supplied as per customer specification and consumption pattern',
+            'Repeat orders with batch discipline and documentation for audit needs',
         ],
         whoItsFor: [
-            'Steel, automotive, plastics, and process industry plants aiming to improve reliability and reduce wear',
-            'Maintenance teams looking to standardize lubricants and reduce premature component failure',
-            'Buyers who require consistent grades and documentation for compliance and repeat ordering',
+            'Steel rolling mills and metal processing plants',
+            'Automotive and general manufacturing maintenance teams',
+            'Buyers standardising lubricants across lines or multiple sites',
         ],
         whyChoose: [
-            'Reliability outcomes: the right chemistry reduces wear, improves consistency, and protects uptime',
-            'Consistency and documentation: keep grades and replenishment predictable across repeat cycles',
-            'Single-partner convenience: combine maintenance inputs with spares and equipment sourcing when needed',
+            'Consistent grades and reliable products for preventive maintenance',
+            'Competitive pricing where the enquiry permits',
+            'Combined supply with spares and plant equipment when scope allows',
         ],
         body: [
-            'In heavy industry, lubrication and maintenance chemistry are not “consumables”—they are reliability tools. Incorrect selection or inconsistent quality can quietly increase wear, drive overheating, accelerate failure, and create quality drift in output. Gujarat Nippon International supplies industrial chemicals, greases, and lubricants with an operational focus: protect equipment health, stabilize performance, and reduce the frequency and severity of breakdowns.',
-            'We work with plants across steel and metal processing, automotive manufacturing, plastics and moulding, and other process industries where uptime matters. Buyers typically approach us to improve maintenance consistency, reduce unplanned stoppages, and simplify procurement by standardizing commonly used products across lines or sites.',
-            'Our supply approach supports predictable purchasing. For teams that run preventive maintenance programs, the key is consistency: the same grade, the same documented specification, and replenishment that arrives on time. That is what enables maintenance planners to control outcomes rather than react to failures. When required, we also align packaging and documentation to buyer compliance needs—especially for export-import programs or multi-location orders.',
-            'To get started, share your equipment list (bearings, gearboxes, hydraulics, rotating equipment), operating conditions, and current consumption patterns. We will help structure a practical supply plan with options that fit your reliability targets, budget, and lead-time constraints—along with a fast path to quotation and dispatch.',
+            'Industrial chemicals lubricants supplier India programmes from Gujarat Nippon International cover rolling oils, greases, rust preventives and related grades for steel, automotive and process plants.',
+            'Share equipment types, operating conditions and monthly consumption. We will advise suitable grades and quotation lead times.',
         ],
-        ctaLabel: 'Talk to our Chemicals & Lubricants specialists',
+        ctaLabel: 'Contact us for chemicals and lubricants',
     },
     {
-        slug: 'equipment',
+        slug: 'capital-equipment',
         name: 'Capital Equipment',
-        metaTitle: 'Capital Equipment',
+        pageTitleAbsolute: 'Capital Equipment — Cranes, Generators | Gujarat Nippon',
+        breadcrumbLabel: 'Capital equipment',
+        h1: 'Capital Equipment Supply — EOT Cranes, Generators & Refractory Materials',
         metaDescription:
-            'Capital equipment sourcing and supply support from Gujarat Nippon International, including export-import coordination for industrial buyers.',
+            'Authorized supply of EOT cranes, industrial generators, gearboxes, refractory materials and packaging machinery from trusted international manufacturers including Zhuoshen and Maker.',
+        supplyHeading: 'What We Supply — Our Capital Equipment Range',
+        industriesHeading: 'Industries We Cater To',
+        whyHeading: 'Why Choose Gujarat Nippon for Capital Equipment',
+        overviewHeading: 'Capital equipment supplier India — sourcing and dispatch',
+        supplyIntro:
+            'We procure and supply capital equipment through established manufacturer associations, with technical clarification, documentation and dispatch planning aligned to project scope.',
+        industriesIntro:
+            'We support steel, plastics, automotive, energy, construction materials and process industries planning expansion, modernization or replacement of critical plant equipment.',
+        whyIntro:
+            'Buyers use our office to reduce vendor fragmentation and keep specifications, packing lists and export paperwork coordinated through one point of contact.',
         highlights: [
-            { label: 'Scope', value: 'Sourcing + delivery coordination' },
-            { label: 'Best for', value: 'Modernization & expansions' },
-            { label: 'Exports', value: 'Documentation-ready shipments' },
-            { label: 'Goal', value: 'On-time, acceptance-ready supply' },
+            { label: 'Scope', value: 'Sourced equipment' },
+            { label: 'Partners', value: 'Zhuoshen • Maker & others' },
+            { label: 'Best for', value: 'Expansion & upgrades' },
+            { label: 'Exports', value: 'Africa • GCC' },
         ],
         whatWeSupply: [
-            'Sourcing and supply of capital equipment aligned to project scope and plant upgrades',
-            'Supplier coordination for documentation, packaging, and dispatch readiness',
-            'Support for modernization and expansion programs where delivery sequencing matters',
-            'Export-import aligned delivery for Africa and GCC markets as required',
+            'EOT cranes and gantry cranes to agreed technical standards',
+            'Industrial generators, gearboxes and packaging machinery',
+            'Refractory materials for high-temperature plant applications',
+            'Documentation, packing and export-import coordination as required',
         ],
         whoItsFor: [
-            'Industrial buyers planning expansion, modernization, or replacement of critical equipment',
-            'Procurement teams that need a reliable partner to consolidate sourcing and reduce vendor risk',
-            'Global buyers who require export-ready documentation and shipment discipline',
+            'Project teams sourcing cranes, generators or packaged machinery',
+            'Plants modernizing utilities, material handling or production lines',
+            'Export buyers needing compliant documentation and dispatch discipline',
         ],
         whyChoose: [
-            'Practical sourcing: align equipment selection to scope, interfaces, and commissioning needs',
-            'Vendor coordination: reduce fragmentation and keep documentation and dispatch under control',
-            'Global readiness: export-import capability for cross-border programs and compliant shipments',
+            'Authorized supply through reputed international manufacturers',
+            'Technical alignment to scope, interfaces and site requirements',
+            '210+ export-import deals; experience across domestic and global programmes',
         ],
         body: [
-            'Capital equipment purchasing is high-stakes: long lead times, tight project schedules, and costly delays when documentation or dispatch readiness slips. Gujarat Nippon International supports industrial buyers with capital equipment sourcing and supply coordination that is built for execution. Our goal is simple—help you receive the right equipment, on time, with the documentation and packaging needed for smooth acceptance and installation.',
-            'We work with buyers across steel, plastics, automotive, energy, and process industries where upgrades and expansions must be delivered without derailing operations. Buyers typically come to us when they want to reduce vendor fragmentation, clarify technical scope, and keep procurement aligned with real-world installation sequencing.',
-            'Our advantage is coordination discipline. In many projects, the biggest risk is not the equipment itself—it is the gap between selection, procurement, fabrication, and dispatch. We help close that gap by keeping specifications aligned, tracking readiness, and ensuring shipments are packaged and documented in a way that supports site acceptance. For export programs, we also support export-import aligned coordination to reduce cross-border friction.',
-            'Share your project scope, target capacity, interfaces, destination, and timeline constraints. We will respond with a practical sourcing path and a clear set of next steps to move quickly from RFQ to dispatch.',
+            'Capital equipment supplier India enquiries often cover EOT cranes, generators, gearboxes, refractory and packaging machinery with long lead times and strict acceptance criteria. We coordinate sourcing and delivery accordingly.',
+            'Contact us with project scope, technical data and destination for quotation and lead-time guidance.',
         ],
-        ctaLabel: 'Talk to our Capital Equipment specialists',
+        ctaLabel: 'Contact us for capital equipment',
     },
     {
         slug: 'plastic-moulding-systems',
         name: 'Plastic Moulding Systems',
-        metaTitle: 'Plastic Moulding Systems',
+        pageTitleAbsolute: 'Plastic Moulding — Injection Machines | Gujarat Nippon',
+        breadcrumbLabel: 'Plastic moulding systems',
+        h1: 'Plastic Moulding Systems — Injection Moulding Machines',
         metaDescription:
             'Plastic moulding systems and manufacturing support from Gujarat Nippon International for high-volume, quality-sensitive production environments.',
+        supplyHeading: 'What We Supply — Our Plastic Moulding Systems Range',
+        industriesHeading: 'Industries We Cater To',
+        whyHeading: 'Why Choose Gujarat Nippon for Plastic Moulding Systems',
+        overviewHeading: 'Injection moulding machine supplier India — lines and support',
+        supplyIntro:
+            'We supply plastic moulding systems and production-aligned spares, consumables and maintenance inputs for injection moulding and processing lines.',
+        industriesIntro:
+            'We cater to plastics and moulding manufacturers, consumer goods producers and plants scaling capacity or stabilising high-volume output.',
+        whyIntro:
+            'We coordinate moulding equipment with greases, lubricants and spares where required, so procurement stays under one roof for repeat programmes.',
         highlights: [
-            { label: 'Focus', value: 'Cycle-time stability' },
-            { label: 'Outcome', value: 'Lower scrap & stoppages' },
-            { label: 'Fit for', value: 'High-volume moulding lines' },
-            { label: 'Support', value: 'Spares + maintenance inputs' },
+            { label: 'Focus', value: 'Injection moulding' },
+            { label: 'Support', value: 'Spares & consumables' },
+            { label: 'Supply', value: 'Per specification' },
+            { label: 'Markets', value: 'Domestic & export' },
         ],
         whatWeSupply: [
-            'Plastic moulding systems aligned to high-volume manufacturing requirements',
-            'Support items, spares, and consumables that protect cycle-time stability and output quality',
-            'Maintenance inputs (chemicals, greases, lubricants) to reduce wear and unplanned stops',
-            'Procurement coordination for scale-ups and multi-line production environments',
+            'Injection moulding systems and related plant equipment',
+            'Spares and consumables for production and maintenance',
+            'Greases, lubricants and chemicals for tooling and machine care',
+            'Procurement coordination for multi-line or expansion projects',
         ],
         whoItsFor: [
-            'Manufacturers using injection moulding and plastic processing who prioritize repeatability and uptime',
-            'Plants facing scrap, cycle-time drift, or frequent stoppages due to spares and maintenance gaps',
-            'Buyers expanding capacity and needing coordinated supply rather than fragmented purchasing',
+            'Injection moulding and plastics processing plants',
+            'High-volume lines needing dependable spares replenishment',
+            'Buyers consolidating moulding supply with maintenance inputs',
         ],
         whyChoose: [
-            'Production-first approach: protect cycle time, reduce scrap, and keep quality predictable',
-            'Faster procurement cycles: clear specifications, repeat ordering discipline, and reliable dispatch',
-            'One-point supply: integrate moulding support with spares and maintenance supplies when needed',
+            'Production-oriented supply with clear specifications',
+            'Repeat order discipline and timely dispatch',
+            'After sales support aligned to the nature of supply',
         ],
         body: [
-            'Plastic moulding operations are won or lost on stability: consistent cycle time, predictable output quality, and minimal downtime. Gujarat Nippon International supports plastics and moulding manufacturers with plastic moulding systems and production-aligned supply programs that help plants run cleaner and more reliably.',
-            'Buyers typically reach out to us when they face common high-volume issues—scrap increases, cycle time slowly drifts, or machines stop more often than planned. In most cases, these problems trace back to procurement gaps: delayed spares, mismatched replacements, or inconsistent maintenance inputs. Our role is to help you structure supply so production teams are not forced into reactive buying.',
-            'We support moulding environments by combining the right systems with the practical support items that keep them operating. That includes spares and consumables, plus maintenance chemistry and lubrication supplies designed to protect tooling and machine components. For plants running multiple lines or scaling output, we also help consolidate sourcing to reduce vendor noise and improve replenishment predictability.',
-            'If you share your product type, target output, operating conditions, and the current pain points (scrap %, cycle time variance, downtime causes), we can shape a practical supply plan and a clear RFQ path. The goal is not just supply—it is operational reliability you can measure.',
+            'Injection moulding machine supplier India customers approach us for equipment, spares and maintenance supplies that protect cycle time and output quality on busy moulding lines.',
+            'Share product type, machine details and current requirements. We will respond with scope options and quotation steps.',
         ],
-        ctaLabel: 'Talk to our Plastics & Moulding specialists',
+        ctaLabel: 'Contact us for moulding systems',
     },
     {
-        slug: 'logic-plastics',
+        slug: 'logic-plastics-manufacturing',
         name: 'Logic Plastics Manufacturing',
-        metaTitle: 'Logic Plastics Manufacturing',
+        pageTitleAbsolute: 'Logic Plastics Manufacturing — Gujarat Nippon',
+        breadcrumbLabel: 'Logic Plastics manufacturing',
+        h1: 'Logic Plastics Manufacturing — High-Volume Production Programmes',
         metaDescription:
             'High-volume plastics manufacturing support from Gujarat Nippon International for consumer goods and industrial buyers, built around repeatability and uptime.',
+        supplyHeading: 'What We Supply — Our Logic Plastics Manufacturing Range',
+        industriesHeading: 'Industries We Cater To',
+        whyHeading: 'Why Choose Gujarat Nippon for Logic Plastics Manufacturing',
+        overviewHeading: 'High-volume plastics manufacturing — supply coordination',
+        supplyIntro:
+            'We support Logic Plastics manufacturing programmes with production-aligned spares, consumables and maintenance materials for steady output and repeat procurement.',
+        industriesIntro:
+            'We cater to consumer goods and FMCG manufacturing, high-volume plastics lines and buyers requiring batch discipline and predictable replenishment.',
+        whyIntro:
+            'Our office coordinates supply with documentation and packing suited to domestic schedules and export programmes where customers ship across regions.',
         highlights: [
-            { label: 'Fit for', value: 'FMCG & consumer goods' },
-            { label: 'Priority', value: 'Repeatability & uptime' },
-            { label: 'Support', value: 'Procurement + production discipline' },
-            { label: 'Global', value: 'Export-ready programs' },
+            { label: 'Fit for', value: 'High-volume FMCG' },
+            { label: 'Priority', value: 'Repeatability' },
+            { label: 'Supply', value: 'Spares & consumables' },
+            { label: 'Support', value: 'Export-ready docs' },
         ],
         whatWeSupply: [
-            'High-volume manufacturing capability support aligned to consistent quality requirements',
-            'Production-aligned spares, consumables, and maintenance inputs for stable operations',
-            'Supply coordination for repeat procurement and predictable replenishment cycles',
-            'Export-ready support for buyers who ship across geographies',
+            'Production-aligned spares and consumables for moulding lines',
+            'Maintenance chemicals and lubricants for machine stability',
+            'Repeat procurement with consistent specifications',
+            'Export-import documentation and dispatch coordination',
         ],
         whoItsFor: [
-            'Consumer goods and FMCG buyers who require repeatability, batch discipline, and predictable delivery',
-            'Manufacturing teams scaling volume and needing procurement to match production speed',
-            'Global buyers who require documentation, packaging discipline, and export-import alignment',
+            'Consumer goods and FMCG plastics manufacturers',
+            'Plants scaling volume or onboarding new products',
+            'Buyers needing dependable inputs during peak production',
         ],
         whyChoose: [
-            'Repeatability mindset: consistency across batches, inputs, and procurement cycles',
-            'Operational discipline: protect uptime so output stays on target during scale-ups',
-            'Buyer readiness: export-import support where documentation and shipment readiness matter',
+            'Focus on consistent grades, batches and replenishment cycles',
+            'Transparent dealings and competitive pricing where permitted',
+            'Single contact for spares, chemicals and related plant supply',
         ],
         body: [
-            'High-volume manufacturing is unforgiving. Small inconsistencies—material inputs, tooling condition, maintenance discipline, or spares availability—quickly show up as scrap, rework, missed dispatches, and customer complaints. Gujarat Nippon International supports high-volume plastics manufacturing requirements through our Logic Plastics manufacturing-aligned supply approach, focused on repeatability, uptime, and predictable delivery.',
-            'This offering is designed for buyers and production teams who need consistency at scale. Whether you are producing consumer goods components or plastics products that must meet tight quality tolerances, the core requirement is the same: stable production, controlled variability, and procurement that does not introduce surprises.',
-            'We support manufacturing programs by keeping production-aligned inputs reliable—spares, consumables, and maintenance materials that protect machine stability. For many plants, the biggest improvement comes from reducing the “unknowns”: standardizing what is ordered, keeping documentation aligned, and ensuring replenishment cycles stay predictable. That is how teams protect cycle time and avoid disruption during peak demand.',
-            'If you are planning a scale-up, onboarding a new product, or stabilizing quality issues, share your target volumes, quality constraints, and current failure patterns (downtime causes, scrap triggers, lead-time gaps). We will propose a practical supply plan and a fast quotation path, and we will guide the next steps to engage specialists and move your RFQ forward.',
+            'Gujarat Nippon International supports high-volume plastics manufacturing customers with Logic Plastics-aligned supply: spares, consumables and maintenance inputs that help protect uptime and output consistency.',
+            'Share target volumes, quality constraints and lead-time requirements. We will propose a practical supply plan and quotation path.',
         ],
-        ctaLabel: 'Talk to our High-Volume Manufacturing specialists',
+        ctaLabel: 'Contact us for manufacturing supply',
     },
 ];
 
@@ -242,22 +338,29 @@ function getProductOrThrow(slug: string): ProductPage {
     return product;
 }
 
-export async function generateMetadata(
-    { params }: { params: Promise<{ slug: string }> }
-): Promise<Metadata> {
+export function generateStaticParams() {
+    return PRODUCTS.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
     const { slug } = await params;
     const p = PRODUCTS.find((x) => x.slug === slug);
     return {
-        title: p?.metaTitle ?? 'Product Details',
+        title: p ? { absolute: p.pageTitleAbsolute } : { absolute: 'Product | Gujarat Nippon' },
         description:
             p?.metaDescription ??
-            "Explore Gujarat Nippon's full range — turnkey plant machinery, industrial spares, chemicals, capital equipment, plastic moulding systems, and logistics manufacturing.",
+            "Gujarat Nippon International offers turnkey plant machineries, industrial spares, chemicals, capital equipment and plastic moulding systems for industrial processing requirements.",
     };
 }
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const product = getProductOrThrow(slug);
+    const related = RELATED[product.slug] ?? [];
 
     return (
         <main className={styles.page}>
@@ -269,11 +372,15 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                 <div className={styles.heroContent}>
                     <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
-                        <Link href="/" className={styles.crumbLink}>Home</Link>
+                        <Link href="/" className={styles.crumbLink}>
+                            Home
+                        </Link>
                         <span className={styles.crumbSep}>/</span>
-                        <Link href="/products" className={styles.crumbLink}>Products</Link>
+                        <Link href="/products" className={styles.crumbLink}>
+                            Products
+                        </Link>
                         <span className={styles.crumbSep}>/</span>
-                        <span>{product.metaTitle}</span>
+                        <span>{product.breadcrumbLabel}</span>
                     </nav>
 
                     <div className={styles.heroLabel}>
@@ -281,9 +388,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         Product
                     </div>
 
-                    <h1 className={styles.title}>
-                        {product.name} — Gujarat Nippon International
-                    </h1>
+                    <h1 className={styles.title}>{product.h1}</h1>
                     <p className={styles.subtitle}>{product.metaDescription}</p>
                 </div>
 
@@ -306,14 +411,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         </section>
 
                         <section className={styles.section}>
-                            <h2 id="supply" className={styles.sectionTitle}>What We Supply</h2>
-                            <p className={styles.text}>
-                                Gujarat Nippon International supplies and coordinates this product line with an
-                                execution-first approach—clear specifications, reliable dispatch discipline, and
-                                procurement aligned to how plants actually operate. The focus is to reduce
-                                procurement friction while protecting uptime, output quality, and commissioning
-                                timelines.
-                            </p>
+                            <h2 id="supply" className={styles.sectionTitle}>
+                                {product.supplyHeading}
+                            </h2>
+                            <p className={styles.text}>{product.supplyIntro}</p>
                             <ul className={styles.list}>
                                 {product.whatWeSupply.map((x) => (
                                     <li key={x}>{x}</li>
@@ -322,13 +423,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         </section>
 
                         <section className={styles.section}>
-                            <h2 id="for" className={styles.sectionTitle}>Who It’s For</h2>
-                            <p className={styles.text}>
-                                This product line is built for industrial buyers who value predictable outcomes:
-                                correct specifications, repeatable procurement, and lead times that do not
-                                disrupt operations. If you are expanding capacity, stabilizing maintenance, or
-                                consolidating vendors, this is the right starting point.
-                            </p>
+                            <h2 id="for" className={styles.sectionTitle}>
+                                {product.industriesHeading}
+                            </h2>
+                            <p className={styles.text}>{product.industriesIntro}</p>
                             <ul className={styles.list}>
                                 {product.whoItsFor.map((x) => (
                                     <li key={x}>{x}</li>
@@ -337,13 +435,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         </section>
 
                         <section className={styles.section}>
-                            <h2 id="why" className={styles.sectionTitle}>Why Choose Gujarat Nippon</h2>
-                            <p className={styles.text}>
-                                Buyers choose us when they want more than a supplier—they want a partner that can
-                                keep scope clear, move fast, and stay consistent across repeat orders. We bring
-                                cross-category capability (equipment, spares, maintenance inputs) and export-import
-                                readiness for global supply programs.
-                            </p>
+                            <h2 id="why" className={styles.sectionTitle}>
+                                {product.whyHeading}
+                            </h2>
+                            <p className={styles.text}>{product.whyIntro}</p>
                             <ul className={styles.list}>
                                 {product.whyChoose.map((x) => (
                                     <li key={x}>{x}</li>
@@ -352,12 +447,30 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         </section>
 
                         <section className={styles.section}>
-                            <h2 id="overview" className={styles.sectionTitle}>Overview</h2>
+                            <h2 id="overview" className={styles.sectionTitle}>
+                                {product.overviewHeading}
+                            </h2>
                             {product.body.map((para) => (
                                 <p key={para} className={styles.text}>
                                     {para}
                                 </p>
                             ))}
+                        </section>
+
+                        <section className={styles.section} aria-label="Related pages">
+                            <h2 id="related" className={styles.sectionTitle}>
+                                Related pages
+                            </h2>
+                            <p className={styles.text}>
+                                {related.map((l, i) => (
+                                    <span key={l.href}>
+                                        {i > 0 ? ' · ' : null}
+                                        <Link href={l.href}>{l.anchor}</Link>
+                                    </span>
+                                ))}
+                                {related.length > 0 ? ' · ' : null}
+                                <Link href="/contact">send us your project requirement</Link>
+                            </p>
                         </section>
                     </div>
 
@@ -365,16 +478,27 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         <div className={styles.ctaCard}>
                             <div className={styles.sectionNav} aria-label="On this page">
                                 <div className={styles.sectionNavTitle}>On this page</div>
-                                <a className={styles.sectionNavLink} href="#supply">What we supply</a>
-                                <a className={styles.sectionNavLink} href="#for">Who it’s for</a>
-                                <a className={styles.sectionNavLink} href="#why">Why choose us</a>
-                                <a className={styles.sectionNavLink} href="#overview">Overview</a>
+                                <a className={styles.sectionNavLink} href="#supply">
+                                    What we supply
+                                </a>
+                                <a className={styles.sectionNavLink} href="#for">
+                                    Industries we cater to
+                                </a>
+                                <a className={styles.sectionNavLink} href="#why">
+                                    Why choose Gujarat Nippon
+                                </a>
+                                <a className={styles.sectionNavLink} href="#overview">
+                                    Overview
+                                </a>
+                                <a className={styles.sectionNavLink} href="#related">
+                                    Related pages
+                                </a>
                             </div>
 
-                            <h2 className={styles.ctaTitle}>Request a Quote</h2>
+                            <h2 className={styles.ctaTitle}>Request a quotation</h2>
                             <p className={styles.ctaText}>
-                                Share your scope (equipment list / spares list), quantities, target timelines, and destination.
-                                We’ll respond with lead times, key clarifications, and next steps.
+                                Share scope, quantities, target timelines and destination. We will respond with lead
+                                times and next steps.
                             </p>
                             <Link href="/contact" className={styles.ctaButton}>
                                 {product.ctaLabel} →
@@ -382,7 +506,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                             <div className={styles.quickLinks}>
                                 <div className={styles.ctaText} style={{ marginTop: 0 }}>
-                                    Prefer browsing first?
+                                    Further reading
                                 </div>
                                 <Link href="/industries" className={styles.quickLink}>
                                     Explore industries →

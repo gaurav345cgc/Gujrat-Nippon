@@ -33,8 +33,8 @@ function ServiceCard({ svc }: { svc: any }) {
 export default function HomeServices() {
     const services = [
         {
-            title: "Turnkey Plant Engineering",
-            description: "We design, manufacture, and supply complete plant machinery setups on a turnkey basis for industrial processing facilities.",
+            title: "Plant and Machinery Engineering",
+            description: "We undertake design, manufacture and supply of plant and machineries for metal processing and allied industries, including rolling mill lines, tube mills, slitting and cut-to-length lines, and related project support as per customer specifications and agreed delivery terms.",
             bgColor: "#0077C0",
             textColor: "#FFFFFF",
             image: "/services1.jpg",
@@ -42,8 +42,8 @@ export default function HomeServices() {
             btnColor: "#0077C0"
         },
         {
-            title: "Equipment Refurbishment Services",
-            description: "We restore and rebuild high-wear heavy machinery components to exact original specifications using advanced automated welding processes.",
+            title: "Equipment Refurbishment",
+            description: "We carry out revamping and repair of heavy-wear machinery and components to agreed technical standards, including weld rebuild, machining and inspection, with the objective of reducing downtime and restoring reliable operation.",
             bgColor: "#0077C0",
             textColor: "#FFFFFF",
             image: "/service2.jpg",
@@ -52,7 +52,7 @@ export default function HomeServices() {
         },
         {
             title: "Modernization and Retrofitting",
-            description: "We upgrade and revamp legacy mechanical infrastructure and electrical systems to enhance overall plant productivity and efficiency.",
+            description: "We provide modernization and retrofitting of existing mechanical and electrical plant, including furnaces, slitting lines, strip galvanising and colour coating lines, to improve productivity and align equipment with current operating requirements.",
             bgColor: "#0077C0",
             textColor: "#FFFFFF",
             image: "/service3.jpg",
@@ -60,8 +60,8 @@ export default function HomeServices() {
             btnColor: "#0077C0"
         },
         {
-            title: "Strategic Industrial Sourcing",
-            description: "We globally procure and supply specialized industrial spares, chemicals, consumables, and capital equipment from trusted international manufacturers.",
+            title: "Industrial Sourcing and Supply",
+            description: "We procure and supply industrial spares, chemicals, greases, lubricants and capital equipment through strategic alliances with manufacturers, with competitive pricing and dependable documentation for domestic and export shipments.",
             bgColor: "#0077C0",
             textColor: "#FFFFFF",
             image: "/services2.jpg",
@@ -80,12 +80,12 @@ export default function HomeServices() {
                     <div className={styles.titleContainer}>
                         <h2 className={styles.title}>Our Services</h2>
                         <p className={styles.description}>
-                            Innovative solutions in turnkey plant engineering, retrofitting, and capital equipment supply to enhance efficiency and productivity across industries.
+                            We provide plant engineering, equipment refurbishment, modernization, industrial spares and consumables supply, and capital equipment sourcing in a well-defined and planned manner, with emphasis on quality, execution and after sales support for customer requirements.
                         </p>
                     </div>
                     <div className={styles.actionContainer}>
                         <div className={styles.learnMoreBtn}>
-                            Our services <span className={styles.arrow}>→</span>
+                            View our services <span className={styles.arrow}>→</span>
                         </div>
                     </div>
                 </div>

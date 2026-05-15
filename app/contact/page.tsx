@@ -3,9 +3,9 @@ import styles from './Contact.module.css';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Contact Us',
+    title: { absolute: 'Contact — Mumbai MIDC | Gujarat Nippon International' },
     description:
-        'Contact Gujarat Nippon International at our Mumbai MIDC office for industrial machinery quotes, engineering consultations, and export-import inquiries.',
+        'Contact Gujarat Nippon International at our Mumbai MIDC office for turnkey project enquiries, industrial machinery requirements and export-import consultations.',
 };
 
 export default function ContactPage() {
@@ -14,6 +14,16 @@ export default function ContactPage() {
 
 
             <div className={styles.container}>
+                <header className={styles.pageHeader}>
+                    <h1 className={styles.pageH1}>Contact Us</h1>
+                    <p className={styles.pageIntro}>
+                        Turnkey project enquiry Mumbai teams submit through this page is routed to our engineering
+                        and supply desk at the Navyug Industrial Estate office. Please include scope, drawings or
+                        bill of material where available, quantities, required dates and destination so that we may
+                        respond with lead times, clarifications and next steps for industrial machinery, spares,
+                        chemicals or capital equipment requirements.
+                    </p>
+                </header>
 
                 <div className={styles.contactLayout}>
                     {/* Left Column: Company Information */}

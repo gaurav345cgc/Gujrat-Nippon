@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from '../Industries.module.css';
-
 type IndustryPage = {
     slug: string;
     name: string;
@@ -14,7 +13,6 @@ type IndustryPage = {
         description: string;
     };
 };
-
 const INDUSTRIES: IndustryPage[] = [
     {
         slug: 'steel-metal-processing',
@@ -39,7 +37,7 @@ const INDUSTRIES: IndustryPage[] = [
             { slug: 'turnkey-plant-engineering', label: 'Turnkey Plant & Machineries' },
             { slug: 'industrial-spares-consumables', label: 'Industrial Spares & Consumables' },
             { slug: 'industrial-chemicals-lubricants', label: 'Chemicals, Grease & Lubricants' },
-            { slug: 'equipment', label: 'Capital Equipment' },
+            { slug: 'capital-equipment', label: 'Capital Equipment' },
         ],
         seo: {
             title: 'Steel & Metal Processing Solutions — Gujarat Nippon International',
@@ -69,7 +67,7 @@ const INDUSTRIES: IndustryPage[] = [
         relatedProducts: [
             { slug: 'industrial-spares-consumables', label: 'Industrial Spares & Consumables' },
             { slug: 'industrial-chemicals-lubricants', label: 'Chemicals, Grease & Lubricants' },
-            { slug: 'equipment', label: 'Capital Equipment' },
+            { slug: 'capital-equipment', label: 'Capital Equipment' },
         ],
         seo: {
             title: 'Automotive Solutions — Gujarat Nippon International',
@@ -100,7 +98,7 @@ const INDUSTRIES: IndustryPage[] = [
             { slug: 'plastic-moulding-systems', label: 'Plastic Moulding Systems' },
             { slug: 'industrial-spares-consumables', label: 'Industrial Spares & Consumables' },
             { slug: 'industrial-chemicals-lubricants', label: 'Chemicals, Grease & Lubricants' },
-            { slug: 'logic-plastics', label: 'Logic Plastics Manufacturing' },
+            { slug: 'logic-plastics-manufacturing', label: 'Logic Plastics Manufacturing' },
         ],
         seo: {
             title: 'Plastics & Moulding Solutions — Gujarat Nippon International',
@@ -130,7 +128,7 @@ const INDUSTRIES: IndustryPage[] = [
         relatedProducts: [
             { slug: 'industrial-chemicals-lubricants', label: 'Chemicals, Grease & Lubricants' },
             { slug: 'industrial-spares-consumables', label: 'Industrial Spares & Consumables' },
-            { slug: 'equipment', label: 'Capital Equipment' },
+            { slug: 'capital-equipment', label: 'Capital Equipment' },
         ],
         seo: {
             title: 'Chemical Manufacturing Solutions — Gujarat Nippon International',
@@ -158,7 +156,7 @@ const INDUSTRIES: IndustryPage[] = [
             'Experience supporting Africa and GCC trade lanes for industrial buyers.',
         ],
         relatedProducts: [
-            { slug: 'equipment', label: 'Capital Equipment' },
+            { slug: 'capital-equipment', label: 'Capital Equipment' },
             { slug: 'turnkey-plant-engineering', label: 'Turnkey Plant & Machineries' },
             { slug: 'industrial-spares-consumables', label: 'Industrial Spares & Consumables' },
         ],
@@ -190,7 +188,7 @@ const INDUSTRIES: IndustryPage[] = [
         relatedProducts: [
             { slug: 'industrial-spares-consumables', label: 'Industrial Spares & Consumables' },
             { slug: 'industrial-chemicals-lubricants', label: 'Chemicals, Grease & Lubricants' },
-            { slug: 'equipment', label: 'Capital Equipment' },
+            { slug: 'capital-equipment', label: 'Capital Equipment' },
         ],
         seo: {
             title: 'Energy & Power Solutions — Gujarat Nippon International',
@@ -219,7 +217,7 @@ const INDUSTRIES: IndustryPage[] = [
         ],
         relatedProducts: [
             { slug: 'industrial-spares-consumables', label: 'Industrial Spares & Consumables' },
-            { slug: 'equipment', label: 'Capital Equipment' },
+            { slug: 'capital-equipment', label: 'Capital Equipment' },
             { slug: 'industrial-chemicals-lubricants', label: 'Chemicals, Grease & Lubricants' },
         ],
         seo: {
@@ -248,7 +246,7 @@ const INDUSTRIES: IndustryPage[] = [
             'Vendor consolidation approach to reduce procurement complexity for plant teams.',
         ],
         relatedProducts: [
-            { slug: 'logic-plastics', label: 'Logic Plastics Manufacturing' },
+            { slug: 'logic-plastics-manufacturing', label: 'Logic Plastics Manufacturing' },
             { slug: 'plastic-moulding-systems', label: 'Plastic Moulding Systems' },
             { slug: 'industrial-spares-consumables', label: 'Industrial Spares & Consumables' },
             { slug: 'industrial-chemicals-lubricants', label: 'Chemicals, Grease & Lubricants' },
@@ -341,4 +339,3 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
         </main>
     );
 }
-

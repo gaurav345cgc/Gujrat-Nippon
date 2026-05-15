@@ -5,44 +5,44 @@ import styles from './HomeAdvantage.module.css';
 
 const capabilities = [
     {
-        title: "Turnkey Industrial Plant Engineering",
-        text: "We execute comprehensive end-to-end design, manufacturing, and supply of robust plant setups and heavy machinery. Our turnkey capabilities specifically cater to metal processing facilities, encompassing hot and cold rolling mills, tube mills, strip galvanizing lines, and deep drawing presses. We also design and supply complete Pre-Engineered Building (PEB) infrastructure.",
-        cta: "Explore Turnkey Solutions"
+        title: "Plant and Machinery for Metal Processing",
+        text: "We undertake design, manufacture and supply of plant and machineries for metal processing industries, including hot and cold rolling mill lines, tube mill lines, slitting and cut-to-length lines, strip galvanising and colour coating lines, deep drawing presses, heat treatment furnaces and related equipment, executed in accordance with customer requirements and agreed quality standards. Complete project supply can be arranged where the contract scope requires it.",
+        cta: "Enquire for plant and machinery"
     },
     {
-        title: "Advanced Machinery Refurbishment",
-        text: "We drastically reduce plant downtime by restoring high-wear heavy machinery to exact OEM specifications. Our advanced repair capabilities include Automated Weld Overlay (WOL) for rebuilding vertical roller mills up to 80mm thick, Submerged Arc Welding (SAW) for kiln shells, Non-Destructive Testing (NDT), and precision CNC machining.",
-        cta: "View Refurbishment Expertise"
+        title: "Machinery Refurbishment and Repair",
+        text: "We carry out revamping of existing projects and refurbishment of heavy-wear components to agreed drawings and specifications, including weld rebuild, machining and non-destructive testing where applicable, with the objective of restoring dependable operation and reducing unplanned downtime.",
+        cta: "Contact us for refurbishment"
     },
     {
-        title: "Plant Modernization & Retrofitting",
-        text: "We specialize in upgrading legacy mechanical and electrical infrastructure to align with modern productivity standards. Our engineering teams expertly revamp existing industrial setups—including heat treatment furnaces, slitting lines, and color coating machinery—to maximize operational efficiency, improve output quality, and minimize overall running costs.",
-        cta: "Upgrade Your Facility"
+        title: "Plant Modernization and Retrofitting",
+        text: "We provide retrofitting and modernization of mechanical and electrical systems in existing plants, including upgrades to slitting lines, colour coating lines and furnace installations, so that equipment continues to meet production and safety expectations under current operating conditions.",
+        cta: "Discuss modernization scope"
     },
     {
-        title: "Strategic Capital Equipment Sourcing",
-        text: "Leveraging authorized partnerships with world-class international manufacturers, we procure and supply mission-critical capital equipment. Our robust catalog spans surface and underground mining drill rigs, automated packaging and strapping systems, and heavy material handling infrastructure like stacker-reclaimers and EOT cranes.",
-        cta: "Discover Strategic Sourcing"
+        title: "Capital Equipment Supply",
+        text: "We supply capital equipment and packaged machinery through established manufacturer associations, with emphasis on technical clarification, documentation and dispatch planning. We cater to project-specific and repeat-order requirements in domestic and international markets.",
+        cta: "Request equipment quotation"
     },
     {
-        title: "Comprehensive Industrial Spares Supply",
-        text: "We serve as a single-point global sourcing hub for highly specialized plant components, preventing costly operational halts. Our procurement network supplies reliable mechanical, electrical, hydraulic, and pneumatic spares—ranging from heavy-duty gearboxes and industrial pumps to precision valves and coupling elements.",
-        cta: "Browse Spare Parts"
+        title: "Industrial Spares and Components",
+        text: "We maintain supply arrangements for mechanical, electrical, hydraulic and pneumatic spares and components for steel plants and process industries, with focus on correct specification, reliable quality and timely delivery to support maintenance schedules.",
+        cta: "Send spares enquiry"
     },
     {
-        title: "Specialized Industrial Consumables",
-        text: "We sustain continuous manufacturing lines through the reliable supply of high-grade, sector-specific consumables. Our portfolio includes high-alumina refractory materials for furnaces, specialized resins and adhesives (like Urea Formaldehyde and Melamine) for MDF production, industrial lubricants, and precision CNC-sharpened cutting tools.",
-        cta: "View Consumables Catalog"
+        title: "Industrial Chemicals, Greases and Lubricants",
+        text: "We offer greases, lubricants and industrial chemicals for plant maintenance and production processes, supplied as per customer specifications and batch requirements, with commitment to consistent grades and transparent documentation.",
+        cta: "Request product details"
     },
     {
-        title: "Power Engineering & Electrical Systems",
-        text: "To guarantee uninterrupted facility operations, we engineer and supply complete industrial power and control solutions. Our capabilities include the deployment of robust diesel and gas generator sets, high-capacity transformers, compact substations, solar power panels, and customized low-voltage electrical control panels.",
-        cta: "Explore Electrical Solutions"
+        title: "Power and Electrical Equipment",
+        text: "We supply diesel and gas generator sets, transformers, substations and low-voltage electrical panels for industrial applications, selected to match load, site and regulatory requirements, with support for installation-related coordination where agreed.",
+        cta: "Enquire for electrical supply"
     },
     {
-        title: "Global Procurement & Logistics",
-        text: "Operating as an ISO 9001:2015 certified Star Export House, we seamlessly navigate complex international supply chains. We successfully execute engineering projects and deliver critical industrial supplies to active operations across more than 16 countries, spanning key markets in Africa, the Middle East, Asia, and North America.",
-        cta: "See Global Reach"
+        title: "Export and Project Logistics",
+        text: "We execute export orders and project shipments with attention to packing, documentation and compliance with import regulations in destination countries. Our customers include operations in Africa, the Middle East, Asia and other regions where reliable supply and integrity in dealings are valued.",
+        cta: "Contact for export requirements"
     }
 ];
 
@@ -66,8 +66,8 @@ export default function HomeAdvantage() {
                     <div className={styles.leftCol}>
                         <div className={styles.imageContainer}>
                             <img
-                                src="/engineering.jpg"
-                                alt="Turnkey plant engineering — Gujarat Nippon International"
+                                src="/turnkey-plant-engineering-gujarat-nippon.jpg"
+                                alt="Turnkey plant engineering — Gujarat Nippon International, Mumbai"
                                 className={styles.mainImage}
                             />
                         </div>

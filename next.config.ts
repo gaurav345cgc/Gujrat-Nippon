@@ -24,6 +24,16 @@ const nextConfig: NextConfig = {
         destination: "/products/plastic-moulding-systems",
         permanent: true,
       },
+      {
+        source: "/products/equipment",
+        destination: "/products/capital-equipment",
+        permanent: true,
+      },
+      {
+        source: "/products/logic-plastics",
+        destination: "/products/logic-plastics-manufacturing",
+        permanent: true,
+      },
     ];
   },
 };

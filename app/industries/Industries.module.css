@@ -18,6 +18,17 @@
     line-height: 1.6;
 }
 
+.inlineLink {
+    color: #055f98;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.inlineLink:hover {
+    color: #004070;
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr;

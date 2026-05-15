@@ -48,6 +48,26 @@
     color: #0077C0;
 }
 
+.pageHeader {
+    margin-bottom: 2.5rem;
+}
+
+.pageH1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0077c0;
+    margin: 0 0 1rem;
+    line-height: 1.25;
+}
+
+.pageIntro {
+    margin: 0;
+    max-width: 720px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #333;
+}
+
 .contactLayout {
     display: flex;
     flex-direction: column;
