@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Mrs_Saint_Delafield, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
 import "./globals.css";
 
 const mrsSaintDelafield = Mrs_Saint_Delafield({ subsets: ["latin"], weight: "400", variable: "--font-delafield" });
@@ -22,20 +24,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") ?? "";
+  const isAdmin = pathname.startsWith("/admin");
+
   return (
     <html lang="en" className={`${mrsSaintDelafield.variable} ${inter.variable}`}>
       <body>
-        <SmoothScroll />
-        <Navbar />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        {!isAdmin && <SmoothScroll />}
+        {!isAdmin && <AnalyticsTracker />}
+        {!isAdmin && <Navbar />}
+        <main className={isAdmin ? 'admin-layout-main' : undefined}>{children}</main>
+        {!isAdmin && <Footer />}
       </body>
     </html>
   );
