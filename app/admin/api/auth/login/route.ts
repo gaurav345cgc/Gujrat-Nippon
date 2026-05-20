@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { createClient } from '@/utils/supabase/server';
+import { getOriginValidationError } from '@/lib/auth/origin';
 import { checkLoginRateLimit, recordLoginAttempt } from '@/lib/auth/rate-limit';
 import { writeAuditLog } from '@/lib/auth/audit';
 import { getClientIp, jsonError, jsonOk } from '@/lib/http';
@@ -11,11 +12,9 @@ const loginSchema = z.object({
 
 export async function POST(request: Request) {
   const ip = getClientIp(request);
-  const origin = request.headers.get('origin');
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-
-  if (siteUrl && origin && !origin.startsWith(new URL(siteUrl).origin)) {
-    return jsonError('Invalid request origin.', 403);
+  const originError = getOriginValidationError(request);
+  if (originError) {
+    return jsonError(originError, 403);
   }
 
   const body = await request.json().catch(() => null);

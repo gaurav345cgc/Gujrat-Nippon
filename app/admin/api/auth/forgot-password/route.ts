@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { createClient } from '@/utils/supabase/server';
+import { getOriginValidationError, getSiteUrl } from '@/lib/auth/origin';
 import { checkLoginRateLimit } from '@/lib/auth/rate-limit';
 import { writeAuditLog } from '@/lib/auth/audit';
 import { getClientIp, jsonError, jsonOk } from '@/lib/http';
@@ -13,6 +14,11 @@ const genericMessage =
 
 export async function POST(request: Request) {
   const ip = getClientIp(request);
+  const originError = getOriginValidationError(request);
+  if (originError) {
+    return jsonError(originError, 403);
+  }
+
   const body = await request.json().catch(() => null);
   const parsed = schema.safeParse(body);
 
@@ -27,8 +33,7 @@ export async function POST(request: Request) {
     return jsonError('Too many requests. Try again later.', 429);
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
-  const redirectTo = `${siteUrl}/admin/auth/callback?next=/admin/reset-password`;
+  const redirectTo = `${getSiteUrl(request)}/admin/auth/callback?next=/admin/reset-password`;
 
   const supabase = await createClient();
   await supabase.auth.resetPasswordForEmail(email, { redirectTo });
