@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { createClient } from '@/utils/supabase/client';
@@ -12,7 +13,6 @@ import {
   IconFile,
   IconHelp,
   IconInbox,
-  IconLeaf,
   IconShield,
   IconUserGear,
 } from '@/components/admin/AdminIcons';
@@ -128,10 +128,10 @@ export default function AdminSidebar({ user }: Props) {
     <aside className={`admin-sidebar${collapsed ? ' admin-sidebar--collapsed' : ''}`}>
       <div className="admin-sidebar-brand">
         <span className="admin-sidebar-brand-icon">
-          <IconLeaf />
+          <Image src="/logo.svg" alt="Gujarat Nippon International Pvt Ltd Logo" width={32} height={32} style={{ width: 'auto', height: '32px' }} />
         </span>
         <span className="admin-sidebar-brand-text">
-          <span>GNIPL</span> Admin
+          <span>Gujarat Nippon International Pvt Ltd</span>
         </span>
         <button
           type="button"

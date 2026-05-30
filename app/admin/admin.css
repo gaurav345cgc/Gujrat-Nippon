@@ -1,23 +1,23 @@
 /* GNIPL Admin — Flup-inspired enterprise dashboard design system */
 
 .admin-root {
-  --admin-brand: #1a5336;
-  --admin-brand-hover: #144229;
-  --admin-brand-soft: #e8f3ed;
-  --admin-brand-muted: #c5e0d0;
+  --admin-brand: #0E3386;
+  --admin-brand-hover: #0A2562;
+  --admin-brand-soft: #EAEFF8;
+  --admin-brand-muted: #B3C6E5;
   --admin-bg: #ffffff;
   --admin-surface: #ffffff;
-  --admin-text: #0f2419;
-  --admin-text-secondary: #1a5336;
-  --admin-text-muted: #4a7d63;
-  --admin-border: #c5e0d0;
-  --admin-border-strong: #9fcab4;
+  --admin-text: #0A1924;
+  --admin-text-secondary: #0E3386;
+  --admin-text-muted: #4A5D84;
+  --admin-border: #D2E0F2;
+  --admin-border-strong: #A6C1E3;
   --admin-radius: 10px;
   --admin-radius-sm: 8px;
   --admin-radius-pill: 999px;
-  --admin-shadow-sm: 0 1px 2px rgba(26, 83, 54, 0.06);
-  --admin-shadow: 0 1px 3px rgba(26, 83, 54, 0.08), 0 1px 2px rgba(26, 83, 54, 0.04);
-  --admin-shadow-lg: 0 10px 24px rgba(26, 83, 54, 0.1);
+  --admin-shadow-sm: 0 1px 2px rgba(14, 51, 134, 0.06);
+  --admin-shadow: 0 1px 3px rgba(14, 51, 134, 0.08), 0 1px 2px rgba(14, 51, 134, 0.04);
+  --admin-shadow-lg: 0 10px 24px rgba(14, 51, 134, 0.1);
   --admin-success: #059669;
   --admin-success-bg: #ecfdf5;
   --admin-success-text: #047857;
@@ -133,14 +133,15 @@ main.admin-layout-main {
 .admin-sidebar-brand-text {
   font-weight: 700;
   font-size: 1.05rem;
-  color: var(--admin-text);
+  color: #000000;
   letter-spacing: -0.02em;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .admin-sidebar-brand-text span {
-  color: var(--admin-brand);
+  color: #000000;
 }
 
 .admin-sidebar--collapsed .admin-sidebar-brand-text,
@@ -193,7 +194,7 @@ main.admin-layout-main {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--admin-text-muted);
+  color: #000000;
   padding: 0 0.6rem;
   margin: 0 0 0.4rem;
 }
@@ -214,7 +215,7 @@ main.admin-layout-main {
   gap: 0.65rem;
   padding: 0.55rem 0.75rem;
   border-radius: var(--admin-radius-sm);
-  color: var(--admin-text-secondary);
+  color: #000000;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -228,18 +229,18 @@ main.admin-layout-main {
 
 .admin-nav-link:hover {
   background: var(--admin-brand-soft);
-  color: var(--admin-text);
+  color: #000000;
 }
 
 .admin-nav-link.active {
   background: var(--admin-brand-soft);
-  color: var(--admin-brand);
+  color: #000000;
   font-weight: 600;
 }
 
 .admin-nav-link.active svg {
   opacity: 1;
-  color: var(--admin-brand);
+  color: #000000;
 }
 
 .admin-sidebar--collapsed .admin-nav-link {
@@ -270,7 +271,7 @@ main.admin-layout-main {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--admin-brand) 0%, #2d7a52 100%);
+  background: linear-gradient(135deg, var(--admin-brand) 0%, #0A2562 100%);
   color: #fff;
   font-size: 0.8rem;
   font-weight: 700;
@@ -283,14 +284,14 @@ main.admin-layout-main {
 .admin-user-name {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--admin-text);
+  color: #000000;
   margin: 0;
   line-height: 1.3;
 }
 
 .admin-user-role {
   font-size: 0.75rem;
-  color: var(--admin-text-muted);
+  color: #000000;
   margin: 0;
 }
 
@@ -301,7 +302,7 @@ main.admin-layout-main {
   text-align: center;
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--admin-text-muted);
+  color: #000000;
   background: transparent;
   border: 1px solid var(--admin-border);
   border-radius: var(--admin-radius-sm);
@@ -603,7 +604,7 @@ main.admin-layout-main {
   font-weight: 700;
   padding: 0.1rem 0.45rem;
   border-radius: var(--admin-radius-pill);
-  background: rgba(26, 83, 54, 0.1);
+  background: rgba(0, 119, 192, 0.1);
   color: inherit;
 }
 
@@ -1107,7 +1108,7 @@ main.admin-layout-main {
 }
 
 .admin-table thead {
-  background: var(--admin-brand-soft);
+  background: #0E3386;
 }
 
 .admin-table th {
@@ -1117,7 +1118,7 @@ main.admin-layout-main {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--admin-text-muted);
+  color: #ffffff;
   border-bottom: 1px solid var(--admin-border);
   white-space: nowrap;
 }

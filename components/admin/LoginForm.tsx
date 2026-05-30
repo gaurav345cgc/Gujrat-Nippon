@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { IconLeaf } from '@/components/admin/AdminIcons';
+import Image from 'next/image';
 import { useAdminFeedback } from '@/lib/admin/useAdminFeedback';
 
 export default function LoginForm() {
@@ -40,9 +40,9 @@ export default function LoginForm() {
 
   return (
     <div className="admin-card">
-      <div className="admin-auth-brand">
-        <IconLeaf />
-        <h1>GNIPL Admin</h1>
+      <div className="admin-auth-brand" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+        <Image src="/logo.svg" alt="Gujarat Nippon International Pvt Ltd Logo" width={64} height={64} style={{ width: 'auto', height: '64px', marginBottom: '1rem' }} />
+        <h1 style={{ fontSize: '1.25rem', lineHeight: '1.4' }}>Gujarat Nippon International Pvt Ltd Admin</h1>
       </div>
       <p className="admin-link-muted" style={{ marginTop: 0 }}>
         Sign in to manage brochures, FAQs, and site content.
