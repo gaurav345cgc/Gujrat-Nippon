@@ -28,6 +28,8 @@ type FaqRow = {
   sort_order: number;
   is_active: boolean;
   use_in_chatbot: boolean;
+  button_label: string | null;
+  button_url: string | null;
   updated_at: string;
 };
 
@@ -38,6 +40,8 @@ const emptyCreate = {
   keywords: '',
   language: 'en' as FaqLanguage,
   useInChatbot: true,
+  buttonLabel: '',
+  buttonUrl: '',
 };
 
 type FaqsManagerProps = {
@@ -135,6 +139,8 @@ export default function FaqsManager({ initialFaqs }: FaqsManagerProps) {
         keywords: parseKeywords(create.keywords),
         language: create.language,
         useInChatbot: create.useInChatbot,
+        buttonLabel: create.buttonLabel || null,
+        buttonUrl: create.buttonUrl || null,
       }),
     });
     const data = await res.json();
@@ -159,6 +165,8 @@ export default function FaqsManager({ initialFaqs }: FaqsManagerProps) {
       keywords: f.keywords.join(', '),
       language: (f.language as FaqLanguage) || 'en',
       useInChatbot: f.use_in_chatbot,
+      buttonLabel: f.button_label || '',
+      buttonUrl: f.button_url || '',
     });
     setPreviewId(null);
   }
@@ -176,6 +184,8 @@ export default function FaqsManager({ initialFaqs }: FaqsManagerProps) {
       language: draft.language,
       use_in_chatbot: draft.useInChatbot,
       is_active: draft.useInChatbot,
+      button_label: draft.buttonLabel || null,
+      button_url: draft.buttonUrl || null,
       updated_at: new Date().toISOString(),
     };
     const previous = faqs;
@@ -193,6 +203,8 @@ export default function FaqsManager({ initialFaqs }: FaqsManagerProps) {
         keywords: parseKeywords(draft.keywords),
         language: draft.language,
         useInChatbot: draft.useInChatbot,
+        buttonLabel: draft.buttonLabel || null,
+        buttonUrl: draft.buttonUrl || null,
       }),
     });
     const data = await res.json();
@@ -398,7 +410,27 @@ export default function FaqsManager({ initialFaqs }: FaqsManagerProps) {
           value={create.keywords}
           onChange={(e) => setCreate({ ...create, keywords: e.target.value })}
         />
-        <label htmlFor="faq-lang">Language</label>
+        <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
+          <div style={{ flex: 1 }}>
+            <label htmlFor="faq-btn-label">Button Label (Optional)</label>
+            <input
+              id="faq-btn-label"
+              value={create.buttonLabel}
+              onChange={(e) => setCreate({ ...create, buttonLabel: e.target.value })}
+              placeholder="e.g. View Products"
+            />
+          </div>
+          <div style={{ flex: 1 }}>
+            <label htmlFor="faq-btn-url">Button URL (Optional)</label>
+            <input
+              id="faq-btn-url"
+              value={create.buttonUrl}
+              onChange={(e) => setCreate({ ...create, buttonUrl: e.target.value })}
+              placeholder="e.g. /products"
+            />
+          </div>
+        </div>
+        <label htmlFor="faq-lang" style={{ marginTop: '0.5rem' }}>Language</label>
         <select
           id="faq-lang"
           value={create.language}
@@ -588,6 +620,22 @@ export default function FaqsManager({ initialFaqs }: FaqsManagerProps) {
                             value={editDraft.keywords}
                             onChange={(e) => setEditDraft({ ...editDraft, keywords: e.target.value })}
                           />
+                          <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem', marginBottom: '0.5rem' }}>
+                            <div style={{ flex: 1 }}>
+                              <label>Button Label</label>
+                              <input
+                                value={editDraft.buttonLabel}
+                                onChange={(e) => setEditDraft({ ...editDraft, buttonLabel: e.target.value })}
+                              />
+                            </div>
+                            <div style={{ flex: 1 }}>
+                              <label>Button URL</label>
+                              <input
+                                value={editDraft.buttonUrl}
+                                onChange={(e) => setEditDraft({ ...editDraft, buttonUrl: e.target.value })}
+                              />
+                            </div>
+                          </div>
                           <fieldset className="admin-form-checks">
                             <legend className="admin-form-checks-legend">Chatbot</legend>
                             <label className="admin-form-check">

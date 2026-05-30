@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
 import AnalyticsTracker from "@/components/AnalyticsTracker";
+import RuleBasedChatbot from "@/components/RuleBasedChatbot";
 import "./globals.css";
 
 const mrsSaintDelafield = Mrs_Saint_Delafield({ subsets: ["latin"], weight: "400", variable: "--font-delafield" });
@@ -41,6 +42,7 @@ export default async function RootLayout({
         {!isAdmin && <Navbar />}
         <main className={isAdmin ? 'admin-layout-main' : undefined}>{children}</main>
         {!isAdmin && <Footer />}
+        {!isAdmin && <RuleBasedChatbot />}
       </body>
     </html>
   );

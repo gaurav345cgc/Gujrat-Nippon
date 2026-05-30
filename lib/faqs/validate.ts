@@ -19,6 +19,8 @@ export const faqCreateSchema = z.object({
   language: z.enum(FAQ_LANGUAGES).optional(),
   sortOrder: z.number().int().optional(),
   useInChatbot: z.boolean().optional().default(true),
+  buttonLabel: z.string().max(100).optional().nullable(),
+  buttonUrl: z.string().max(500).optional().nullable(),
 });
 
 export const faqUpdateSchema = faqCreateSchema.partial();

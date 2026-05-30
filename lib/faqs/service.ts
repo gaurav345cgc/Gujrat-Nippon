@@ -25,10 +25,12 @@ export type FaqRecord = {
   created_at: string;
   updated_at: string;
   deleted_at: string | null;
+  button_label: string | null;
+  button_url: string | null;
 };
 
 const FAQ_COLUMNS =
-  'id, question, answer, category, keywords, language, version, sort_order, is_active, use_in_chatbot, last_published_at, created_by, updated_by, created_at, updated_at, deleted_at';
+  'id, question, answer, category, keywords, language, version, sort_order, is_active, use_in_chatbot, last_published_at, created_by, updated_by, created_at, updated_at, deleted_at, button_label, button_url';
 
 function mapRow(row: Record<string, unknown>): FaqRecord {
   return {
@@ -48,6 +50,8 @@ function mapRow(row: Record<string, unknown>): FaqRecord {
     created_at: row.created_at as string,
     updated_at: row.updated_at as string,
     deleted_at: (row.deleted_at as string) ?? null,
+    button_label: (row.button_label as string) ?? null,
+    button_url: (row.button_url as string) ?? null,
   };
 }
 
@@ -83,6 +87,8 @@ async function saveRevision(faq: FaqRecord, actorId: string) {
     language: faq.language,
     is_active: faq.is_active,
     use_in_chatbot: faq.use_in_chatbot,
+    button_label: faq.button_label,
+    button_url: faq.button_url,
     created_by: actorId,
   });
 }
@@ -166,6 +172,8 @@ export async function createFaq(params: {
   language?: FaqLanguage;
   sortOrder?: number;
   useInChatbot?: boolean;
+  buttonLabel?: string | null;
+  buttonUrl?: string | null;
   actorId: string;
 }): Promise<FaqRecord> {
   const question = normalizeFaqQuestion(params.question);
@@ -190,6 +198,8 @@ export async function createFaq(params: {
       sort_order: params.sortOrder ?? (await getNextFaqSortOrder()),
       is_active: useInChatbot,
       use_in_chatbot: useInChatbot,
+      button_label: params.buttonLabel ?? null,
+      button_url: params.buttonUrl ?? null,
       last_published_at: useInChatbot ? now : null,
       created_by: params.actorId,
       updated_by: params.actorId,
@@ -211,6 +221,8 @@ export async function updateFaq(params: {
   language?: FaqLanguage;
   sortOrder?: number;
   useInChatbot?: boolean;
+  buttonLabel?: string | null;
+  buttonUrl?: string | null;
   actorId: string;
 }): Promise<FaqRecord> {
   const existing = await getFaqById(params.id);
@@ -235,6 +247,8 @@ export async function updateFaq(params: {
   if (params.keywords !== undefined) updates.keywords = sanitizeKeywords(params.keywords);
   if (params.language !== undefined) updates.language = params.language;
   if (params.sortOrder !== undefined) updates.sort_order = params.sortOrder;
+  if (params.buttonLabel !== undefined) updates.button_label = params.buttonLabel;
+  if (params.buttonUrl !== undefined) updates.button_url = params.buttonUrl;
 
   if (params.useInChatbot !== undefined) {
     updates.use_in_chatbot = params.useInChatbot;

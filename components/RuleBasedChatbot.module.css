@@ -1,0 +1,453 @@
+.widgetContainer {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.toggleButton {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: #0e3386;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(14, 51, 134, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.toggleButton:hover {
+  transform: translateY(-2px);
+  background: #092a72;
+}
+
+.chatPanel {
+  width: 390px;
+  height: 560px;
+  max-height: calc(100vh - 104px);
+  margin-bottom: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.18);
+  animation: slideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  background: linear-gradient(135deg, #0e3386 0%, #0f4c9a 58%, #176269 100%);
+  color: #ffffff;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.14);
+}
+
+.headerTitle {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.headerSubtitle {
+  margin: 3px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+
+.closeButton {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background:
+    linear-gradient(180deg, rgba(241, 245, 249, 0.95), rgba(248, 250, 252, 0.98)),
+    #f8fafc;
+}
+
+.messageStack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  width: fit-content;
+  max-width: 92%;
+  padding: 11px 13px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  line-height: 1.48;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  animation: messageIn 0.2s ease;
+}
+
+@keyframes messageIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message p {
+  margin: 0;
+}
+
+.botMessage {
+  align-self: flex-start;
+  color: #1e293b;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-bottom-left-radius: 4px;
+}
+
+.userMessage {
+  align-self: flex-end;
+  color: #ffffff;
+  background: #0e3386;
+  border-bottom-right-radius: 4px;
+}
+
+.inlineCta {
+  width: fit-content;
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #0e3386;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.inlineCta:hover {
+  color: #092a72;
+  text-decoration: underline;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.primaryCard {
+  min-height: 104px;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #263447;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #dbe3ee;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.primaryCard:hover {
+  border-color: #0e3386;
+  box-shadow: 0 8px 20px rgba(14, 51, 134, 0.1);
+  transform: translateY(-1px);
+}
+
+.cardIcon {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.cardTitle {
+  max-width: 120px;
+  color: #172033;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.optionPanel {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 12px;
+  animation: panelIn 0.22s ease;
+}
+
+@keyframes panelIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.backButton {
+  margin: 0 0 10px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #64748b;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.backButton:hover {
+  color: #0e3386;
+}
+
+.optionHeader {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #172033;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.optionIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  color: #0e3386;
+  background: #eaf1ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.listView {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.listAction {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #29364a;
+  text-align: left;
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.25;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+  transition: border-color 0.18s ease, color 0.18s ease, background-color 0.18s ease;
+}
+
+.listAction svg {
+  flex: 0 0 auto;
+  color: #7f8da1;
+}
+
+.listAction:hover {
+  color: #0e3386;
+  border-color: #0e3386;
+  background: #f9fbff;
+}
+
+.redirectAction {
+  border-color: rgba(14, 51, 134, 0.25);
+  background: #f4f8ff;
+}
+
+.primaryButton {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 16px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background: #0e3386;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.primaryButton:hover {
+  color: #ffffff;
+  background: #092a72;
+}
+
+.primaryButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.leadForm {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.formIntro {
+  margin: 0;
+  color: #475569;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.leadForm label {
+  display: block;
+  margin-bottom: 4px;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.leadForm input,
+.leadForm textarea {
+  width: 100%;
+  padding: 10px 11px;
+  color: #172033;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.leadForm input:focus,
+.leadForm textarea:focus {
+  outline: none;
+  border-color: #0e3386;
+  box-shadow: 0 0 0 3px rgba(14, 51, 134, 0.1);
+}
+
+.leadForm textarea {
+  min-height: 76px;
+  resize: vertical;
+}
+
+.successMessage {
+  padding: 16px;
+  color: #155e42;
+  text-align: center;
+  background: #e9f8f1;
+  border: 1px solid #bfe9d4;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.successMessage p {
+  margin: 0;
+}
+
+.errorMessage {
+  padding: 10px 12px;
+  color: #991b1b;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .widgetContainer {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .chatPanel {
+    position: fixed;
+    right: 12px;
+    bottom: 86px;
+    width: calc(100vw - 24px);
+    height: min(620px, calc(100vh - 108px));
+    margin-bottom: 0;
+    border-radius: 12px;
+  }
+
+  .content {
+    padding: 14px;
+  }
+
+  .message {
+    max-width: 96%;
+  }
+
+  .primaryCard {
+    min-height: 98px;
+  }
+}

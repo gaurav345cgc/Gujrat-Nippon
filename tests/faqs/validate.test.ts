@@ -13,6 +13,7 @@ describe('FAQ validation', () => {
       question: '   ',
       answer: 'Valid answer.',
       category: 'general',
+      useInChatbot: true,
     });
     assert.equal(result.ok, false);
   });
@@ -22,6 +23,7 @@ describe('FAQ validation', () => {
       question: 'What is GNIPL?',
       answer: '',
       category: 'general',
+      useInChatbot: true,
     });
     assert.equal(result.ok, false);
   });
@@ -31,6 +33,7 @@ describe('FAQ validation', () => {
       question: 'What is GNIPL?',
       answer: 'GNIPL is an industrial supplier.',
       category: 'general',
+      useInChatbot: true,
     });
     assert.equal(result.ok, true);
   });
