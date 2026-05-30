@@ -130,9 +130,10 @@ export default function AdminSidebar({ user }: Props) {
         <span className="admin-sidebar-brand-icon">
           <Image src="/logo.svg" alt="Gujarat Nippon International Pvt Ltd Logo" width={32} height={32} style={{ width: 'auto', height: '32px' }} />
         </span>
-        <span className="admin-sidebar-brand-text">
-          <span>Gujarat Nippon International Pvt Ltd</span>
-        </span>
+        <div className="admin-sidebar-brand-text-container">
+          <span className="admin-sidebar-brandName">Gujarat Nippon</span>
+          <span className="admin-sidebar-companyType">International Pvt Ltd</span>
+        </div>
         <button
           type="button"
           className="admin-sidebar-collapse"
