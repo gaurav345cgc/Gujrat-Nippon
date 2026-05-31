@@ -3,7 +3,17 @@
 import React from 'react';
 import styles from './HomeServices.module.css';
 
-function ServiceCard({ svc }: { svc: any }) {
+type Service = {
+    title: string;
+    description: string;
+    bgColor: string;
+    textColor: string;
+    image: string;
+    btnBg: string;
+    btnColor: string;
+};
+
+function ServiceCard({ svc }: { svc: Service }) {
     return (
         <div
             className={styles.serviceCard}
@@ -31,7 +41,7 @@ function ServiceCard({ svc }: { svc: any }) {
 }
 
 export default function HomeServices() {
-    const services = [
+    const services: Service[] = [
         {
             title: "Plant and Machinery Engineering",
             description: "We undertake design, manufacture and supply of plant and machineries for metal processing and allied industries, including rolling mill lines, tube mills, slitting and cut-to-length lines, and related project support as per customer specifications and agreed delivery terms.",

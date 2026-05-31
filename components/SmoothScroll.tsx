@@ -9,12 +9,12 @@ export default function SmoothScroll() {
             duration: 1.8,
             // Custom easing for a more luxurious, slow decay
             easing: (t: number) => 1 - Math.pow(1 - t, 4), 
-            direction: 'vertical',
-            gestureDirection: 'vertical',
-            smooth: true,
-            smoothTouch: false,
+            orientation: 'vertical',
+            gestureOrientation: 'vertical',
+            smoothWheel: true,
+            syncTouch: false,
             touchMultiplier: 1.5,
-        } as any);
+        });
 
         function raf(time: number) {
             lenis.raf(time);

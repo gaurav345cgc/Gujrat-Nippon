@@ -1,7 +1,8 @@
 /** Escape a value for RFC 4180-style CSV (Excel-safe). */
 export function escapeCsvField(value: string | number | null | undefined): string {
   if (value === null || value === undefined) return '';
-  const s = String(value);
+  const raw = String(value);
+  const s = /^[=+\-@\t\r\n]/.test(raw) ? `'${raw}` : raw;
   if (/[",\r\n]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
   return s;
 }

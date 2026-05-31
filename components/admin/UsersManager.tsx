@@ -59,6 +59,8 @@ export default function UsersManager({ initialUsers }: UsersManagerProps) {
 
   useEffect(() => {
     if (initialUsers) return;
+    // Client fallback when server-provided initial data is unavailable.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     load();
   }, [load, initialUsers]);
 

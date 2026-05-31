@@ -11,12 +11,21 @@ export async function GET(request: Request) {
 
   const statusParam = new URL(request.url).searchParams.get('status');
   const status =
-    statusParam === 'new' || statusParam === 'read' || statusParam === 'archived'
+    statusParam === 'new' ||
+    statusParam === 'contacted' ||
+    statusParam === 'closed' ||
+    statusParam === 'spam' ||
+    statusParam === 'archived'
       ? (statusParam as InquiryRow['status'])
+      : undefined;
+  const sourceParam = new URL(request.url).searchParams.get('source');
+  const source =
+    sourceParam === 'contact' || sourceParam === 'chatbot'
+      ? (sourceParam as InquiryRow['source'])
       : undefined;
 
   try {
-    const inquiries = await listInquiries(EXPORT_LIMIT, status);
+    const inquiries = await listInquiries(EXPORT_LIMIT, status, source);
     const csv = inquiriesToCsv(inquiries);
     const suffix = status ? `-${status}` : '';
     return new Response(csv, {

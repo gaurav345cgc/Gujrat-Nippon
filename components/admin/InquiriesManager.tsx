@@ -9,12 +9,16 @@ import { useAdminReconcile } from '@/lib/admin/useAdminReconcile';
 
 type InquiryRow = {
   id: string;
+  source: 'contact' | 'chatbot';
   name: string;
+  company: string | null;
   email: string;
   phone: string | null;
+  subject: string;
   message: string;
-  status: 'new' | 'read' | 'archived';
+  status: 'new' | 'contacted' | 'closed' | 'spam' | 'archived';
   created_at: string;
+  updated_at: string;
 };
 
 type InquiriesManagerProps = {
@@ -25,7 +29,8 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
   const [inquiries, setInquiries] = useState<InquiryRow[]>(initialInquiries ?? []);
   const [loading, setLoading] = useState(!initialInquiries);
   const [search, setSearch] = useState('');
-  const [statusFilter, setStatusFilter] = useState<'all' | 'new' | 'read' | 'archived'>('all');
+  const [statusFilter, setStatusFilter] = useState<'all' | InquiryRow['status']>('all');
+  const [sourceFilter, setSourceFilter] = useState<'all' | InquiryRow['source']>('all');
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [exporting, setExporting] = useState(false);
   const { setError, success } = useAdminFeedback();
@@ -51,7 +56,9 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
     () => ({
       all: inquiries.length,
       new: inquiries.filter((i) => i.status === 'new').length,
-      read: inquiries.filter((i) => i.status === 'read').length,
+      contacted: inquiries.filter((i) => i.status === 'contacted').length,
+      closed: inquiries.filter((i) => i.status === 'closed').length,
+      spam: inquiries.filter((i) => i.status === 'spam').length,
       archived: inquiries.filter((i) => i.status === 'archived').length,
     }),
     [inquiries]
@@ -64,12 +71,15 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
       if (!q) return true;
       return (
         i.name.toLowerCase().includes(q) ||
+        (i.company ?? '').toLowerCase().includes(q) ||
         i.email.toLowerCase().includes(q) ||
         (i.phone ?? '').toLowerCase().includes(q) ||
+        i.subject.toLowerCase().includes(q) ||
+        i.source.toLowerCase().includes(q) ||
         i.message.toLowerCase().includes(q)
       );
-    });
-  }, [inquiries, search, statusFilter]);
+    }).filter((i) => sourceFilter === 'all' || i.source === sourceFilter);
+  }, [inquiries, search, statusFilter, sourceFilter]);
 
   const selected = useMemo(
     () => (selectedId ? inquiries.find((i) => i.id === selectedId) ?? null : null),
@@ -84,11 +94,6 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [selectedId]);
-
-  useEffect(() => {
-    if (!selected || selected.status !== 'new') return;
-    void setStatus(selected.id, 'read', { silent: true });
-  }, [selected?.id]); // eslint-disable-line react-hooks/exhaustive-deps -- mark read once when opening
 
   async function setStatus(
     id: string,
@@ -130,8 +135,10 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
   async function exportAll() {
     setExporting(true);
     try {
-      const qs =
-        statusFilter !== 'all' ? `?status=${encodeURIComponent(statusFilter)}` : '';
+      const params = new URLSearchParams();
+      if (statusFilter !== 'all') params.set('status', statusFilter);
+      if (sourceFilter !== 'all') params.set('source', sourceFilter);
+      const qs = params.toString() ? `?${params.toString()}` : '';
       const res = await fetch(`/admin/api/inquiries/export${qs}`);
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -194,7 +201,9 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
           [
             { key: 'all' as const, label: 'All', count: counts.all },
             { key: 'new' as const, label: 'New', count: counts.new },
-            { key: 'read' as const, label: 'Read', count: counts.read },
+            { key: 'contacted' as const, label: 'Contacted', count: counts.contacted },
+            { key: 'closed' as const, label: 'Closed', count: counts.closed },
+            { key: 'spam' as const, label: 'Spam', count: counts.spam },
             { key: 'archived' as const, label: 'Archived', count: counts.archived },
           ] as const
         ).map((pill) => (
@@ -216,11 +225,21 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
           <span aria-hidden>🔍</span>
           <input
             type="search"
-            placeholder="Search by name, email, or message…"
+            placeholder="Search by name, company, subject, email, or message…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
+        <select
+          className="admin-select-inline"
+          value={sourceFilter}
+          onChange={(e) => setSourceFilter(e.target.value as typeof sourceFilter)}
+          aria-label="Filter by lead source"
+        >
+          <option value="all">All sources</option>
+          <option value="contact">Contact form</option>
+          <option value="chatbot">Chatbot</option>
+        </select>
       </div>
 
       <section className="admin-card admin-card-flat">
@@ -238,9 +257,11 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
               <thead>
                 <tr>
                   <th>Received</th>
+                  <th>Source</th>
                   <th>Name</th>
+                  <th>Company</th>
                   <th>Email</th>
-                  <th>Message</th>
+                  <th>Subject</th>
                   <th>Status</th>
                 </tr>
               </thead>
@@ -273,6 +294,12 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
                       </span>
                     </td>
                     <td>
+                      <span className="admin-status admin-status--neutral">
+                        <span className="admin-status-dot" />
+                        {i.source === 'chatbot' ? 'Chatbot' : 'Contact'}
+                      </span>
+                    </td>
+                    <td>
                       {i.name}
                       {i.phone && (
                         <>
@@ -283,6 +310,7 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
                         </>
                       )}
                     </td>
+                    <td>{i.company ?? '—'}</td>
                     <td>
                       <a
                         href={`mailto:${i.email}`}
@@ -291,7 +319,7 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
                         {i.email}
                       </a>
                     </td>
-                    <td className="admin-table-cell-truncate">{i.message}</td>
+                    <td className="admin-table-cell-truncate">{i.subject}</td>
                     <td onClick={(e) => e.stopPropagation()}>
                       <select
                         className="admin-select-inline"
@@ -302,7 +330,9 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
                         aria-label={`Status for ${i.name}`}
                       >
                         <option value="new">New</option>
-                        <option value="read">Read</option>
+                        <option value="contacted">Contacted</option>
+                        <option value="closed">Closed</option>
+                        <option value="spam">Spam</option>
                         <option value="archived">Archived</option>
                       </select>
                     </td>
@@ -352,6 +382,18 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
 
             <dl className="admin-lead-detail-fields">
               <div>
+                <dt>Source</dt>
+                <dd>{selected.source === 'chatbot' ? 'Chatbot' : 'Contact form'}</dd>
+              </div>
+              <div>
+                <dt>Company</dt>
+                <dd>{selected.company ?? '—'}</dd>
+              </div>
+              <div>
+                <dt>Subject</dt>
+                <dd>{selected.subject}</dd>
+              </div>
+              <div>
                 <dt>Email</dt>
                 <dd>
                   <a href={`mailto:${selected.email}`}>{selected.email}</a>
@@ -376,7 +418,9 @@ export default function InquiriesManager({ initialInquiries }: InquiriesManagerP
                     }
                   >
                     <option value="new">New</option>
-                    <option value="read">Read</option>
+                    <option value="contacted">Contacted</option>
+                    <option value="closed">Closed</option>
+                    <option value="spam">Spam</option>
                     <option value="archived">Archived</option>
                   </select>
                 </dd>

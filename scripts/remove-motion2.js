@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require('fs');
-const path = require('path');
 
 const files = [
     'd:/GitHub/GNIL/gujarat-nippon/components/HomeServices.tsx',

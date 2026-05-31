@@ -6,7 +6,6 @@ import { createAdminClient } from '@/lib/supabase/admin';
 import { validatePasswordStrength } from '@/lib/auth/password';
 import { writeAuditLog } from '@/lib/auth/audit';
 import { getClientIp, jsonError, jsonOk } from '@/lib/http';
-import type { AppRole } from '@/lib/auth/types';
 
 const createUserSchema = z.object({
   name: z.string().min(1).max(120),

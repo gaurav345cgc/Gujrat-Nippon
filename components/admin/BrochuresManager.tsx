@@ -112,10 +112,12 @@ export default function BrochuresManager({ initialBrochures }: BrochuresManagerP
       return;
     }
     setBrochures(data.brochures);
-  }, []);
+  }, [setError]);
 
   useEffect(() => {
     if (initialBrochures) return;
+    // Client fallback when server-provided initial data is unavailable.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     load();
   }, [load, initialBrochures]);
 

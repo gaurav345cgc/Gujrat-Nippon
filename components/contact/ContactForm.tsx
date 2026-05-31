@@ -5,9 +5,12 @@ import styles from '@/app/contact/Contact.module.css';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
+  const [company, setCompany] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [website, setWebsite] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [sent, setSent] = useState(false);
@@ -20,7 +23,16 @@ export default function ContactForm() {
     const res = await fetch('/api/inquiries', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, phone: phone || undefined, message }),
+      body: JSON.stringify({
+        name,
+        company,
+        email,
+        phone: phone || undefined,
+        subject,
+        message,
+        source: 'contact',
+        website,
+      }),
     });
     const data = await res.json().catch(() => ({}));
     setSubmitting(false);
@@ -32,9 +44,12 @@ export default function ContactForm() {
 
     setSent(true);
     setName('');
+    setCompany('');
     setEmail('');
     setPhone('');
+    setSubject('');
     setMessage('');
+    setWebsite('');
   }
 
   if (sent) {
@@ -91,6 +106,22 @@ export default function ContactForm() {
         </div>
 
         <div className={styles.formGroup}>
+          <label htmlFor="company" className={styles.label}>
+            Company
+          </label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            className={styles.input}
+            required
+            placeholder="Company name"
+            value={company}
+            onChange={(e) => setCompany(e.target.value)}
+          />
+        </div>
+
+        <div className={styles.formGroup}>
           <label htmlFor="phone" className={styles.label}>
             Phone Number
           </label>
@@ -102,6 +133,22 @@ export default function ContactForm() {
             placeholder="+91 00000 00000"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
+          />
+        </div>
+
+        <div className={styles.formGroup}>
+          <label htmlFor="subject" className={styles.label}>
+            Subject
+          </label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            className={styles.input}
+            required
+            placeholder="Requirement subject"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
           />
         </div>
 
@@ -119,6 +166,17 @@ export default function ContactForm() {
             onChange={(e) => setMessage(e.target.value)}
           />
         </div>
+
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          style={{ display: 'none' }}
+          aria-hidden="true"
+        />
 
         <button type="submit" className={styles.submitBtn} disabled={submitting}>
           {submitting ? 'Sending…' : 'Send Message'}

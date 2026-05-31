@@ -29,13 +29,20 @@ export type TopBrochureDownload = {
 
 export type InquiryRow = {
   id: string;
+  source: 'contact' | 'chatbot';
   name: string;
+  company: string | null;
   email: string;
   phone: string | null;
+  subject: string;
   message: string;
-  status: 'new' | 'read' | 'archived';
+  status: 'new' | 'contacted' | 'closed' | 'spam' | 'archived';
   created_at: string;
+  updated_at: string;
 };
+
+const INQUIRY_SELECT =
+  'id, source, name, company, email, phone, subject, message, status, created_at, updated_at';
 
 function daysAgoIso(days: number): string {
   const d = new Date();
@@ -66,21 +73,27 @@ export async function recordBrochureDownloadEvent(brochureId: string): Promise<v
 
 export async function createInquiry(input: {
   name: string;
+  company?: string;
   email: string;
   phone?: string;
+  subject: string;
   message: string;
+  source?: InquiryRow['source'];
 }): Promise<InquiryRow> {
   const admin = createAdminClient();
   const { data, error } = await admin
     .from('inquiries')
     .insert({
+      source: input.source ?? 'contact',
       name: input.name.trim(),
+      company: input.company?.trim() || null,
       email: input.email.trim().toLowerCase(),
       phone: input.phone?.trim() || null,
+      subject: input.subject.trim(),
       message: input.message.trim(),
       status: 'new',
     })
-    .select('id, name, email, phone, message, status, created_at')
+    .select(INQUIRY_SELECT)
     .single();
 
   if (error || !data) throw error ?? new Error('Failed to save inquiry');
@@ -195,16 +208,18 @@ export async function getTopBrochureDownloads(
 
 export async function listInquiries(
   limit = 100,
-  status?: InquiryRow['status']
+  status?: InquiryRow['status'],
+  source?: InquiryRow['source']
 ): Promise<InquiryRow[]> {
   const admin = createAdminClient();
   let query = admin
     .from('inquiries')
-    .select('id, name, email, phone, message, status, created_at')
+    .select(INQUIRY_SELECT)
     .order('created_at', { ascending: false })
     .limit(limit);
 
   if (status) query = query.eq('status', status);
+  if (source) query = query.eq('source', source);
 
   const { data, error } = await query;
   if (error) throw error;
@@ -215,7 +230,7 @@ export async function getInquiryById(id: string): Promise<InquiryRow | null> {
   const admin = createAdminClient();
   const { data, error } = await admin
     .from('inquiries')
-    .select('id, name, email, phone, message, status, created_at')
+    .select(INQUIRY_SELECT)
     .eq('id', id)
     .maybeSingle();
 
@@ -230,9 +245,9 @@ export async function updateInquiryStatus(
   const admin = createAdminClient();
   const { data, error } = await admin
     .from('inquiries')
-    .update({ status })
+    .update({ status, updated_at: new Date().toISOString() })
     .eq('id', id)
-    .select('id, name, email, phone, message, status, created_at')
+    .select(INQUIRY_SELECT)
     .single();
 
   if (error || !data) throw error ?? new Error('Update failed');

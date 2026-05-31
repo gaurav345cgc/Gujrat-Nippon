@@ -2,7 +2,6 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import styles from './HomeProducts.module.css';
-import Link from 'next/link';
 import HomeAdvantage from './HomeAdvantage';
 import HomeServices from './HomeServices';
 

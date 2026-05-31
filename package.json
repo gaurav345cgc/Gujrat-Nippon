@@ -14,7 +14,7 @@
     "db:seed:brochures": "npx tsx scripts/seed-brochures.ts",
     "db:setup:storage": "npx tsx scripts/ensure-storage-buckets.ts",
     "db:seed:faqs": "npx tsx scripts/seed-faqs.ts",
-    "test": "node --import tsx --test tests/faqs/validate.test.ts tests/faqs/sanitize.test.ts",
+    "test": "node --import tsx --test tests/faqs/validate.test.ts tests/faqs/sanitize.test.ts tests/admin/csv.test.ts",
     "test:faqs": "node --import tsx --test tests/faqs/validate.test.ts tests/faqs/sanitize.test.ts"
   },
   "dependencies": {

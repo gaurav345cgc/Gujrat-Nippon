@@ -218,6 +218,7 @@ export default function RuleBasedChatbot() {
     email: '',
     phone: '',
     message: '',
+    website: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -279,9 +280,13 @@ export default function RuleBasedChatbot() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: formData.name,
+          company: formData.company,
           email: formData.email,
           phone: formData.phone,
-          message: `Company: ${formData.company || 'N/A'}\n\n[Chatbot Lead]\n${formData.message}`,
+          subject: 'Chatbot human support request',
+          message: formData.message,
+          source: 'chatbot',
+          website: formData.website,
         }),
       });
 
@@ -293,7 +298,7 @@ export default function RuleBasedChatbot() {
 
       setSuccess(true);
       appendMessage('bot', 'Thank you. Your request has been sent to the GNIPL team.');
-      setFormData({ name: '', company: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', company: '', email: '', phone: '', message: '', website: '' });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to submit request');
     } finally {
@@ -425,6 +430,7 @@ export default function RuleBasedChatbot() {
                       <label htmlFor="lead-company">Company</label>
                       <input
                         id="lead-company"
+                        required
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       />
@@ -456,6 +462,15 @@ export default function RuleBasedChatbot() {
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       />
                     </div>
+                    <input
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={formData.website}
+                      onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                      style={{ display: 'none' }}
+                      aria-hidden="true"
+                    />
                     <button type="submit" className={styles.primaryButton} disabled={isSubmitting}>
                       {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>

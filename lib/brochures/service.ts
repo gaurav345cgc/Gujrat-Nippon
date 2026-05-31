@@ -348,15 +348,17 @@ export async function getBrochureForDownload(slug: string) {
 
 export async function incrementDownloadCount(brochureId: string) {
   const admin = createAdminClient();
-  const { data } = await admin.from('brochures').select('download_count').eq('id', brochureId).single();
-  if (!data) return;
-  await Promise.all([
-    admin
-      .from('brochures')
-      .update({ download_count: (data.download_count ?? 0) + 1 })
-      .eq('id', brochureId),
-    recordBrochureDownloadEvent(brochureId),
+  const [{ error: incrementError }, eventResult] = await Promise.all([
+    admin.rpc('increment_brochure_download_count', { p_brochure_id: brochureId }),
+    recordBrochureDownloadEvent(brochureId)
+      .then(() => ({ error: null }))
+      .catch((error) => ({ error })),
   ]);
+
+  if (incrementError) throw incrementError;
+  if (eventResult.error) {
+    console.error('Brochure download event failed', brochureId, eventResult.error);
+  }
   invalidateBrochuresModule();
 }
 

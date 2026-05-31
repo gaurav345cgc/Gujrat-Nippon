@@ -63,12 +63,10 @@ function initials(name: string): string {
 export default function AdminSidebar({ user }: Props) {
   const pathname = usePathname();
   const router = useRouter();
-  const [collapsed, setCollapsed] = useState(false);
-
-  useEffect(() => {
-    const stored = localStorage.getItem('admin-sidebar-collapsed');
-    if (stored === '1') setCollapsed(true);
-  }, []);
+  const [collapsed, setCollapsed] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.localStorage.getItem('admin-sidebar-collapsed') === '1';
+  });
 
   useEffect(() => {
     ADMIN_PREFETCH_ROUTES.forEach((href) => {

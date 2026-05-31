@@ -4,7 +4,7 @@ import { jsonError, jsonOk } from '@/lib/http';
 import { z } from 'zod';
 
 const patchSchema = z.object({
-  status: z.enum(['new', 'read', 'archived']),
+  status: z.enum(['new', 'contacted', 'closed', 'spam', 'archived']),
 });
 
 type RouteContext = { params: Promise<{ id: string }> };
