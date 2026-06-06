@@ -10,7 +10,7 @@ if (typeof globalThis.WebSocket === 'undefined') {
 config({ path: resolve(process.cwd(), '.env.local') });
 config({ path: resolve(process.cwd(), '.env') });
 
-let admin;
+let admin: ReturnType<typeof createAdminClient>;
 try {
   admin = createAdminClient();
 } catch {
