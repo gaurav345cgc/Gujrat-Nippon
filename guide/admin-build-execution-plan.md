@@ -1,12 +1,13 @@
-# GNIPL Admin Panel — Build Map (No CMS)
+# GNIPL Admin Panel — Build Map
 
-**Status:** Active development tracker  
+**Status:** Active development tracker (brochures, FAQs, leads, analytics, users, audit) · **CMS Pages module live** — see [`cms-operator-guide.md`](./cms-operator-guide.md)  
 **Use:** Hand this to Cursor and check boxes as work completes.  
 **Contract reference:** [`admin-implementation-plan.md`](./admin-implementation-plan.md) (full agreement).  
-**Repo:** Next.js 16 · React 19 · TypeScript · PostgreSQL + Prisma (to add).
+**CMS reference:** [`cms-build-execution-plan.md`](./cms-build-execution-plan.md) · [`cms-operator-guide.md`](./cms-operator-guide.md)
 
 > **Scope:** Auth, brochures, FAQs, leads, basic analytics, audit/security, QA, handover.  
-> **Excluded from this build:** CMS page editor (separate project), AI chatbot, CRM/ERP, advanced analytics, multilingual, marketing automation, payments, third-party integrations.
+> **CMS page editing:** Built separately — `/admin/pages` (10 contractual routes). Tracked in [`cms-build-execution-plan.md`](./cms-build-execution-plan.md).  
+> **Still excluded:** AI chatbot, CRM/ERP, advanced analytics, multilingual, marketing automation, payments, third-party integrations.
 
 **Recommended build order:** 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 
@@ -16,12 +17,12 @@
 
 | Area | Today | Action in this build |
 |------|--------|----------------------|
-| `/admin` shell | Exists; fake analytics; CMS nav link | Remove CMS link; wire real modules |
-| Auth | `/api/admin/login` missing | Phase 1 |
-| Brochures | Hardcoded + `public/brochures/` (~96 MB) | Phase 2 → S3 + DB |
-| Contact / chatbot | Forms not persisted | Phase 4 |
-| FAQs | No admin; chatbot stub | Phase 3 |
-| Page copy | Hardcoded in `.tsx` | **Unchanged** until CMS project |
+| `/admin` shell | Exists; Pages, Brochures, FAQs, Leads, Analytics | Wire real modules |
+| Auth | Supabase session | Phase 1 |
+| Brochures | S3 + DB | Phase 2 |
+| Contact / chatbot | Forms persisted | Phase 4 |
+| FAQs | Admin + public API | Phase 3 |
+| Page copy | **CMS** — `/admin/pages` | [`cms-operator-guide.md`](./cms-operator-guide.md) |
 
 ---
 
@@ -348,7 +349,7 @@ Handover must include admin credentials, documentation, source code, database ex
 
 - [ ] Create final Admin and Editor credentials
 - [ ] Deliver admin login instructions
-- [ ] Deliver admin guide: brochures, FAQs, leads, analytics, users (not page CMS)
+- [ ] Deliver admin guide: brochures, FAQs, leads, analytics, users, **and CMS pages** ([`cms-operator-guide.md`](./cms-operator-guide.md))
 - [ ] Deliver source code or repo access
 - [ ] Deliver database export and schema notes
 - [ ] Deliver third-party component and license list
@@ -357,7 +358,7 @@ Handover must include admin credentials, documentation, source code, database ex
 - [ ] Confirm temporary provider access is limited to warranty/support needs
 - [ ] Confirm client data ownership and export readiness
 - [ ] Confirm no hidden dependencies remain
-- [ ] Document CMS as future change-request / separate project
+- [x] CMS page editing — live at `/admin/pages` ([`cms-build-execution-plan.md`](./cms-build-execution-plan.md))
 
 ### Exit criteria
 
@@ -392,8 +393,9 @@ The admin panel is **done** only when the client can:
 3. Review and export leads
 4. See basic analytics (page views, downloads, inquiries)
 5. Receive full documentation and credentials for independent routine use
+6. Edit and publish contractual page copy via CMS ([`cms-operator-guide.md`](./cms-operator-guide.md))
 
-**CMS page editing is not part of this definition of done** — tracked as a separate project.
+**CMS page editing** is delivered as part of the overall admin platform — operator docs in [`cms-operator-guide.md`](./cms-operator-guide.md).
 
 ---
 
@@ -402,7 +404,9 @@ The admin panel is **done** only when the client can:
 | File | Purpose |
 |------|---------|
 | **`admin-build-execution-plan.md`** (this file) | Phase map + checklists for current build |
-| `admin-implementation-plan.md` | Full contract scope (includes CMS for later) |
+| `admin-implementation-plan.md` | Full contract scope |
+| `cms-operator-guide.md` | CMS edit / publish / restore for content editors |
+| `cms-cache-handover.md` | Cache and revalidation behavior |
 | `website-administration-guide.md` | *Create at Phase 8* |
 | `technical-setup.md` | *Create at Phase 8* |
 

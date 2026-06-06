@@ -3,8 +3,14 @@
 import React from 'react';
 import styles from './Footer.module.css';
 import Link from 'next/link';
+import type { ContactInfoPayload } from '@/lib/cms/types';
+import { GLOBAL_CONTACT } from '@/lib/cms/payloads';
 
-export default function Footer() {
+type Props = {
+    contact?: ContactInfoPayload;
+};
+
+export default function Footer({ contact = GLOBAL_CONTACT }: Props) {
     const currentYear = new Date().getFullYear();
 
     return (
@@ -31,21 +37,21 @@ export default function Footer() {
                         <li><Link href="/about">About Us</Link></li>
                         <li><Link href="/products">Products &amp; Services</Link></li>
                         <li><Link href="/industries">Industries Served</Link></li>
+                        <li><Link href="/careers">Careers</Link></li>
                         <li><Link href="/contact">Contact Us</Link></li>
                     </ul>
                 </div>
 
                 {/* Column 3: Contact Info */}
                 <div className={styles.linkCol}>
-                    <h3 className={styles.columnTitle}>Contact Info</h3>
+                    <h3 className={styles.columnTitle}>{contact.heading ?? 'Contact Info'}</h3>
                     <ul className={styles.contactList}>
-                        <li>
-                            21, Navyug Industrial Estate, M.I.D.C Cross Road,<br />
-                            J.B. Nagar, Andheri (East), Mumbai &ndash; 400069
-                        </li>
-                        <li>Tel: +91-22-4099 7000</li>
+                        <li style={{ whiteSpace: 'pre-line' }}>{contact.address}</li>
+                        <li>Tel: {contact.phone}</li>
                         <li>CIN: U51900MH2004PTC149572</li>
-                        <li>Email: <a href="mailto:info@gujaratnippon.com">info@gujaratnippon.com</a></li>
+                        <li>
+                            Email: <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                        </li>
                     </ul>
                 </div>
 

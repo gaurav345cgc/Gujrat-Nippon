@@ -1,26 +1,18 @@
-import { Metadata } from 'next';
+import LegalDocument from '@/components/cms/LegalDocument';
+import { generateCmsMetadata } from '@/lib/cms/metadata';
+import { resolvePublicPage } from '@/lib/cms/gate';
+import type { TextPayload } from '@/lib/cms/types';
 
-export const metadata: Metadata = {
-    title: 'Privacy Policy',
-};
+export const generateMetadata = () => generateCmsMetadata('privacy');
 
-export default function PrivacyPage() {
-    return (
-        <article>
-            <header>
-                <h1>Privacy Policy</h1>
-                <p>Last Updated: February 22, 2026</p>
-            </header>
+export default async function PrivacyPage() {
+  const page = await resolvePublicPage('privacy');
 
-            <section>
-                <h2>1. Information We Collect</h2>
-                <p>We collect information to provide better services to our global customers.</p>
-            </section>
-
-            <section>
-                <h2>2. How We Use Information</h2>
-                <p>Your information is stored securely and used in accordance with GDPR principles.</p>
-            </section>
-        </article>
-    );
+  return (
+    <LegalDocument
+      hero={page.sections.hero as TextPayload}
+      intro={page.sections.intro as TextPayload}
+      bodies={[page.sections.body_1, page.sections.body_2].filter(Boolean) as TextPayload[]}
+    />
+  );
 }

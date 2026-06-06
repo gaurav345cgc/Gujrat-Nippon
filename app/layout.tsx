@@ -4,6 +4,8 @@ import { Mrs_Saint_Delafield, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
+import { getCachedPublishedContactInfo } from "@/lib/cms/cache/queries";
+import { getFallbackContactInfo } from "@/lib/cms/payloads";
 import AnalyticsTracker from "@/components/AnalyticsTracker";
 import "./globals.css";
 
@@ -32,6 +34,8 @@ export default async function RootLayout({
   const headersList = await headers();
   const pathname = headersList.get("x-pathname") ?? "";
   const isAdmin = pathname.startsWith("/admin");
+  const contactPublished = isAdmin ? null : await getCachedPublishedContactInfo();
+  const contact = contactPublished ?? getFallbackContactInfo();
 
   return (
     <html lang="en" className={`${mrsSaintDelafield.variable} ${inter.variable}`}>
@@ -40,7 +44,7 @@ export default async function RootLayout({
         {!isAdmin && <AnalyticsTracker />}
         {!isAdmin && <Navbar />}
         <main className={isAdmin ? 'admin-layout-main' : undefined}>{children}</main>
-        {!isAdmin && <Footer />}
+        {!isAdmin && <Footer contact={contact} />}
       </body>
     </html>
   );

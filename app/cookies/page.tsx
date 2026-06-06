@@ -1,26 +1,18 @@
-import { Metadata } from 'next';
+import LegalDocument from '@/components/cms/LegalDocument';
+import { generateCmsMetadata } from '@/lib/cms/metadata';
+import { resolvePublicPage } from '@/lib/cms/gate';
+import type { TextPayload } from '@/lib/cms/types';
 
-export const metadata: Metadata = {
-    title: 'Cookie Policy',
-};
+export const generateMetadata = () => generateCmsMetadata('cookies');
 
-export default function CookiesPage() {
-    return (
-        <article>
-            <header>
-                <h1>Cookie Policy</h1>
-                <p>How we use cookies and similar technologies.</p>
-            </header>
+export default async function CookiesPage() {
+  const page = await resolvePublicPage('cookies');
 
-            <section>
-                <h2>What Are Cookies?</h2>
-                <p>Cookies are small text files that are placed on your machine to help the site provide a better customer experience.</p>
-            </section>
-
-            <section>
-                <h2>Managing Cookies</h2>
-                <p>You may prefer to disable cookies on this site and on others.</p>
-            </section>
-        </article>
-    );
+  return (
+    <LegalDocument
+      hero={page.sections.hero as TextPayload}
+      intro={page.sections.intro as TextPayload}
+      bodies={[page.sections.body_1, page.sections.body_2].filter(Boolean) as TextPayload[]}
+    />
+  );
 }

@@ -246,9 +246,20 @@
 
 .productLeftHeader {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    gap: 0.5rem;
+}
+
+.productSectionSubheading {
+    margin: 0;
+    text-align: center;
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 42rem;
 }
 
 .newsTitle {
