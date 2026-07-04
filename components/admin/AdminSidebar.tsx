@@ -13,6 +13,7 @@ import {
   IconFile,
   IconHelp,
   IconInbox,
+  IconPages,
   IconShield,
   IconUserGear,
 } from '@/components/admin/AdminIcons';
@@ -31,6 +32,7 @@ type NavItem = {
 
 const contentLinks: NavItem[] = [
   { href: '/admin', label: 'Dashboard', icon: <IconDashboard />, exact: true },
+  { href: '/admin/pages', label: 'Pages', icon: <IconPages /> },
   { href: '/admin/brochures', label: 'Brochures', icon: <IconFile /> },
   { href: '/admin/faqs', label: 'FAQs', icon: <IconHelp /> },
 ];

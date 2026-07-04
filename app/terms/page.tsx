@@ -1,26 +1,18 @@
-import { Metadata } from 'next';
+import LegalDocument from '@/components/cms/LegalDocument';
+import { generateCmsMetadata } from '@/lib/cms/metadata';
+import { resolvePublicPage } from '@/lib/cms/gate';
+import type { TextPayload } from '@/lib/cms/types';
 
-export const metadata: Metadata = {
-    title: 'Terms of Service',
-};
+export const generateMetadata = () => generateCmsMetadata('terms');
 
-export default function TermsPage() {
-    return (
-        <article>
-            <header>
-                <h1>Terms of Service</h1>
-                <p>Last Updated: February 22, 2026</p>
-            </header>
+export default async function TermsPage() {
+  const page = await resolvePublicPage('terms');
 
-            <section>
-                <h2>1. Acceptance of Terms</h2>
-                <p>By accessing our website, you agree to be bound by these terms.</p>
-            </section>
-
-            <section>
-                <h2>2. Use License</h2>
-                <p>Permission is granted to temporarily download one copy of the materials.</p>
-            </section>
-        </article>
-    );
+  return (
+    <LegalDocument
+      hero={page.sections.hero as TextPayload}
+      intro={page.sections.intro as TextPayload}
+      bodies={[page.sections.body_1, page.sections.body_2].filter(Boolean) as TextPayload[]}
+    />
+  );
 }

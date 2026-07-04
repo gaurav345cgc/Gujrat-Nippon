@@ -1,41 +1,38 @@
 import React from 'react';
 import styles from './Contact.module.css';
-import { Metadata } from 'next';
 import ContactForm from '@/components/contact/ContactForm';
+import { generateCmsMetadata } from '@/lib/cms/metadata';
+import { resolvePublicPage } from '@/lib/cms/gate';
+import type { ContactInfoPayload, TextPayload } from '@/lib/cms/types';
 
-export const metadata: Metadata = {
-  title: { absolute: 'Contact — Mumbai MIDC | Gujarat Nippon International' },
-  description:
-    'Contact Gujarat Nippon International at our Mumbai MIDC office for turnkey project enquiries, industrial machinery requirements and export-import consultations.',
-};
+export const generateMetadata = () => generateCmsMetadata('contact');
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const page = await resolvePublicPage('contact');
+  const pageHeader = page.sections.page_header as TextPayload;
+  const contactInfo = page.sections.contact_info as ContactInfoPayload;
+  const formIntro = page.sections.form_intro as TextPayload;
+
   return (
     <main className={styles.pageWrapper}>
       <div className={styles.container}>
         <header className={styles.pageHeader}>
-          <h1 className={styles.pageH1}>Contact Us</h1>
-          <p className={styles.pageIntro}>
-            Turnkey project enquiry Mumbai teams submit through this page is routed to our engineering
-            and supply desk at the Navyug Industrial Estate office. Please include scope, drawings or
-            bill of material where available, quantities, required dates and destination so that we may
-            respond with lead times, clarifications and next steps for industrial machinery, spares,
-            chemicals or capital equipment requirements.
-          </p>
+          <h1 className={styles.pageH1}>{pageHeader.heading ?? 'Contact Us'}</h1>
+          <p className={styles.pageIntro}>{pageHeader.body}</p>
         </header>
 
         <div className={styles.contactLayout}>
           <section className={styles.companyInfo}>
-            <h2 className={styles.companyName}>Gujarat Nippon International Pvt. Ltd.</h2>
+            <h2 className={styles.companyName}>
+              {contactInfo.heading ?? 'Gujarat Nippon International Pvt. Ltd.'}
+            </h2>
 
-            <address className={styles.infoBlock} style={{ fontStyle: 'normal' }}>
-              21, Navyug Industrial Estate, M.I.D.C Cross Road,
-              <br />
-              J.B. Nagar, Andheri (East), Mumbai – 400069
+            <address className={styles.infoBlock} style={{ fontStyle: 'normal', whiteSpace: 'pre-line' }}>
+              {contactInfo.address}
             </address>
 
             <div className={styles.infoBlock}>
-              <span className={styles.infoLabel}>Tel:</span> +91-22-4099 7000
+              <span className={styles.infoLabel}>Tel:</span> {contactInfo.phone}
             </div>
 
             <div className={styles.infoBlock}>
@@ -44,11 +41,25 @@ export default function ContactPage() {
 
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Email:</span>{' '}
-              <a href="mailto:info@gujaratnippon.com">info@gujaratnippon.com</a>
+              <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
             </div>
+
+            {contactInfo.workingHours ? (
+              <div className={styles.infoBlock}>
+                <span className={styles.infoLabel}>Hours:</span> {contactInfo.workingHours}
+              </div>
+            ) : null}
           </section>
 
-          <ContactForm />
+          <div>
+            {formIntro.heading || formIntro.body ? (
+              <div className={styles.infoBlock} style={{ marginBottom: '1.5rem' }}>
+                {formIntro.heading ? <h2 className={styles.companyName}>{formIntro.heading}</h2> : null}
+                <p className={styles.pageIntro}>{formIntro.body}</p>
+              </div>
+            ) : null}
+            <ContactForm />
+          </div>
         </div>
       </div>
     </main>

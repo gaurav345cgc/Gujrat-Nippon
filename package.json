@@ -14,8 +14,14 @@
     "db:seed:brochures": "npx tsx scripts/seed-brochures.ts",
     "db:setup:storage": "npx tsx scripts/ensure-storage-buckets.ts",
     "db:seed:faqs": "npx tsx scripts/seed-faqs.ts",
-    "test": "node --import tsx --test tests/faqs/validate.test.ts tests/faqs/sanitize.test.ts tests/admin/csv.test.ts",
-    "test:faqs": "node --import tsx --test tests/faqs/validate.test.ts tests/faqs/sanitize.test.ts"
+    "db:seed:cms": "npx tsx scripts/seed-cms-pages.ts",
+    "db:export:cms-defaults": "npx tsx scripts/export-cms-defaults.ts",
+    "db:migrate:cms": "npx tsx scripts/apply-cms-migration.ts",
+    "test": "node --import tsx --test tests/faqs/validate.test.ts tests/faqs/sanitize.test.ts tests/cms/validate.test.ts tests/cms/sanitize.test.ts tests/cms/editor.test.ts tests/cms/seo.test.ts",
+    "test:faqs": "node --import tsx --test tests/faqs/validate.test.ts tests/faqs/sanitize.test.ts",
+    "test:cms": "node --import tsx --test tests/cms/validate.test.ts tests/cms/sanitize.test.ts tests/cms/editor.test.ts tests/cms/seo.test.ts tests/cms/map-hero.test.ts",
+    "qa:cms:phase4": "npx tsx scripts/qa-cms-phase4.ts",
+    "qa:cms:phase5": "npx tsx scripts/qa-cms-phase5-seo.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.19.0",
@@ -35,11 +41,13 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
+    "@types/pg": "^8.20.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/ws": "^8.18.1",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "pg": "^8.21.0",
     "prisma": "^6.19.0",
     "tsx": "^4.22.3",
     "typescript": "^5"

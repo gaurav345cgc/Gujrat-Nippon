@@ -1,30 +1,8 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
+import { getCachedPublishedPagesForSitemap } from '@/lib/cms/cache/queries';
+import { buildSitemapEntries } from '@/lib/cms/sitemap';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-    return [
-        {
-            url: 'https://www.corporatewebsite.com',
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 1,
-        },
-        {
-            url: 'https://www.corporatewebsite.com/about',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://www.corporatewebsite.com/contact',
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://www.corporatewebsite.com/products',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-    ];
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const pages = await getCachedPublishedPagesForSitemap();
+  return buildSitemapEntries(pages);
 }

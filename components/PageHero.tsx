@@ -9,7 +9,8 @@ interface PageHeroProps {
     titleAccent: string;
     titleRest?: string;
     description: string;
-    bgImage: string;
+    bgImage?: string;
+    variant?: 'default' | 'industries';
 }
 
 export default function PageHero({
@@ -18,37 +19,45 @@ export default function PageHero({
     titleAccent,
     titleRest,
     description,
-    bgImage
+    bgImage = '',
+    variant = 'default',
 }: PageHeroProps) {
+    const isIndustries = variant === 'industries';
+    const heroClass = isIndustries ? `${styles.hero} ${styles.heroIndustries}` : styles.hero;
+    const showBgImage = Boolean(bgImage) && !isIndustries;
+
     return (
-        <section className={styles.hero}>
-            <div className={styles.heroBg} style={{ backgroundImage: `url('${bgImage}')` }} />
+        <section className={heroClass}>
+            {showBgImage ? (
+                <div className={styles.heroBg} style={{ backgroundImage: `url('${bgImage}')` }} />
+            ) : null}
             <div className={styles.heroOverlay} />
 
-            {/* Geometric accents */}
             <div className={styles.heroAccentRing} />
             <div className={styles.heroAccentRing2} />
 
             <div className={styles.heroContent}>
-                {/* Label */}
-                <div className={styles.heroLabel}>
-                    <span className={styles.labelDot} />
-                    {label}
-                </div>
+                {label ? (
+                    <div className={styles.heroLabel}>
+                        <span className={styles.labelDot} />
+                        {label}
+                    </div>
+                ) : null}
 
-                {/* Heading */}
                 <h1 className={styles.heroTitle}>
-                    {titleMain} <span className={styles.heroTitleAccent}>{titleAccent}</span>
-                    {titleRest && <><br />{titleRest}</>}
+                    {titleMain}{' '}
+                    {titleAccent ? <span className={styles.heroTitleAccent}>{titleAccent}</span> : null}
+                    {titleRest ? (
+                        <>
+                            <br />
+                            {titleRest}
+                        </>
+                    ) : null}
                 </h1>
 
-                {/* Sub */}
-                <p className={styles.heroSub}>
-                    {description}
-                </p>
+                {description ? <p className={styles.heroSub}>{description}</p> : null}
             </div>
 
-            {/* Bottom shape */}
             <div className={styles.heroShapeBar}>
                 <div className={styles.heroShapeTeal} />
                 <div className={styles.heroShapeWhite} />

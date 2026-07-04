@@ -129,9 +129,92 @@
     flex: 1;
     height: 100%;
     background-color: #f7f9fc;
-    /* Default page bg, can be overridden */
     clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
     margin-left: -40px;
+}
+
+/* Industries page — dark gradient hero with blue rings (no photo) */
+.heroIndustries {
+    height: 100vh;
+    height: 100svh;
+    min-height: 680px;
+    max-height: none;
+    align-items: center;
+}
+
+.heroIndustries .heroOverlay {
+    background: linear-gradient(
+        105deg,
+        #1f242b 0%,
+        #2b3038 42%,
+        #4a515c 72%,
+        #6b7280 100%
+    );
+}
+
+.heroIndustries .heroContent {
+    padding: 6rem 2rem 4rem;
+}
+
+.heroIndustries .heroLabel {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
+
+.heroIndustries .labelDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+}
+
+.heroIndustries .heroTitle {
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.heroIndustries .heroTitleAccent {
+    color: #7dd3fc;
+    font-weight: 600;
+}
+
+.heroIndustries .heroSub {
+    color: rgba(255, 255, 255, 0.88);
+    max-width: 560px;
+}
+
+.heroIndustries .heroAccentRing {
+    width: 760px;
+    height: 760px;
+    border-width: 110px;
+    top: 50%;
+    right: -220px;
+    bottom: auto;
+    transform: translateY(-58%);
+    opacity: 0.95;
+}
+
+.heroIndustries .heroAccentRing2 {
+    width: 520px;
+    height: 520px;
+    border-width: 78px;
+    top: 18%;
+    right: 60px;
+    bottom: auto;
+    opacity: 0.85;
+}
+
+.heroIndustries .heroShapeBar {
+    height: 44px;
+}
+
+.heroIndustries .heroShapeTeal {
+    width: 300px;
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+}
+
+.heroIndustries .heroShapeWhite {
+    background-color: #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -150,5 +233,15 @@
     .heroAccentRing,
     .heroAccentRing2 {
         display: none;
+    }
+
+    .heroIndustries {
+        min-height: 100vh;
+        height: 100svh;
+        padding-bottom: 0;
+    }
+
+    .heroIndustries .heroContent {
+        padding: 5.5rem 1.5rem 4rem;
     }
 }

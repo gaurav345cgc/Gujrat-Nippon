@@ -42,6 +42,20 @@ export function IconDashboard({ className }: IconProps) {
   );
 }
 
+export function IconPages({ className }: IconProps) {
+  return (
+    <svg className={className} width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M6 4h8l4 4v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4Z"
+        stroke="currentColor"
+        strokeWidth="1.75"
+      />
+      <path d="M14 4v4h4" stroke="currentColor" strokeWidth="1.75" />
+      <path d="M8 12h8M8 16h5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function IconFile({ className }: IconProps) {
   return (
     <svg className={className} width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
