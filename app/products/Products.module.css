@@ -1,14 +1,17 @@
-.container {
+.pageWrapper {
     background-color: transparent;
     min-height: 100vh;
-    padding: 8rem 2rem 4rem;
-    /* Restored padding-top so navbar doesn't cover it */
+}
+
+.container {
+    background-color: transparent;
+    padding: 4rem 2rem 4rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .pageTitle {
-    color: #1A1A1A;
+    color: #0077C0;
     font-size: 3rem;
     font-weight: 800;
     text-align: center;
@@ -35,79 +38,33 @@
 
 .productCard {
     background-color: #FFFFFF;
-    border-radius: 8px;
-    padding: 2rem;
-    /* Increased padding */
-    min-height: 200px;
-    /* Added min height */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-    border: 1px solid #F0F0F0;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border-radius: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-
-    /* Initial state for slide-up animation */
-    opacity: 0;
-    transform: translateY(30px);
-    animation: slideUpFade 0.6s ease-out forwards;
+    transition: transform 0.3s ease;
 }
 
-/* Staggered Delay for exactly 6 dummy products */
-.productCard:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.productCard:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.productCard:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.productCard:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.productCard:nth-child(5) {
-    animation-delay: 0.5s;
-}
-
-.productCard:nth-child(6) {
-    animation-delay: 0.6s;
-}
 
 .productCard:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+    box-shadow: none;
 }
 
 .cardTag {
-    color: #DD3333;
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-size: 0.85rem;
+    color: #0077C0;
     text-transform: uppercase;
-    margin-bottom: 0.75rem;
-    letter-spacing: 0.5px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
 .imageContainer {
+    position: relative;
     width: 100%;
-    height: 300px;
-    /* Force same height as HomeAbout mobile first */
+    aspect-ratio: 1.5;
     overflow: hidden;
-    border-radius: 12px;
-    border: 4px solid #FFFFFF;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    /* Exact shadow from HomeAbout */
-    margin-bottom: 1.5rem;
-}
-
-@media (min-width: 1024px) {
-    .imageContainer {
-        height: 340px;
-        /* Exact height from HomeAbout desktop */
-    }
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%, 0 88%);
 }
 
 .productImage {
@@ -121,50 +78,52 @@
     transform: scale(1.05);
 }
 
-.cardFooter {
+.cardBody {
+    padding: 1.5rem 0;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: auto;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
 }
 
 .productName {
-    color: #1A1A1A;
-    font-size: 1.25rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0077C0;
+    line-height: 1.25;
+    margin: 0;
 }
 
 .productDescription {
-    color: #718096;
-    font-size: 0.75rem;
-    font-weight: 500;
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.6;
     margin: 0;
+}
+
+.learnMore {
+    margin-top: auto;
+    display: inline-block;
+    border: 1.5px solid #0077C0;
+    border-radius: 999px;
+    padding: 0.65rem 2.2rem;
+    color: #0077C0;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 800;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    width: fit-content;
+    transition: all 0.25s ease;
+    cursor: pointer;
 }
 
-.cardArrow {
-    color: #1A1A1A;
-    font-size: 1.2rem;
-    margin-bottom: 0.2rem;
-    transition: transform 0.2s ease;
+.learnMore:hover {
+    background: #0077C0;
+    color: #FFF;
 }
 
-.productCard:hover .cardArrow {
-    transform: translateX(4px);
-}
 
-@keyframes slideUpFade {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 @media (max-width: 768px) {
     .container {

@@ -5,7 +5,7 @@ import styles from './History.module.css';
 
 const historyData = [
     { year: '2010', title: 'First Major Projects', desc: 'Successfully delivered automation and control solutions for manufacturing and energy industries.' },
-    { year: '2013', title: 'Entering Aviation', desc: 'Started working with airport infrastructure, providing runway lighting systems and control equipment.' },
+    { year: '2013', title: 'Expanding Operations', desc: 'Started working with large scale infrastructure, providing automation systems and control equipment.' },
     { year: '2016', title: 'Digital Transformation', desc: 'Introduced IoT and digital monitoring solutions.' },
     { year: '2019', title: 'Global Reach', desc: 'Expanded our operations globally.' },
 ];

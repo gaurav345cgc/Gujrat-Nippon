@@ -9,7 +9,7 @@ export async function GET() {
         // Example DB query: const dbDocs = await prisma.document.findMany();
 
         return NextResponse.json(documents);
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: 'Failed to fetch documents' }, { status: 500 });
     }
 }

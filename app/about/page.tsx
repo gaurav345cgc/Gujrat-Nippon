@@ -1,8 +1,13 @@
-"use client";
-
+import { Metadata } from 'next';
 import React from 'react';
 import styles from './About.module.css';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: { absolute: 'Industrial Engineering Company Mumbai — Gujarat Nippon' },
+    description:
+        'Established in 2004, Gujarat Nippon International is a Mumbai-based engineering and industrial supply company with 18+ years of execution across 510+ projects worldwide.',
+};
 
 export default function AboutPage() {
     return (
@@ -12,14 +17,15 @@ export default function AboutPage() {
                 <div className={styles.heroOverlay}></div>
                 <div className={styles.heroContent}>
                     <h1 className={styles.heroTitle}>
-                        About <span className={styles.heroTitleAccent}>Gujarat Nippon.</span>
+                        <span className={styles.heroTitleAbout}>About </span>
+                        <span className={styles.heroTitleBrand}>Gujarat Nippon</span>
                     </h1>
+                    <p className={styles.heroTitleLine2}>International Pvt Ltd.</p>
                     <p className={styles.heroSubtitle}>
-                        A globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution.
+                        A globally focused engineering solutions and industrial supply company dedicated to providing
+                        industries with cutting-edge machinery, technological expertise, and dependable project
+                        execution.
                     </p>
-                    <button className={styles.heroBtn}>
-                        GET QUOTE <ArrowRight size={16} />
-                    </button>
                 </div>
                 <div className={styles.heroShapeContainer}>
                     <div className={styles.heroShapeRed}></div>
@@ -33,7 +39,6 @@ export default function AboutPage() {
 
                 {/* 2. ABOUT COMPANY (with stats) */}
                 <section className={styles.darkSection}>
-                    <div className={styles.watermark}>S</div>
                     <div className={styles.sharedContainer}>
                         <div className={styles.twoColumnRow}>
                             <div className={styles.aboutLeftTitleCol}>
@@ -64,7 +69,10 @@ export default function AboutPage() {
 
                                 <div className={styles.aboutTextContainer}>
                                     <div className={styles.aboutText}>
-                                        Gujarat Nippon International Private Limited is a globally focused engineering solutions and industrial supply company dedicated to providing industries with cutting-edge machinery, technological expertise, and dependable project execution. Our mission is to provide efficient, precise, and excellent execution that empowers our business partners to achieve operational excellence and long-term success.
+                                        Established in 2004, Gujarat Nippon International Pvt Ltd is an industrial engineering company Mumbai-based metal processors and export buyers approach for coordinated supply. We undertake design, manufacture and supply of plant and machineries for metal processing industries on a turnkey basis where the contract requires it, and we carry out revamping, retrofitting and modernization of existing lines and equipment in accordance with drawings and quality standards agreed with the customer.
+                                    </div>
+                                    <div className={styles.aboutText} style={{ marginTop: '1.25rem' }}>
+                                        Our scope includes hot and cold rolling mill lines, tube mill lines, slitting and cut-to-length lines, strip galvanising and colour coating lines, deep drawing presses, heat treatment furnaces and related equipment. We maintain strategic alliances with manufacturers for industrial spares, greases, lubricants, industrial chemicals and capital equipment, with emphasis on reliable products and services, timely execution, transparent dealings, competitive pricing where the enquiry permits, total customer satisfaction and after sales support under one roof for domestic and international markets.
                                     </div>
                                 </div>
 
@@ -87,7 +95,7 @@ export default function AboutPage() {
                             </div>
                             <div className={styles.rightContentCol}>
                                 <div className={styles.projectsTopDesc}>
-                                    We combine hard work, smart execution, and strong industry networks to deliver exceptional value. Our commitments are a testament to our dedication to our business partners.
+                                    We undertake each assignment in a well-defined and planned manner, with technical expertise, dependable quality and integrity in export-import transactions. Long-term business relationships and customer requirements remain central to how we coordinate engineering solutions, documentation and dispatch.
                                 </div>
                             </div>
                         </div>
@@ -96,46 +104,31 @@ export default function AboutPage() {
                             <div className={styles.projectsTabs}>
                                 <div className={styles.tabBox}>
                                     <div className={styles.tabTextContainer}>
-                                        <span className={styles.tabTitle}>Strong Networks</span>
-                                        <span className={styles.tabSubtitle}>Core Value</span>
+                                        <span className={styles.tabTitle}>Manufacturer alliances</span>
                                     </div>
                                     <span className={styles.tabNumber}>01</span>
                                 </div>
                                 <div className={styles.tabBox}>
                                     <div className={styles.tabTextContainer}>
-                                        <span className={styles.tabTitle}>Smart Work</span>
-                                        <span className={styles.tabSubtitle}>Core Value</span>
+                                        <span className={styles.tabTitle}>Timely execution</span>
                                     </div>
                                     <span className={styles.tabNumber}>02</span>
                                 </div>
                                 <div className={styles.tabBoxActive}>
                                     <div className={styles.tabTextContainer}>
-                                        <span className={styles.tabTitle}>Hard Work</span>
-                                        <span className={styles.tabSubtitle}>Core Value</span>
+                                        <span className={styles.tabTitle}>Quality standards</span>
                                     </div>
                                     <span className={styles.tabNumber}>03</span>
+                                </div>
+                                <div className={styles.tabBox}>
+                                    <div className={styles.tabTextContainer}>
+                                        <span className={styles.tabTitle}>After sales support</span>
+                                    </div>
+                                    <span className={styles.tabNumber}>04</span>
                                 </div>
                             </div>
                             <div className={styles.projectsImageWrapper}>
                                 <div className={styles.projectsImage}></div>
-                                <div className={styles.projectsFloatingCard}>
-                                    <div className={styles.cardHeader}>
-                                        <span className={styles.cardNum}>04</span>
-                                        <span className={styles.cardSubtitle}>Our Team</span>
-                                    </div>
-                                    <h3 className={styles.cardTitle}>Our Commitments</h3>
-                                    <div className={styles.cardText}>
-                                        <ul style={{ listStyleType: 'none', padding: 0 }}>
-                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#4A9E96', fontWeight: 'bold' }}>•</span> Professional Excellence</li>
-                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#4A9E96', fontWeight: 'bold' }}>•</span> Efficient Execution</li>
-                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#4A9E96', fontWeight: 'bold' }}>•</span> Strategic Problem-Solving</li>
-                                            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#4A9E96', fontWeight: 'bold' }}>•</span> Client-Centric Service</li>
-                                        </ul>
-                                    </div>
-                                    <button className={styles.learnMoreBtn}>
-                                        LEARN MORE
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -150,36 +143,36 @@ export default function AboutPage() {
                             Our <span className={styles.newsTitleAccent}>Goals</span>
                         </h2>
                         <div style={{ display: 'flex', gap: '10px' }}>
-                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid #E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7B7492', cursor: 'pointer' }}><ArrowLeft size={20} /></div>
-                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#4A9E96', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', cursor: 'pointer' }}><ArrowRight size={20} /></div>
+                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid #E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0077C0', cursor: 'pointer' }}><ArrowLeft size={20} /></div>
+                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#0077C0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', cursor: 'pointer' }}><ArrowRight size={20} /></div>
                         </div>
                     </div>
 
                     <div className={styles.newsGrid}>
                         {/* Goal 1 */}
                         <div className={styles.newsCard}>
-                            <img src="/industries_served.png" alt="People" className={styles.newsCardImg} />
+                            <img src="/people_about.jpg" alt="Gujarat Nippon International team — industrial engineering company Mumbai" className={styles.newsCardImg} />
                             <div className={styles.newsCardBody}>
                                 <h3 className={styles.newsCardTitle}>People</h3>
-                                <p className={styles.newsCardText}>To create equitable opportunities for growth and success for all our stakeholders — employees, partners, and clients — by fostering innovation, collaboration, and trust.</p>
+                                <p className={styles.newsCardText}>We maintain fair and honest dealings with employees, associates and customers, with emphasis on clear communication, technical training where required, and disciplined execution so that plant and machinery enquiries, spares orders and export shipments are handled in a professional manner.</p>
                                 <button className={styles.newsCardBtn}>READ MORE <ArrowRight size={14} style={{ marginLeft: '4px' }} /></button>
                             </div>
                         </div>
                         {/* Goal 2 */}
                         <div className={styles.newsCard}>
-                            <img src="/hero_image.png" alt="Planet" className={styles.newsCardImg} />
+                            <img src="/planet_about.jpg" alt="Industrial operations and responsible supply — Gujarat Nippon International" className={styles.newsCardImg} />
                             <div className={styles.newsCardBody}>
                                 <h3 className={styles.newsCardTitle}>Planet</h3>
-                                <p className={styles.newsCardText}>To serve industries across the globe with sustainable and responsible engineering solutions that contribute positively to society and the environment.</p>
+                                <p className={styles.newsCardText}>We cater to customers across India, Africa, the GCC and other regions with packing, documentation and supply practices aligned to applicable regulations and site requirements, and we support project and repeat orders without overstating capability beyond the agreed bill of supply.</p>
                                 <button className={styles.newsCardBtn}>READ MORE <ArrowRight size={14} style={{ marginLeft: '4px' }} /></button>
                             </div>
                         </div>
                         {/* Goal 3 */}
                         <div className={styles.newsCard}>
-                            <img src="/export_image.png" alt="Profits" className={styles.newsCardImg} />
+                            <img src="/profit_about.jpg" alt="Commercial discipline and customer value — Gujarat Nippon International" className={styles.newsCardImg} />
                             <div className={styles.newsCardBody}>
                                 <h3 className={styles.newsCardTitle}>Profits</h3>
-                                <p className={styles.newsCardText}>To deliver measurable value to our business partners by ensuring minimum operating costs, maximum efficiency, and enhanced profitability across every project.</p>
+                                <p className={styles.newsCardText}>We offer competitive pricing where the enquiry permits, customized solutions as per customer specifications, and dependable quality so that buyers achieve predictable lifecycle value from plant machinery, spares and capital equipment sourced through our office.</p>
                                 <button className={styles.newsCardBtn}>READ MORE <ArrowRight size={14} style={{ marginLeft: '4px' }} /></button>
                             </div>
                         </div>
@@ -199,25 +192,25 @@ export default function AboutPage() {
                             Vision & <br /><span className={styles.testiTitleAccent}>Mission</span>
                         </h2>
                         <div style={{ display: 'flex', gap: '10px', marginTop: '1rem' }}>
-                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid #E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7B7492', cursor: 'pointer' }}><ArrowLeft size={20} /></div>
-                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#7B7492', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', cursor: 'pointer' }}><ArrowRight size={20} /></div>
+                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid #E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0077C0', cursor: 'pointer' }}><ArrowLeft size={20} /></div>
+                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#0077C0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', cursor: 'pointer' }}><ArrowRight size={20} /></div>
                         </div>
                     </div>
 
                     <div className={styles.testiGrid}>
                         <div className={styles.testiCard}>
                             <p className={styles.testiText}>
-                                "To become a globally recognized one-stop hub for comprehensive engineering solutions and industrial supplies, known for reliability, efficiency, and execution excellence."
+                                To be recognized as a trusted engineering and industrial supply company for metal processing and allied sectors, known for reliable products and services, technical expertise and total customer satisfaction in domestic and international markets.
                             </p>
                             <span className={styles.testiAuthor}>Our Vision</span>
-                            <span style={{ color: '#7B7492', fontSize: '0.8rem', marginTop: '4px' }}>Gujarat Nippon</span>
+                            <span style={{ color: '#0077C0', fontSize: '0.8rem', marginTop: '4px' }}>Gujarat Nippon International Pvt Ltd</span>
                         </div>
                         <div className={styles.testiCard}>
                             <p className={styles.testiText}>
-                                "To provide efficient, precise, and excellent execution that empowers our business partners to achieve operational excellence and long-term success."
+                                To provide engineering solutions and diversified industrial products in a well-defined and planned manner: design, manufacture and supply of plant and machineries, revamping and modernization, industrial spares, greases, lubricants and capital equipment, with commitment to quality standards, transparent dealings and after sales support aligned to customer requirements.
                             </p>
                             <span className={styles.testiAuthor}>Our Mission</span>
-                            <span style={{ color: '#7B7492', fontSize: '0.8rem', marginTop: '4px' }}>Gujarat Nippon</span>
+                            <span style={{ color: '#0077C0', fontSize: '0.8rem', marginTop: '4px' }}>Gujarat Nippon International Pvt Ltd</span>
                         </div>
                     </div>
 
@@ -227,46 +220,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* 6. DOUBLE IMAGE SPLIT */}
-            <section className={styles.doubleImageSection}>
-                <div className={styles.doubleImageBlock} style={{ backgroundImage: "url('/export_image.png')" }}>
-                    <div className={styles.doubleImageContent}>
-                        <h2 className={styles.doubleImageTitle}>
-                            What efficiency<br />can make <span className={styles.doubleImageTitleAccent}>changes.</span>
-                        </h2>
-                    </div>
-                </div>
-                <div className={styles.doubleImageBlock} style={{ backgroundImage: "url('/industries_served.png')" }}>
-                    <div className={styles.doubleImageContent}>
-                        <h2 className={styles.doubleImageTitle} style={{ marginBottom: '1.5rem' }}>
-                            Start your<br />engineering journey.<br /><span className={styles.doubleImageTitleAccent}>Today.</span>
-                        </h2>
-                        <button className={styles.heroBtn}>
-                            CONSULT US <ArrowRight size={16} />
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            {/* 7. NEWSLETTER */}
-            <section className={styles.newsletterSection}>
-                <div className={styles.newsletterContainer}>
-                    <div className={styles.newsletterLeft}>
-                        <h2 className={styles.newsletterTitle}>
-                            Stay up to date on<br />the latest <span className={styles.newsletterTitleAccent}>Gujarat Nippon news</span>
-                        </h2>
-                    </div>
-                    <div className={styles.newsletterRight}>
-                        <p className={styles.newsletterText}>Get our latest news, updates and business insights straight to your inbox.</p>
-                        <form className={styles.newsletterForm} onSubmit={(e) => e.preventDefault()}>
-                            <input type="email" placeholder="Email Address" className={styles.newsletterInput} />
-                            <button type="submit" className={styles.newsletterBtn}>
-                                SUBSCRIBE <ArrowRight size={16} style={{ marginLeft: '8px' }} />
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </section>
         </main>
     );
 }

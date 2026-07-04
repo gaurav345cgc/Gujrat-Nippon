@@ -32,37 +32,71 @@
     z-index: 2;
     text-align: center;
     color: #FFFFFF;
-    padding: 0 20px;
+    padding: 0 clamp(1rem, 4vw, 2rem);
     max-width: 900px;
+    margin: 0 auto;
 }
 
 .heroTitle {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 7vw, 4.25rem);
     font-weight: 300;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    letter-spacing: -1px;
+    line-height: 1.12;
+    margin: 0 0 0.25rem;
+    letter-spacing: -0.02em;
 }
 
-.heroTitleAccent {
-    color: #4A9E96;
-    /* Teal accent */
+.heroTitleAbout {
+    color: #ffffff;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.heroTitleBrand {
+    color: #a5c9ff;
     font-weight: 600;
     font-style: italic;
 }
 
+.heroTitleLine2 {
+    margin: 0 0 1.5rem;
+    padding: 0;
+    font-size: clamp(1.2rem, 3.8vw, 1.95rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #a5c9ff;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+}
+
+.heroTitleAccent {
+    color: #a5c9ff;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.heroTitleSuffix {
+    color: #a5c9ff;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 0.5em;
+    display: inline-block;
+    margin-left: 0.2rem;
+}
+
 .heroSubtitle {
-    font-size: 1rem;
-    line-height: 1.6;
-    opacity: 0.9;
-    max-width: 600px;
+    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+    line-height: 1.65;
+    font-weight: 400;
+    font-style: normal;
+    color: #ffffff;
+    opacity: 0.95;
+    max-width: 38rem;
     margin: 0 auto;
 }
 
 .heroBtn {
     margin-top: 2rem;
-    background-color: #7B7492;
-    /* Purple btn */
+    background-color: #0077C0;
     color: #FFFFFF;
     border: none;
     padding: 14px 32px;
@@ -91,8 +125,7 @@
 .heroShapeRed {
     width: 250px;
     height: 100%;
-    background-color: #4A9E96;
-    /* Teal */
+    background-color: #0077C0;
 }
 
 .heroShapeWhite {
@@ -118,13 +151,11 @@
 
 /* ---- SECTION 2 & 3: COMBINED DARK WRAPPER (ABOUT & PHILOSOPHY) ---- */
 .combinedDarkWrapper {
-    background-color: #222222;
-    /* Dark grey from design */
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #1D1D1F;
     position: relative;
     overflow: hidden;
     padding: 12rem 0 0 0;
-    /* padding top increased to push content down */
 }
 
 /* Very subtle full-height vertical line connecting sections */
@@ -135,7 +166,7 @@
     left: calc(50% - 550px + 2rem);
     /* Matches container left padding edge */
     width: 1px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
     z-index: 0;
 }
 
@@ -163,6 +194,8 @@
     padding: 0 2rem;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .twoColumnRow {
@@ -170,6 +203,8 @@
     gap: 0;
     /* We handle spacing via columns */
     align-items: flex-start;
+    min-width: 0;
+    width: 100%;
 }
 
 @media(max-width: 900px) {
@@ -192,7 +227,16 @@
     flex: 0 0 280px;
     display: flex;
     margin-top: 0;
+    min-width: 0;
+    max-width: 100%;
     /* Aligned vertically exact with the start of the right column */
+}
+
+@media (max-width: 900px) {
+    .aboutLeftTitleCol {
+        flex: 1 1 auto;
+        width: 100%;
+    }
 }
 
 .rightContentCol {
@@ -203,8 +247,10 @@
 
 /* Specifically compress About section content width */
 .aboutRightContentCol {
-    flex: 0 0 550px;
-    /* Fixed width to ensure right alignment */
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    max-width: 550px;
     display: flex;
     flex-direction: column;
     margin-left: auto;
@@ -213,22 +259,38 @@
     /* Push content DOWN, making heading sit higher relative to it */
 }
 
+@media (max-width: 900px) {
+    .aboutRightContentCol {
+        margin-left: 0;
+        margin-top: 2rem;
+        max-width: 100%;
+    }
+}
+
 .sectionHeading {
     font-size: 3rem;
-    /* Reduced from 4rem */
     font-weight: 300;
-    color: #FFFFFF;
+    color: #1D1D1F;
     margin: 0;
-    line-height: 1.1;
+    line-height: 1.15;
     letter-spacing: -1px;
-    border-left: 4px solid #4A9E96;
+    border-left: 4px solid #0077C0;
     padding-left: 1.5rem;
-    white-space: nowrap;
-    /* Keep headings on a single line */
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+@media (max-width: 640px) {
+    .sectionHeading {
+        font-size: 1.75rem;
+        padding-left: 1rem;
+    }
 }
 
 .headingAccent {
-    color: #4A9E96;
+    color: #0077C0;
     font-weight: 400;
 }
 
@@ -236,17 +298,16 @@
 .statsRow {
     display: flex;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 1rem 1.5rem;
     margin-bottom: 4rem;
-    flex-wrap: nowrap;
-    /* Force 1 line */
+    flex-wrap: wrap;
     width: 100%;
+    min-width: 0;
 }
 
-@media(min-width: 600px) {
+@media (min-width: 720px) {
     .statsRow {
-        gap: 1.5rem;
-        /* Ensure tight enough to stay one line */
+        flex-wrap: nowrap;
     }
 }
 
@@ -254,25 +315,37 @@
     display: flex;
     flex-direction: column;
     flex: 1 1 0;
-    /* Make them share the space equally */
+    min-width: 0;
+}
+
+@media (max-width: 719px) {
+    .statItem {
+        flex: 1 1 calc(50% - 0.75rem);
+        max-width: calc(50% - 0.75rem);
+        min-width: 0;
+    }
+}
+
+@media (max-width: 380px) {
+    .statItem {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }
 
 .statLabel {
-    color: #4A9E96;
-    /* Teal accent like design orange */
+    color: #0077C0;
     font-size: 0.8rem;
     font-weight: 600;
     line-height: 1.4;
     margin-bottom: 0.8rem;
-    /* Removed max-width to let text stack compactly if needed */
 }
 
 .statNum {
     font-size: 2.5rem;
-    /* Reduced size to fit narrower layout in one line */
     font-weight: 700;
     line-height: 1;
-    color: #FFFFFF;
+    color: #1D1D1F;
     letter-spacing: -1px;
 }
 
@@ -285,15 +358,23 @@
 .aboutText {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #CCCCCC;
-    /* Light gray for dark bg */
+    color: #666666;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+@media (max-width: 480px) {
+    .aboutText {
+        font-size: 1rem;
+    }
 }
 
 .aboutBtnWhite {
     align-self: flex-start;
-    background: #FFFFFF;
+    background: transparent;
     color: #1D1D1F;
-    border: none;
+    border: 1px solid #1D1D1F;
     padding: 12px 28px;
     font-size: 0.9rem;
     font-weight: 700;
@@ -301,13 +382,12 @@
     cursor: pointer;
     transition: all 0.3s;
     border-radius: 4px;
-    /* match pill design if requested, but used 4px so far. let's keep 4px as before or matching learnMoreBtn */
     display: inline-flex;
     align-items: center;
 }
 
 .aboutBtnWhite:hover {
-    background: #4A9E96;
+    background: #0077C0;
     color: #FFFFFF;
 }
 
@@ -319,8 +399,7 @@
     transform: translateY(-50%);
     font-size: 30rem;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.02);
-    /* adjusted for dark bg */
+    color: rgba(0, 0, 0, 0.03);
     z-index: 0;
     line-height: 1;
     pointer-events: none;
@@ -328,13 +407,11 @@
 
 .projectsTopDesc {
     max-width: 500px;
-    color: #CCCCCC;
+    color: #666666;
     font-size: 0.95rem;
     line-height: 1.6;
     margin-left: auto;
-    /* Pushes content to the right */
     text-align: right;
-    /* Right align the text to match reference */
 }
 
 .projectsLayout {
@@ -352,8 +429,9 @@
 
 .projectsTabs {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 280px;
+    height: 100%;
 }
 
 @media(max-width: 1024px) {
@@ -366,14 +444,13 @@
 .tabBox,
 .tabBoxActive {
     flex: 1;
-    background-color: #4A9E96;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #0077C0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
-    padding: 1.5rem 0;
-    /* Reduced padding to fit smaller box */
+    justify-content: space-between;
+    padding: 0 2rem;
     color: #FFFFFF;
     transition: all 0.3s;
     cursor: pointer;
@@ -396,15 +473,14 @@
 }
 
 .tabBoxActive {
-    background-color: #3f8f87;
-    /* slightly darker for active or keep same? Design keeps same, just different content. Let's keep same but maybe bolder text. */
+    background-color: #004c85;
 }
 
 .tabTextContainer {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
+    writing-mode: horizontal-tb;
+    transform: none;
     text-align: left;
-    margin-bottom: 2rem;
+    margin-right: 1rem;
     white-space: nowrap;
 }
 
@@ -453,10 +529,8 @@
 
 @media(max-width: 1024px) {
     .tabNumber {
-        display: none;
+        display: block;
     }
-
-    /* Hide number on mobile to save space */
 }
 
 .projectsImageWrapper {
@@ -474,7 +548,7 @@
 .projectsImage {
     width: 100%;
     height: 100%;
-    background: url('/export_image.png') no-repeat center center;
+    background: url('/philosophy_about.jpg') no-repeat center center;
     background-size: cover;
 }
 
@@ -512,7 +586,7 @@
 }
 
 .cardSubtitle {
-    color: #7B7492;
+    color: #0077C0;
     font-size: 0.9rem;
 }
 
@@ -572,7 +646,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem;
-    border-left: 2px solid #4A9E96;
+    border-left: 2px solid #0077C0;
     padding-left: 2rem;
 }
 
@@ -584,7 +658,7 @@
 
 .newsTitleAccent {
     font-weight: 700;
-    color: #4A9E96;
+    color: #0077C0;
 }
 
 .newsGrid {
@@ -594,11 +668,12 @@
 }
 
 .newsCard {
-    background: #F8F9FA;
+    background: #FFFFFF;
     display: flex;
     flex-direction: column;
     border-radius: 8px;
     overflow: hidden;
+    border: 1px solid #E2E8F0;
 }
 
 .newsCardImg {
@@ -632,8 +707,7 @@
 .newsCardBtn {
     align-self: flex-start;
     background: transparent;
-    color: #7B7492;
-    /* Purple text */
+    color: #0077C0;
     border: none;
     padding: 0;
     font-size: 0.9rem;
@@ -646,12 +720,12 @@
 }
 
 .newsCardBtn:hover {
-    color: #4A9E96;
+    color: #0077C0;
 }
 
 /* ---- SECTION 5: CUSTOMERS (VISION & MISSION) ---- */
 .testimonialsSection {
-    background-color: #F8F9FA;
+    background-color: #FFFFFF;
     padding: 6rem 2rem;
 }
 
@@ -665,8 +739,7 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 3rem;
-    border-left: 2px solid #7B7492;
-    /* Purple */
+    border-left: 2px solid #0077C0;
     padding-left: 2rem;
 }
 
@@ -678,7 +751,7 @@
 }
 
 .testiTitleAccent {
-    color: #7B7492;
+    color: #0077C0;
     font-weight: 600;
 }
 
@@ -713,8 +786,7 @@
 }
 
 .testiAuthor {
-    color: #4A9E96;
-    /* Teal */
+    color: #0077C0;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -766,15 +838,13 @@
 }
 
 .doubleImageTitleAccent {
-    color: #4A9E96;
-    /* Teal */
+    color: #0077C0;
     font-weight: 600;
 }
 
 /* ---- SECTION 7: NEWSLETTER ---- */
 .newsletterSection {
-    background-color: #4A9E96;
-    /* Teal background */
+    background-color: #0077C0;
     padding: 5rem 2rem;
     color: #FFFFFF;
 }
@@ -850,7 +920,7 @@
 .newsletterBtn {
     align-self: flex-start;
     background: #FFFFFF;
-    color: #4A9E96;
+    color: #0077C0;
     border: none;
     padding: 12px 24px;
     font-size: 0.9rem;

@@ -45,7 +45,27 @@
     padding: 8rem 2rem 4rem;
     max-width: 1000px;
     margin: 0 auto;
-    color: #2C3E50;
+    color: #0077C0;
+}
+
+.pageHeader {
+    margin-bottom: 2.5rem;
+}
+
+.pageH1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0077c0;
+    margin: 0 0 1rem;
+    line-height: 1.25;
+}
+
+.pageIntro {
+    margin: 0;
+    max-width: 720px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #333;
 }
 
 .contactLayout {
@@ -67,11 +87,11 @@
 }
 
 .companyName {
-    color: #1A1A1A;
+    color: #0077C0;
     font-size: 1.75rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: #C00000;
+    color: #0077C0;
 }
 
 .infoBlock {
@@ -82,7 +102,7 @@
 
 .infoLabel {
     font-weight: 700;
-    color: #1A1A1A;
+    color: #0077C0;
     margin-right: 0.5rem;
 }
 
@@ -110,7 +130,7 @@
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #1A1A1A;
+    color: #0077C0;
 }
 
 .input,
@@ -121,12 +141,19 @@
     /* Lighter borders */
     border-radius: 8px;
     /* Softer radius for inputs */
-    font-family: inherit;
+    
     font-size: 1rem;
-    color: #2C3E50;
-    background-color: #F8FAFC;
+    color: #fff; /* Ensures text written inside is white */
+    background-color: #0077C0;
     /* Slightly lighter background */
     transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Set placeholder color to white for input and textarea */
+.input::placeholder,
+.textarea::placeholder {
+    color: #fff !important;
+    opacity: 1;
 }
 
 .textarea {
@@ -138,13 +165,13 @@
 .input:focus,
 .textarea:focus {
     outline: none;
-    border-color: #C00000;
+    border-color: #0077C0;
     box-shadow: 0 0 0 3px rgba(192, 0, 0, 0.1);
 }
 
 .submitBtn {
     width: 100%;
-    background-color: #C00000;
+    background-color: #0077C0;
     color: #FFFFFF;
     border: none;
     padding: 1.2rem;
@@ -158,10 +185,37 @@
 }
 
 .submitBtn:hover {
-    background-color: #A00000;
+    background-color: #0077C0;
     /* Darker red on hover */
     box-shadow: 0 8px 20px rgba(192, 0, 0, 0.25);
     transform: translateY(-2px);
+}
+
+.submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.successMessage {
+    margin: 0 0 1.25rem;
+    padding: 1rem 1.1rem;
+    background: #ecfdf5;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    color: #047857;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.formError {
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    color: #b91c1c;
+    font-size: 0.9rem;
 }
 
 /* Mobile Responsiveness */

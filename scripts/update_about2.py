@@ -702,7 +702,7 @@ export default function AboutPage() {
                                     <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#C00000', fontWeight: 'bold' }}>•</span> Professional Excellence</li>
                                     <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#C00000', fontWeight: 'bold' }}>•</span> Efficient Execution</li>
                                     <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#C00000', fontWeight: 'bold' }}>•</span> Strategic Problem-Solving</li>
-                                    <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#C00000', fontWeight: 'bold' }}>•</span> Client-Centric Service</li>
+                                    <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#C00000', fontWeight: 'bold' }}>•</span> Customer-Centric Service</li>
                                 </ul>
                                 <p style={{ marginTop: '1rem', fontStyle: 'italic', opacity: 0.8 }}>We combine hard work, smart execution, and strong industry networks to deliver exceptional value.</p>
                             </div>
@@ -733,7 +733,7 @@ export default function AboutPage() {
                             <img src="/industries_served.png" alt="People" className={styles.newsCardImg} />
                             <div className={styles.newsCardBody}>
                                 <h3 className={styles.newsCardTitle}>People</h3>
-                                <p className={styles.newsCardText}>To create equitable opportunities for growth and success for all our stakeholders — employees, partners, and clients — by fostering innovation, collaboration, and trust.</p>
+                                <p className={styles.newsCardText}>To create equitable opportunities for growth and success for all our stakeholders — employees, partners, and customers — by fostering innovation, collaboration, and trust.</p>
                                 <button className={styles.newsCardBtn}>READ MORE <ArrowRight size={14} style={{marginLeft:'4px'}}/></button>
                             </div>
                         </div>

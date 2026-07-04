@@ -1,45 +1,48 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Mrs_Saint_Delafield, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
+import Footer from "@/components/Footer";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
+import RuleBasedChatbot from "@/components/RuleBasedChatbot";
+import "./globals.css";
 
 const mrsSaintDelafield = Mrs_Saint_Delafield({ subsets: ["latin"], weight: "400", variable: "--font-delafield" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-import Footer from "@/components/Footer";
-import "./globals.css";
-
 export const metadata: Metadata = {
   title: {
-    template: "%s | Corporate Website",
-    default: "Corporate Website | Your Trusted Industry Partner",
+    template: "%s | Gujarat Nippon International Pvt Ltd",
+    default: "Gujarat Nippon International Pvt Ltd | Your Trusted Industry Partner",
   },
-  description: "Delivering industry-leading solutions and certifications around the globe.",
-  openGraph: {
-    title: "Corporate Website",
-    description: "Delivering industry-leading solutions and certifications around the globe.",
-    url: "https://www.corporatewebsite.com",
-    siteName: "Corporate Website",
-    locale: "en_US",
-    type: "website",
+  description:
+    "Gujarat Nippon International supplies turnkey plant machinery, industrial spares, and capital equipment for steel, plastics, and energy industries across India, Africa, and GCC.",
+  icons: {
+    icon: '/logo.svg',
+    shortcut: '/logo.svg',
+    apple: '/logo.svg',
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") ?? "";
+  const isAdmin = pathname.startsWith("/admin");
+
   return (
     <html lang="en" className={`${mrsSaintDelafield.variable} ${inter.variable}`}>
       <body>
-        <SmoothScroll />
-        <Navbar />
-        <main>
-          {children}
-        </main>
-
-        <Footer />
+        {!isAdmin && <SmoothScroll />}
+        {!isAdmin && <AnalyticsTracker />}
+        {!isAdmin && <Navbar />}
+        <main className={isAdmin ? 'admin-layout-main' : undefined}>{children}</main>
+        {!isAdmin && <Footer />}
+        {!isAdmin && <RuleBasedChatbot />}
       </body>
     </html>
   );

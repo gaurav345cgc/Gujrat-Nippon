@@ -14,7 +14,7 @@ export default function CookiesPage() {
 
             <section>
                 <h2>What Are Cookies?</h2>
-                <p>Cookies are small text files that are placed on your machine to help the site provide a better user experience.</p>
+                <p>Cookies are small text files that are placed on your machine to help the site provide a better customer experience.</p>
             </section>
 
             <section>
