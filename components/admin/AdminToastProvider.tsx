@@ -177,7 +177,11 @@ function defaultTitle(variant: AdminToastVariant): string {
 
 export function AdminToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<ToastItem[]>([]);
-  const portalTarget = typeof document === 'undefined' ? null : document.body;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const dismiss = useCallback((id: string) => {
     setToasts((list) => list.filter((t) => t.id !== id));
@@ -219,14 +223,14 @@ export function AdminToastProvider({ children }: { children: ReactNode }) {
   return (
     <AdminToastContext.Provider value={value}>
       {children}
-      {portalTarget &&
+      {mounted &&
         createPortal(
           <div className="admin-toast-stack" aria-live="polite" aria-relevant="additions">
             {toasts.map((t) => (
               <AdminToastCard key={t.id} toast={t} onDismiss={() => dismiss(t.id)} />
             ))}
           </div>,
-          portalTarget
+          document.body
         )}
     </AdminToastContext.Provider>
   );
