@@ -58,7 +58,8 @@ const FALLBACK_PAGES: Record<PageSlug, FallbackPage> = {
         heading: "Products & Supply",
       },
       cta_bottom: {
-        heading: "Discuss your project",
+        heading: "Your Trusted Partner in Precision Manufacturing",
+        body: "Every successful project begins with the right manufacturing partner. Whether you're developing a new product or scaling production, we're here to provide dependable quality, technical expertise, and timely delivery. Contact our team to discuss your requirements and receive a customized solution.",
         buttonHref: "/contact",
         buttonLabel: "Contact Us",
       },

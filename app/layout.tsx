@@ -46,6 +46,7 @@ export default async function RootLayout({
         {!isAdmin && <Navbar />}
         <main className={isAdmin ? 'admin-layout-main' : undefined}>{children}</main>
         {!isAdmin && <Footer contact={contact} />}
+        {!isAdmin && <RuleBasedChatbot />}
       </body>
     </html>
   );

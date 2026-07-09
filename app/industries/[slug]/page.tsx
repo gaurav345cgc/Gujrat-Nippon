@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from '../Industries.module.css';
+import { getIndustryImageBySlug } from '@/lib/cms/industry-defaults';
 type IndustryPage = {
     slug: string;
     name: string;
@@ -283,15 +284,23 @@ function getIndustryOrThrow(slug: string): IndustryPage {
 export default async function IndustryDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const industry = getIndustryOrThrow(slug);
+    const heroImage = getIndustryImageBySlug(slug);
 
     return (
         <main className={styles.pageWrapper}>
             <div className={styles.container}>
+                <div className={styles.detailHeroImage}>
+                    <img
+                        src={heroImage}
+                        alt={`${industry.name} — industrial supply and engineering solutions, Gujarat Nippon International`}
+                    />
+                </div>
+
                 <h1 className={styles.pageTitle}>
                     {industry.name} Solutions — Gujarat Nippon International
                 </h1>
 
-                <section>
+                <section className={styles.detailSection}>
                     <h2>What We Supply to This Industry</h2>
                     <ul>
                         {industry.whatWeSupply.map((item) => (
@@ -300,7 +309,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
                     </ul>
                 </section>
 
-                <section>
+                <section className={styles.detailSection}>
                     <h2>Key Challenges We Solve</h2>
                     <ul>
                         {industry.challenges.map((c) => (
@@ -309,7 +318,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
                     </ul>
                 </section>
 
-                <section>
+                <section className={styles.detailSection}>
                     <h2>Our Track Record in This Industry</h2>
                     <ul>
                         {industry.trackRecord.map((t) => (
@@ -318,7 +327,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
                     </ul>
                 </section>
 
-                <section>
+                <section className={styles.detailSection}>
                     <h2>Related Products</h2>
                     <ul>
                         {industry.relatedProducts.map((p) => (
@@ -329,7 +338,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
                     </ul>
                 </section>
 
-                <section>
+                <section className={styles.detailSection}>
                     <h2>Talk to Our {industry.name} Specialists</h2>
                     <Link href="/contact" className={styles.learnMore}>
                         Talk to Our {industry.name} Specialists

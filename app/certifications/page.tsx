@@ -44,8 +44,9 @@ export default async function CertificationsPage() {
           })}
         </section>
 
-        {cta ? <CmsCta cta={cta} className={styles.ctaSection} /> : null}
       </div>
+
+      {cta ? <CmsCta cta={cta} /> : null}
     </main>
   );
 }

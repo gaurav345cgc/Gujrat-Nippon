@@ -6,14 +6,14 @@ export type IndustryCardAsset = {
 };
 
 export const INDUSTRY_CARD_ASSETS: IndustryCardAsset[] = [
-  { slug: 'steel-metal-processing', image: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&q=80&w=800' },
-  { slug: 'automotive', image: 'https://images.unsplash.com/photo-1518985289906-8dceaa1b8ef0?auto=format&fit=crop&q=80&w=800' },
-  { slug: 'plastics-moulding', image: 'https://images.unsplash.com/photo-1605371924599-2d0365da1ae0?auto=format&fit=crop&q=80&w=800' },
-  { slug: 'chemical-manufacturing', image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=800' },
-  { slug: 'global-logistics', image: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c80a30?auto=format&fit=crop&q=80&w=800' },
-  { slug: 'energy-power', image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=800' },
-  { slug: 'construction-materials', image: 'https://images.unsplash.com/photo-1541888081198-d1a2dd6b59d9?auto=format&fit=crop&q=80&w=800' },
-  { slug: 'consumer-goods', image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800' },
+  { slug: 'steel-metal-processing', image: '/sven-verweij-4ZHg6OytifQ-unsplash.jpg' },
+  { slug: 'automotive', image: '/greg-rosenke-xoxnfVIE7Qw-unsplash.jpg' },
+  { slug: 'plastics-moulding', image: '/product_3.png' },
+  { slug: 'chemical-manufacturing', image: '/morteza-mohammadi-l0QB40LUoXA-unsplash.jpg' },
+  { slug: 'global-logistics', image: '/distribution_image.png' },
+  { slug: 'energy-power', image: '/crystal-kwok-XUEdfpPIhXg-unsplash.jpg' },
+  { slug: 'construction-materials', image: '/wallace-wang-8wfB4s5OWqQ-unsplash.jpg' },
+  { slug: 'consumer-goods', image: '/joanna-stolowicz-XQNG5c6zl-g-unsplash.jpg' },
 ];
 
 export const INDUSTRY_CARD_DEFAULTS: TextPayload[] = [
@@ -26,6 +26,21 @@ export const INDUSTRY_CARD_DEFAULTS: TextPayload[] = [
   { heading: 'Construction Materials', body: 'Equipment, spares and pneumatics or hydraulics consumables for construction materials manufacturing.' },
   { heading: 'Consumer Goods', body: 'Spares, consumables and moulding-related support for high-volume consumer goods production.' },
 ];
+
+const INDUSTRY_SLUG_BY_HEADING = Object.fromEntries(
+  INDUSTRY_CARD_DEFAULTS.map((card, index) => [
+    card.heading ?? '',
+    INDUSTRY_CARD_ASSETS[index]?.slug ?? 'steel-metal-processing',
+  ])
+) as Record<string, string>;
+
+export function resolveIndustrySlug(heading: string, index: number): string {
+  return INDUSTRY_SLUG_BY_HEADING[heading] ?? INDUSTRY_CARD_ASSETS[index]?.slug ?? 'steel-metal-processing';
+}
+
+export function getIndustryImageBySlug(slug: string): string {
+  return INDUSTRY_CARD_ASSETS.find((asset) => asset.slug === slug)?.image ?? '/ourindustries.jpg';
+}
 
 export function buildIndustryCardSections(): Record<string, TextPayload> {
   const sections: Record<string, TextPayload> = {};

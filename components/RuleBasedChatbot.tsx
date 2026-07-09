@@ -16,8 +16,14 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import styles from './RuleBasedChatbot.module.css';
+import {
+  type ChatbotFaqPayload,
+  type ChatbotViewKey,
+  type ChatOption,
+  mergeFaqsIntoCategoryOptions,
+} from '@/lib/faqs/chatbot-map';
 
-type ViewState = 'menu' | 'products' | 'industries' | 'resources' | 'contact' | 'lead';
+type ViewState = 'menu' | ChatbotViewKey | 'lead';
 type Sender = 'bot' | 'user';
 
 type ChatMessage = {
@@ -29,25 +35,6 @@ type ChatMessage = {
     href: string;
   };
 };
-
-type ChatOption =
-  | {
-      label: string;
-      kind: 'answer';
-      answer: string;
-      cta?: ChatMessage['cta'];
-    }
-  | {
-      label: string;
-      kind: 'link';
-      href: string;
-      answer: string;
-    }
-  | {
-      label: string;
-      kind: 'lead';
-      answer: string;
-    };
 
 type Category = {
   title: string;
@@ -64,7 +51,7 @@ const initialMessages: ChatMessage[] = [
   },
 ];
 
-const categories: Record<Exclude<ViewState, 'menu' | 'lead'>, Category> = {
+const fallbackCategories: Record<ChatbotViewKey, Category> = {
   products: {
     title: 'Products & Solutions',
     icon: <Package size={18} />,
@@ -205,7 +192,25 @@ const categories: Record<Exclude<ViewState, 'menu' | 'lead'>, Category> = {
   },
 };
 
+function buildCategories(faqs: ChatbotFaqPayload[]): Record<ChatbotViewKey, Category> {
+  return (Object.keys(fallbackCategories) as ChatbotViewKey[]).reduce(
+    (acc, view) => {
+      acc[view] = {
+        ...fallbackCategories[view],
+        options: mergeFaqsIntoCategoryOptions(
+          view,
+          fallbackCategories[view].options,
+          faqs
+        ),
+      };
+      return acc;
+    },
+    {} as Record<ChatbotViewKey, Category>
+  );
+}
+
 export default function RuleBasedChatbot() {
+  const [categories, setCategories] = useState(fallbackCategories);
   const [isOpen, setIsOpen] = useState(false);
   const [view, setView] = useState<ViewState>('menu');
   const [messages, setMessages] = useState<ChatMessage[]>(initialMessages);
@@ -223,6 +228,26 @@ export default function RuleBasedChatbot() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      try {
+        const res = await fetch('/api/faqs/chatbot');
+        const data = await res.json();
+        if (!res.ok || cancelled) return;
+        const faqs = (data.faqs ?? []) as ChatbotFaqPayload[];
+        if (faqs.length > 0 && !cancelled) {
+          setCategories(buildCategories(faqs));
+        }
+      } catch {
+        // Keep built-in fallback categories when API is unavailable.
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (!contentRef.current) return;
@@ -244,7 +269,7 @@ export default function RuleBasedChatbot() {
     ]);
   };
 
-  const selectCategory = (nextView: Exclude<ViewState, 'menu' | 'lead'>) => {
+  const selectCategory = (nextView: ChatbotViewKey) => {
     const category = categories[nextView];
     setView(nextView);
     appendMessage('user', category.title);
@@ -323,7 +348,11 @@ export default function RuleBasedChatbot() {
             </button>
           </div>
 
-          <div ref={contentRef} className={styles.content}>
+          <div
+            ref={contentRef}
+            className={styles.content}
+            data-lenis-prevent
+          >
             <div className={styles.messageStack}>
               {messages.map((message) => (
                 <div

@@ -101,7 +101,10 @@
 .content {
   flex: 1;
   min-height: 0;
+  overflow-x: hidden;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -109,6 +112,10 @@
   background:
     linear-gradient(180deg, rgba(241, 245, 249, 0.95), rgba(248, 250, 252, 0.98)),
     #f8fafc;
+}
+
+.content > * {
+  flex-shrink: 0;
 }
 
 .messageStack {

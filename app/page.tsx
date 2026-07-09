@@ -42,11 +42,7 @@ export default async function HomePage() {
         capabilities={resolveHomeCapabilities(page.sections)}
         productTeasers={resolveHomeProductTeasers(page.sections)}
       />
-      {ctaBottom?.buttonLabel ? (
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 2rem 4rem' }}>
-          <CmsCta cta={ctaBottom} />
-        </div>
-      ) : null}
+      {ctaBottom?.buttonLabel ? <CmsCta cta={ctaBottom} /> : null}
     </article>
   );
 }

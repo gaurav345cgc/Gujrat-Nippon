@@ -32,8 +32,9 @@ export default async function CareersPage() {
           <CmsTextBody body={culture.body} className={styles.sectionBody} />
         </section>
 
-        <CmsCta cta={cta} className={styles.ctaSection} />
       </div>
+
+      <CmsCta cta={cta} />
     </main>
   );
 }

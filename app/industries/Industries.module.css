@@ -74,15 +74,19 @@
 .cardImageWrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 1.5;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
+    border-radius: 12px;
+    background-color: #e2e8f0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%, 0 88%);
 }
 
 .cardImage {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.5s ease;
 }
 
@@ -104,6 +108,8 @@
     color: #0077C0;
     line-height: 1.25;
     margin: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .cardDesc {
@@ -138,8 +144,59 @@
 }
 
 
+.pageTitle {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: #0077C0;
+    margin: 0 0 2rem;
+    line-height: 1.2;
+}
+
+.detailHeroImage {
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    background-color: #e2e8f0;
+}
+
+.detailHeroImage img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.detailSection {
+    margin-bottom: 2rem;
+}
+
+.detailSection h2 {
+    color: #0077C0;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+}
+
+.detailSection ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #334155;
+    line-height: 1.7;
+}
+
+.detailSection li + li {
+    margin-top: 0.5rem;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 6rem 1rem 3rem;
+    }
+
+    .detailHeroImage {
+        aspect-ratio: 16 / 10;
     }
 }

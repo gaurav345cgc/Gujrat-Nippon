@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from './Industries.module.css';
-import Link from 'next/link';
 import PageHero from '../../components/PageHero';
 import { generateCmsMetadata } from '@/lib/cms/metadata';
 import { resolvePublicPage } from '@/lib/cms/gate';
 import { mapHeroToPageHero } from '@/lib/cms/map-hero';
-import { INDUSTRY_CARD_ASSETS, resolveIndustryCards } from '@/lib/cms/industry-defaults';
+import {
+  getIndustryImageBySlug,
+  resolveIndustryCards,
+  resolveIndustrySlug,
+} from '@/lib/cms/industry-defaults';
 import type { HeroPayload, TextPayload } from '@/lib/cms/types';
 
 export const generateMetadata = () => generateCmsMetadata('industries');
@@ -29,17 +32,18 @@ export default async function IndustriesPage() {
 
         <div className={styles.grid}>
           {industryCards.map((industry, index) => {
-            const asset = INDUSTRY_CARD_ASSETS[index] ?? INDUSTRY_CARD_ASSETS[0];
             const title = industry.heading ?? 'Industry';
+            const slug = resolveIndustrySlug(title, index);
+            const image = getIndustryImageBySlug(slug);
             return (
-              <article key={`${asset.slug}-${index}`} className={styles.industryCard}>
+              <article key={`${slug}-${index}`} className={styles.industryCard}>
                 <span className={styles.cardTag}>Industry</span>
 
                 <div className={styles.cardImageWrapper}>
                   <img
-                    src={asset.image}
+                    src={image}
                     alt={
-                      asset.slug === 'steel-metal-processing'
+                      slug === 'steel-metal-processing'
                         ? 'Steel and metal processing — rolling mills, coil lines and plant supply, Gujarat Nippon International'
                         : `${title} sector — industrial supply and engineering solutions, Gujarat Nippon International`
                     }
@@ -50,9 +54,6 @@ export default async function IndustriesPage() {
                 <div className={styles.cardBody}>
                   <h3 className={styles.cardTitle}>{title}</h3>
                   <p className={styles.cardDesc}>{industry.body}</p>
-                  <Link href={`/industries/${asset.slug}`} className={styles.learnMore}>
-                    {`View ${title} solutions`}
-                  </Link>
                 </div>
               </article>
             );
